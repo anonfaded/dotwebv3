@@ -13,7 +13,7 @@ export default async function Home({
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Hero lang={lang} dictionary={dictionary} />
-      <AIWidget dictionary={dictionary} />
+      <AIWidget />
       {/* Other sections will be added here */}
     </Suspense>
   );

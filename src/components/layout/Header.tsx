@@ -22,9 +22,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-50 px-14 pt-4">
+    <div className="fixed top-0 left-0 right-0 z-50 px-8">
       <motion.header 
-        className="flex items-center justify-between px-8 py-4 bg-white/90 backdrop-blur-sm rounded-[12px] shadow-lg"
+        className="mx-auto mt-6 flex items-center justify-between rounded-2xl bg-white shadow-lg px-8 py-4"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -70,7 +70,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               </button>
 
               {showSolutionsDropdown && (
-                <div className="absolute top-[60px] left-0 w-[374px] bg-white/95 backdrop-blur-sm rounded-[12px] shadow-lg p-6">
+                <div className="absolute top-[calc(100%+1rem)] left-0 w-[374px] bg-white rounded-xl p-6 shadow-lg">
                   <div className="absolute top-[-8px] left-[20px] w-4 h-4 bg-white transform rotate-45" />
                   <p className="font-nunito text-[12px] font-[600] leading-[18px] tracking-[0.5px] text-[#97A3B7] mb-4">
                     Werkzeuge für Immobilienprofis
