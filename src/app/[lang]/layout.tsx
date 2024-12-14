@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Nunito, Nunito_Sans } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { locales } from '@/config/i18n';
+import { locales, Locale } from '@/config/i18n';
 import { getDictionary } from '@/lib/dictionary';
 import '@/app/globals.css';
 
@@ -42,21 +42,25 @@ interface Dictionary {
   };
 }
 
+interface LayoutProps {
+  children: React.ReactNode;
+  params: {
+    lang: Locale;
+  };
+}
+
 export default async function LocaleLayout({
   children,
-  params: { lang },
-}: {
-  children: React.ReactNode;
-  params: { lang: string };
-}) {
-  const dictionary = await getDictionary(lang) as Dictionary;
+  params,
+}: LayoutProps) {
+  const dictionary = await getDictionary(params.lang) as Dictionary;
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={params.lang} suppressHydrationWarning>
       <body className={`${nunito.variable} ${nunitoSans.variable}`} suppressHydrationWarning>
-        <Header lang={lang} dictionary={dictionary} />
+        <Header lang={params.lang} dictionary={dictionary} />
         <main className="min-h-screen">{children}</main>
-        <Footer lang={lang} />
+        <Footer lang={params.lang} />
       </body>
     </html>
   );
