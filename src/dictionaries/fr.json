@@ -1,0 +1,16 @@
+{
+  "navigation": {
+    "start": "Commencer l'Automatisation",
+    "learn": "Découvrir Nos Outils"
+  },
+  "hero": {
+    "title": "Des Workflows Conçus pour Réduire la Complexité et Améliorer les Résultats",
+    "subtitle": "Optimisez Vos Processus d'Entreprise"
+  },
+  "features": {
+    "title": "Nos Fonctionnalités",
+    "automation": "Automatisation",
+    "workflow": "Gestion des Workflows",
+    "integration": "Intégration"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "navigation": {
+    "start": "Jetzt Automatisieren",
+    "learn": "Über unsere Tools"
+  },
+  "hero": {
+    "title": "Workflows für reduzierte Komplexität und bessere Ergebnisse",
+    "subtitle": "Optimieren Sie Ihre Geschäftsprozesse"
+  },
+  "features": {
+    "title": "Unsere Funktionen",
+    "automation": "Automatisierung",
+    "workflow": "Workflow-Management",
+    "integration": "Integration"
+  }
+}

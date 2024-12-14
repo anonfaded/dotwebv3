@@ -1,0 +1,16 @@
+{
+  "navigation": {
+    "start": "Start Automating Now",
+    "learn": "Learn About Our Tools"
+  },
+  "hero": {
+    "title": "Workflows Built for Reduced Overhead and Better Results",
+    "subtitle": "Optimize Your Business Processes"
+  },
+  "features": {
+    "title": "Our Features",
+    "automation": "Automation",
+    "workflow": "Workflow Management",
+    "integration": "Integration"
+  }
+}
