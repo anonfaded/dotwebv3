@@ -42,17 +42,13 @@ interface Dictionary {
   };
 }
 
-interface LayoutProps {
-  children: React.ReactNode;
-  params: {
-    lang: Locale;
-  };
-}
-
 export default async function LocaleLayout({
   children,
   params,
-}: LayoutProps) {
+}: {
+  children: React.ReactNode;
+  params: { lang: Locale };
+}) {
   const dictionary = await getDictionary(params.lang) as Dictionary;
 
   return (
