@@ -51,8 +51,16 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
       </button>
 
       {showDropdown && (
-        <div className="absolute top-[60px] right-0 w-[200px] bg-white/95 backdrop-blur-sm rounded-[12px] shadow-lg p-4">
-          <div className="absolute top-[-8px] right-[20px] w-4 h-4 bg-white transform rotate-45" />
+        <div 
+          className="absolute right-0 w-[200px] rounded-xl bg-white p-4 shadow-lg"
+          style={{ top: 'calc(100% + 45px)', zIndex: 100 }}
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        >
+          <div 
+            className="absolute right-[20px] top-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
+            style={{ zIndex: -1 }}
+          />
           <div className="space-y-3">
             {Object.entries(langs).map(([code, name]) => (
               <Link

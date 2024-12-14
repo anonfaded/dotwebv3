@@ -24,7 +24,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-8">
       <motion.header 
-        className="mx-auto mt-6 flex items-center justify-between rounded-2xl bg-white shadow-lg px-8 py-4"
+        className="relative mx-auto mt-6 flex items-center justify-between rounded-2xl bg-white shadow-lg px-8 py-4"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -71,12 +71,15 @@ export default function Header({ lang, dictionary }: HeaderProps) {
 
               {showSolutionsDropdown && (
                 <div 
-                  className="absolute left-0 mt-4 w-[374px] rounded-xl bg-white p-6 shadow-lg"
-                  style={{ top: '100%' }}
+                  className="absolute left-0 w-[374px] rounded-xl bg-white p-6 shadow-lg"
+                  style={{ top: 'calc(100% + 45px)', zIndex: 100 }}
                   onMouseEnter={() => setShowSolutionsDropdown(true)}
                   onMouseLeave={() => setShowSolutionsDropdown(false)}
                 >
-                  <div className="absolute left-[20px] top-[-8px] h-4 w-4 rotate-45 transform bg-white" />
+                  <div 
+                    className="absolute left-[20px] top-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
+                    style={{ zIndex: -1 }}
+                  />
                   <p className="font-nunito text-[12px] font-[600] leading-[18px] tracking-[0.5px] text-[#97A3B7] mb-4">
                     Werkzeuge für Immobilienprofis
                   </p>
