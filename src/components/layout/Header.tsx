@@ -70,8 +70,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               </button>
 
               {showSolutionsDropdown && (
-                <div className="absolute top-[calc(100%+1rem)] left-0 w-[374px] bg-white rounded-xl p-6 shadow-lg">
-                  <div className="absolute top-[-8px] left-[20px] w-4 h-4 bg-white transform rotate-45" />
+                <div 
+                  className="absolute left-0 mt-4 w-[374px] rounded-xl bg-white p-6 shadow-lg"
+                  style={{ top: '100%' }}
+                  onMouseEnter={() => setShowSolutionsDropdown(true)}
+                  onMouseLeave={() => setShowSolutionsDropdown(false)}
+                >
+                  <div className="absolute left-[20px] top-[-8px] h-4 w-4 rotate-45 transform bg-white" />
                   <p className="font-nunito text-[12px] font-[600] leading-[18px] tracking-[0.5px] text-[#97A3B7] mb-4">
                     Werkzeuge für Immobilienprofis
                   </p>

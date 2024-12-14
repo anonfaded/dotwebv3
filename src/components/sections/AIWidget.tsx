@@ -1,11 +1,8 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 export default function AIWidget() {
-  const [isSticky, setIsSticky] = useState(false);
-
   return (
     <section className="relative h-[800px] w-full bg-gradient-to-b from-transparent to-gray-100">
       <motion.div
