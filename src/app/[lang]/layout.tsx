@@ -25,6 +25,23 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
+interface Dictionary {
+  navigation: {
+    start: string;
+    learn: string;
+  };
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  features: {
+    title: string;
+    automation: string;
+    workflow: string;
+    integration: string;
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params: { lang },
@@ -32,7 +49,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang) as Dictionary;
 
   return (
     <html lang={lang} suppressHydrationWarning>
