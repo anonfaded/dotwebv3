@@ -8,7 +8,14 @@ import { useState } from 'react';
 
 interface HeaderProps {
   lang: string;
-  dictionary: any;
+  dictionary: {
+    navigation?: {
+      solutions: string;
+      caseStudies: string;
+      contact: string;
+      demo: string;
+    };
+  };
 }
 
 export default function Header({ lang, dictionary }: HeaderProps) {
@@ -51,7 +58,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   priority 
                   unoptimized
                 />
-                <span>Solutions</span>
+                <span>{dictionary.navigation?.solutions || 'Solutions'}</span>
                 <Image 
                   src="/dropdown.png" 
                   alt="Dropdown" 
@@ -124,7 +131,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 priority 
                 unoptimized
               />
-              <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">Case Studies</span>
+              <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">{dictionary.navigation?.caseStudies || 'Case Studies'}</span>
             </Link>
 
             {/* Contact */}
@@ -137,7 +144,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 priority 
                 unoptimized
               />
-              <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">Contact</span>
+              <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">{dictionary.navigation?.contact || 'Contact'}</span>
             </Link>
           </div>
         </div>
@@ -146,7 +153,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
         <div className="flex items-center space-x-6">
           <LanguageSwitcher currentLang={lang} />
           <button className="bg-[#2A2A2A] text-white px-6 py-2 rounded-lg font-nunito hover:bg-black transition-colors">
-            Request a Demo
+            {dictionary.navigation?.demo || 'Request a Demo'}
           </button>
         </div>
       </motion.header>

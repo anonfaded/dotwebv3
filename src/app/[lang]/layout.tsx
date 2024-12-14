@@ -16,12 +16,10 @@ const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
 });
 
-export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
-  return {
-    title: 'DotWeb - Smart Automation Solutions',
-    description: 'Workflows Built for Reduced Overhead and Better Results',
-  };
-}
+export const metadata: Metadata = {
+  title: 'DotWeb - Smart Automation Solutions',
+  description: 'Workflows Built for Reduced Overhead and Better Results',
+};
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
