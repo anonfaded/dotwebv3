@@ -50,7 +50,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div 
-                className="w-[230px] bg-white rounded-xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
+                className="w-[230px] bg-white rounded-3xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
               >
                 <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center">
                   AI Provided Personalized Answers
@@ -79,20 +79,21 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 <Image
                   src="/hero-icon3.png"
                   alt="Hero Icon 3"
-                  width={85}
-                  height={45}
+                  width={125}
+                  height={55}
                   priority
                   unoptimized
-                  className="mb-[-29px] ml-[-9px]"
+                  className="mb-[-39px] ml-[-9px]"
                 />
               </div>
               <Image
                 src="/hero-icon2.png"
                 alt="Hero Icon 2"
-                width={67}
-                height={62}
+                width={75}
+                height={55}
                 priority
                 unoptimized
+                className="mb-[-39px] ml-[16px]"
               />
             </motion.div>
 
@@ -126,19 +127,20 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 <Image
                   src="/hero-icon3.png"
                   alt="Hero Icon 3"
-                  width={85}
-                  height={45}
+                  width={125}
+                  height={55}
                   priority
                   unoptimized
-                  className="mb-[-24px]"
+                  className="mb-[-39px] ml-[200px]"
                 />
                 <Image
                   src="/hero-icon4.png"
                   alt="Hero Icon 4"
-                  width={67}
+                  width={77}
                   height={62}
                   priority
                   unoptimized
+                  className="ml-[200px]"
                 />
               </div>
             </motion.div>
@@ -182,7 +184,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <div 
-                className="w-[230px] bg-white rounded-xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
+                className="w-[230px] bg-white rounded-3xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center mr-[130px]"
               >
                 <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center">
                   Product Explained, Lead Captured.
@@ -191,10 +193,11 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               <Image
                 src="/hero-icon5.png"
                 alt="Hero Icon 5"
-                width={67}
+                width={77}
                 height={62}
                 priority
                 unoptimized
+                className="ml-[70px]"
               />
             </motion.div>
           </div>
