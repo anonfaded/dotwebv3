@@ -75,14 +75,15 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="flex justify-center mb-1">
+              <div className="flex justify-center mb-2">
                 <Image
                   src="/hero-icon3.png"
                   alt="Hero Icon 3"
-                  width={55}
-                  height={29}
+                  width={85}
+                  height={45}
                   priority
                   unoptimized
+                  className="mb-[-29px] ml-[-9px]"
                 />
               </div>
               <Image
@@ -121,24 +122,25 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="flex justify-center mb-1">
+              <div className="flex flex-col items-center">
                 <Image
                   src="/hero-icon3.png"
                   alt="Hero Icon 3"
-                  width={55}
-                  height={29}
+                  width={85}
+                  height={45}
+                  priority
+                  unoptimized
+                  className="mb-[-24px]"
+                />
+                <Image
+                  src="/hero-icon4.png"
+                  alt="Hero Icon 4"
+                  width={67}
+                  height={62}
                   priority
                   unoptimized
                 />
               </div>
-              <Image
-                src="/hero-icon4.png"
-                alt="Hero Icon 4"
-                width={67}
-                height={62}
-                priority
-                unoptimized
-              />
             </motion.div>
 
             {/* Buttons */}
