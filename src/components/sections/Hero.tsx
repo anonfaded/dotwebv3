@@ -60,7 +60,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 <Image
                   src="/hero-icon1.png"
                   alt="Hero Icon 1"
-                  width={67}
+                  width={77}
                   height={62}
                   priority
                   unoptimized
@@ -70,30 +70,18 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 top-[20px] hidden md:block"
+              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 top-[20px] hidden md:block mt-[-27px]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="flex justify-center mb-2">
-                <Image
-                  src="/hero-icon3.png"
-                  alt="Hero Icon 3"
-                  width={125}
-                  height={55}
-                  priority
-                  unoptimized
-                  className="mb-[-39px] ml-[-9px]"
-                />
-              </div>
               <Image
                 src="/hero-icon2.png"
-                alt="Hero Icon 2"
-                width={75}
-                height={55}
+                alt="Hero Icon Combined"
+                width={125}
+                height={110}
                 priority
                 unoptimized
-                className="mb-[-39px] ml-[16px]"
               />
             </motion.div>
 
@@ -126,18 +114,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               <div className="flex flex-col items-center">
                 <Image
                   src="/hero-icon3.png"
-                  alt="Hero Icon 3"
+                  alt="Hero Icon Combined Left"
                   width={125}
-                  height={55}
-                  priority
-                  unoptimized
-                  className="mb-[-39px] ml-[200px]"
-                />
-                <Image
-                  src="/hero-icon4.png"
-                  alt="Hero Icon 4"
-                  width={77}
-                  height={62}
+                  height={117}
                   priority
                   unoptimized
                   className="ml-[200px]"
@@ -147,7 +126,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Buttons */}
             <motion.div 
-              className="flex items-center gap-8"
+              className="flex items-center gap-8 mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -178,7 +157,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 hidden md:block"
+              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 hidden md:block mt-[27px]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -191,9 +170,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 </p>
               </div>
               <Image
-                src="/hero-icon5.png"
+                src="/hero-icon4.png"
                 alt="Hero Icon 5"
-                width={77}
+                width={89}
                 height={62}
                 priority
                 unoptimized
