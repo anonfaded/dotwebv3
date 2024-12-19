@@ -14,7 +14,7 @@ export default function ChatBox() {
         <div className="flex justify-between items-center px-12 py-8 bg-[#0B0B0B]">
           <div className="space-y-2">
             <h3 className="font-nunito text-[21.38px] font-bold leading-[29.16px] text-white">
-              Ask About Smarter Automation Solutions ⚙️
+              Ask About Smarter Automation Solutions 
             </h3>
             <p className="font-lato text-[17.81px] font-normal leading-[21.38px] text-[#E8E8E8]">
               Instant insights on workflows, cost savings, and efficiency.
@@ -31,7 +31,7 @@ export default function ChatBox() {
         </div>
 
         {/* Main Content */}
-        <div className="px-12 py-40 bg-white">
+        <div className="px-12 py-20 bg-white">
           <div className="flex flex-col items-center mb-20">
             <div className="w-[45.42px] h-[45.42px] mb-8">
               <Image
@@ -97,7 +97,7 @@ export default function ChatBox() {
           </div>
 
           {/* Input Field */}
-          <div className="relative mb-6">
+          <div className="relative mb-8">
             <div className="flex items-center border border-[#E5E5E5] rounded-[8.91px] h-[48px] mx-auto w-[1008px] bg-white">
               <input
                 type="text"
@@ -126,7 +126,7 @@ export default function ChatBox() {
           </div>
 
           {/* Powered By Logo */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-4">
             <Image
               src="/poweredby.png"
               alt="Powered By"

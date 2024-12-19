@@ -20,7 +20,7 @@ interface HeroProps {
 
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
-    <section className="relative h-screen flex items-start justify-center overflow-x-hidden pt-[250px]">
+    <section className="relative h-screen flex items-start justify-center overflow-x-hidden pt-[190px]">
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
@@ -44,7 +44,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
           <div className="relative">
             {/* Left icon group */}
             <motion.div 
-              className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 top-[20px] hidden md:block"
+              className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 top-[60px] hidden md:block"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -70,7 +70,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 top-[20px] hidden md:block mt-[-27px]"
+              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 top-[10px] hidden md:block mt-[-27px]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -105,7 +105,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
             <div className="flex items-center justify-center gap-8 relative">
               {/* Left icon group */}
               <motion.div 
-                className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 hidden md:block"
+                className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 hidden md:block -top-5"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
