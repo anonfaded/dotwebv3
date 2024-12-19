@@ -22,7 +22,7 @@ export default function ComparisonStats() {
 
         {/* Middle Comparison */}
         <div className="flex-1 mx-16">
-          <h3 className="font-nunito text-[39.48px] font-bold leading-[59.21px] tracking-[-2.32px] text-[#2E2F35] mb-6 text-center">
+          <h3 className="font-nunito text-[39.48px] font-bold leading-[59.21px] tracking-[-2.32px] text-[#2E2F35] mb-14 text-center">
             Legacy Systems vs. Modern Workflows
           </h3>
           <div className="relative w-[651.36px] mx-auto">
@@ -40,16 +40,18 @@ export default function ComparisonStats() {
             </div>
 
             {/* Right icon with spacing */}
-            <div className="absolute left-[620px] -top-8">
-              <Image
-                src="/bar2.png"
-                alt="End Bar Icon"
-                width={24}
-                height={24}
-                priority
-                unoptimized
-                className="transform translate-x-[-50%]"
-              />
+            <div className="absolute" style={{ left: 'calc(635px - 12px)', top: '-30px' }}>
+              <div className="relative w-[29px] h-[29px]">
+                <Image
+                  src="/bar2.png"
+                  alt="End Bar Icon"
+                  fill
+                  sizes="29px"
+                  priority
+                  unoptimized
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
             </div>
 
             {/* Base bar */}
