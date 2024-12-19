@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import React from 'react';
 import ChatBox from '../ui/ChatBox';
 import ComparisonStats from '../ui/ComparisonStats';
 import AIWidgetSection from './AIWidgetSection';
