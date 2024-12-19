@@ -24,7 +24,7 @@ export default function AutomationSection() {
                 Marketing Automation Made Simple for Teams
               </h2>
               <p className="font-lato text-[19.51px] leading-[29.27px] text-[#2A2A2A] mb-8">
-                IMMOIQ's automation tools make it easy to generate exposé PDFs, open house invitations, follow-up emails, and polished client presentations. By eliminating manual tasks, real estate professionals can save time and focus on strengthening client relationships.
+                IMMOIQ&apos;s automation tools make it easy to generate exposé PDFs, open house invitations, follow-up emails, and polished client presentations. By eliminating manual tasks, real estate professionals can save time and focus on strengthening client relationships.
               </p>
               <Link 
                 href="#"
