@@ -20,7 +20,7 @@ interface HeroProps {
 
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
-    <section className="relative min-h-[90vh] flex items-start justify-center overflow-x-hidden pt-[250px]">
+    <section className="relative h-screen flex items-start justify-center overflow-x-hidden pt-[250px]">
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image

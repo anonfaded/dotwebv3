@@ -31,7 +31,7 @@ export default function ChatBox() {
         </div>
 
         {/* Main Content */}
-        <div className="px-12 py-20 bg-white">
+        <div className="px-12 py-40 bg-white">
           <div className="flex flex-col items-center mb-20">
             <div className="w-[45.42px] h-[45.42px] mb-8">
               <Image
