@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { getDictionary } from '@/lib/dictionary';
 import Hero from '@/components/sections/Hero';
-import AIWidget from '@/components/sections/AIWidget';
+import ChatSection from '@/components/sections/ChatSection';
 
 export default async function Home({
   params: { lang },
@@ -13,7 +13,7 @@ export default async function Home({
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Hero lang={lang} dictionary={dictionary} />
-      <AIWidget />
+      <ChatSection />
       {/* Other sections will be added here */}
     </Suspense>
   );
