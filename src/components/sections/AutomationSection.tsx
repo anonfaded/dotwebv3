@@ -48,19 +48,21 @@ export default function AutomationSection() {
                 <div className="relative">
                   <Card
                     className="overflow-hidden w-[680px] [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
-                    bodyStyle={{ 
-                      padding: 0,
-                      background: '#1E1E1E',
-                      height: '500px',
-                      border: 'none',
-                    }}
-                    headStyle={{
-                      background: '#2A2A2A',
-                      border: 'none',
-                      borderBottom: 0,
-                      padding: '12px 16px',
-                      minHeight: 'auto',
-                      marginBottom: 0,
+                    styles={{ 
+                      body: { 
+                        padding: 0,
+                        background: '#1E1E1E',
+                        height: '500px',
+                        border: 'none',
+                      },
+                      header: {
+                        background: '#2A2A2A',
+                        border: 'none',
+                        borderBottom: 0,
+                        padding: '12px 16px',
+                        minHeight: 'auto',
+                        marginBottom: 0,
+                      }
                     }}
                     title={
                       <div className="flex space-x-2">
