@@ -50,9 +50,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div 
-                className="w-[230px] bg-white rounded-3xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
+                className="w-[230px] bg-white rounded-3xl px-[21px] py-[0px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
               >
-                <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center">
+                <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center mt-3 text-[#016EC6]">
                   AI Provided Personalized Answers
                 </p>
               </div>
@@ -162,9 +162,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div 
-                  className="w-[230px] bg-white rounded-3xl px-[21px] py-[10px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center mr-[130px]"
+                  className="w-[230px] bg-white rounded-3xl px-[21px] py-[0px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center mr-[130px]"
                 >
-                  <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center">
+                  <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center mt-3">
                     Product Explained, Lead Captured.
                   </p>
                 </div>
