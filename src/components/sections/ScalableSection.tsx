@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from 'antd';
 
-export default function AutomationSection() {
+export default function ScalableSection() {
   return (
-    <section className="h-[671px] bg-[#F5FAFF] relative overflow-hidden">
+    <section className="h-[671px] bg-[#F6F2EF] relative overflow-hidden">
       <div className="container mx-auto pl-4 relative z-10 h-full flex items-center">
         <div className="max-w-[1200px] mx-auto w-full">
           {/* Content Grid */}
@@ -14,23 +14,23 @@ export default function AutomationSection() {
             {/* Left Content */}
             <div className="lg:max-w-[480px]">
               <div 
-                className="w-[216px] h-[35px] bg-[#d8e9f5] rounded-[12.54px] mb-8 flex items-center justify-center"
+                className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
-                <span className="uppercase text-sm font-bold tracking-wider text-[#016EC6]">
-                  WORKFLOW EFFICIENCY
+                <span className="uppercase text-sm font-bold tracking-wider text-[#2A2A2A]">
+                  SCALABLE DESIGN
                 </span>
               </div>
               <h2 className="font-nunito text-[41.2px] font-bold leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
-                Marketing Automation Made Simple for Teams
+                Platforms Designed for Scalable Business Growth
               </h2>
               <p className="font-lato text-[19.51px] leading-[29.27px] text-[#2A2A2A] mb-8">
-                IMMOIQ's automation tools make it easy to generate exposé PDFs, open house invitations, follow-up emails, and polished client presentations. By eliminating manual tasks, real estate professionals can save time and focus on strengthening client relationships.
+                A custom-designed platform built for IMMOIQ ensures long-term scalability and efficiency. The solution is intuitive, future-ready, and reflects a professional, modern brand image tailored for the real estate industry.
               </p>
               <Link 
                 href="#"
-                className="inline-flex items-center bg-[#016EC6] text-white px-[40.89px] py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-opacity"
+                className="inline-flex items-center bg-[#0B0B0B] text-white px-[40.89px] py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-opacity"
               >
-                <span className="text-[19.51px]">See How Automation Saves Time</span>
+                <span className="text-[19.51px]">Find Out About Scalable Tools</span>
                 <svg className="ml-6 w-4 h-4" viewBox="0 0 16 16" fill="none">
                   <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -41,8 +41,8 @@ export default function AutomationSection() {
             <div className="relative lg:ml-auto translate-x-[270px]">
               <div className="relative">
                 {/* Background layers */}
-                <div className="absolute -left-8 -top-5 bottom-0 w-[720px] bg-[#016EC6] rounded-xl" />
-                <div className="absolute -left-4 top-12 -bottom-3 w-[645px] bg-[#f5faff] rounded-xl" />
+                <div className="absolute -left-8 -top-5 bottom-0 w-[720px] bg-[#e2ddd8] rounded-xl" />
+                <div className="absolute -left-4 top-12 -bottom-3 w-[645px] bg-[#f5f1ee] rounded-xl" />
                 
                 {/* Card container with overflow */}
                 <div className="relative">
@@ -72,8 +72,8 @@ export default function AutomationSection() {
                   >
                     <div className="relative w-full h-full">
                       <Image
-                        src="/widget-screenshot2.png"
-                        alt="Automation Interface"
+                        src="/widget-screenshot3.png"
+                        alt="Scalable Platform Interface"
                         fill
                         className="object-cover"
                         priority

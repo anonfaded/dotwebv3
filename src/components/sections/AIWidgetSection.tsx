@@ -14,7 +14,7 @@ export default function AIWidgetSection() {
             {/* Left Content */}
             <div className="lg:max-w-[480px]">
               <div 
-                className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px_0_0_0] mb-8 flex items-center justify-center"
+                className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
                 <span className="uppercase text-sm font-bold tracking-wider text-[#2A2A2A]">
                   LEAD PREQUALIFICATION
