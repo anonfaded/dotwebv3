@@ -6,8 +6,8 @@ import ChatBox from '../ui/ChatBox';
 export default function ChatSection() {
   return (
     <section className="min-h-screen relative bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 relative">
-        <div className="absolute left-1/2 -translate-x-1/2 -top-[200px] w-full max-w-[800px]">
+      <div className="w-full relative">
+        <div className="absolute left-0 right-0 -top-[200px]">
           <ChatBox />
         </div>
       </div>
