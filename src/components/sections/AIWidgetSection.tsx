@@ -7,12 +7,12 @@ import { Card } from 'antd';
 export default function AIWidgetSection() {
   return (
     <section className="h-[671px] bg-[#F6F2EF] relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
+      <div className="container mx-auto pl-4 relative z-10 h-full flex items-center">
         <div className="max-w-[1200px] mx-auto w-full">
           {/* Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div>
+            <div className="lg:max-w-[480px]">
               <div 
                 className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px_0_0_0] mb-8 flex items-center justify-center"
               >
@@ -38,45 +38,47 @@ export default function AIWidgetSection() {
             </div>
 
             {/* Right Content - Window Frame with Background Layers */}
-            <div className="relative">
-              {/* Background layers */}
-              <div className="absolute left-0 -top-5 bottom-0 w-[664px] bg-[#e2ddd8] rounded-xl" />
-              <div className="absolute left-4 top-12 -bottom-3 w-[645px] bg-[#f5f1ee] rounded-xl" />
-              
-              {/* Card container with overflow */}
-              <div className="relative translate-x-[30px]">
-                <Card
-                  className="overflow-hidden shadow-2xl w-[635px]"
-                  bodyStyle={{ 
-                    padding: 0,
-                    background: '#1E1E1E',
-                    height: '480px',
-                  }}
-                  headStyle={{
-                    background: '#2A2A2A',
-                    border: 'none',
-                    padding: '8px 12px',
-                    minHeight: 'auto',
-                  }}
-                  title={
-                    <div className="flex space-x-1.5">
-                      <div className="w-2 h-2 rounded-full bg-[#f7f7f8]" />
-                      <div className="w-2 h-2 rounded-full bg-[#565b5d]" />
-                      <div className="w-2 h-2 rounded-full bg-[#565b5d]" />
+            <div className="relative lg:ml-auto translate-x-[270px]">
+              <div className="relative">
+                {/* Background layers */}
+                <div className="absolute -left-8 -top-5 bottom-0 w-[720px] bg-[#e2ddd8] rounded-xl" />
+                <div className="absolute -left-4 top-12 -bottom-3 w-[645px] bg-[#f5f1ee] rounded-xl" />
+                
+                {/* Card container with overflow */}
+                <div className="relative">
+                  <Card
+                    className="overflow-hidden shadow-2xl w-[680px]"
+                    bodyStyle={{ 
+                      padding: 0,
+                      background: '#1E1E1E',
+                      height: '500px',
+                    }}
+                    headStyle={{
+                      background: '#2A2A2A',
+                      border: 'none',
+                      padding: '12px 16px',
+                      minHeight: 'auto',
+                    }}
+                    title={
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 rounded-full bg-[#f7f7f8]" />
+                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
+                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
+                      </div>
+                    }
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/widget-screenshot.png"
+                        alt="AI Widget Interface"
+                        fill
+                        className="object-cover"
+                        priority
+                        unoptimized
+                      />
                     </div>
-                  }
-                >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/widget-screenshot.png"
-                      alt="AI Widget Interface"
-                      fill
-                      className="object-cover"
-                      priority
-                      unoptimized
-                    />
-                  </div>
-                </Card>
+                  </Card>
+                </div>
               </div>
             </div>
           </div>
