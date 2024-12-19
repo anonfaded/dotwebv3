@@ -4,6 +4,7 @@ import React from 'react';
 import ChatBox from '../ui/ChatBox';
 import ComparisonStats from '../ui/ComparisonStats';
 import AIWidgetSection from './AIWidgetSection';
+import AutomationSection from './AutomationSection';
 
 export default function ChatSection() {
   return (
@@ -19,6 +20,7 @@ export default function ChatSection() {
         </div>
       </section>
       <AIWidgetSection />
+      <AutomationSection />
     </>
   );
 }
