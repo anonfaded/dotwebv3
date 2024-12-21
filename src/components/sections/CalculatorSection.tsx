@@ -164,21 +164,21 @@ export default function CalculatorSection() {
           </div>
 
           {/* Right Column - Results */}
-          <div className="w-[422px] h-[617px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-8">
-            <h3 className="mb-8 font-nunito text-[25.3px] font-bold leading-[27.83px] tracking-[-0.02em]">
+          <div className="w-[422px] h-[617px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-8 relative">
+            <h3 className="mb-4 font-nunito text-[25.3px] font-bold leading-[27.83px] tracking-[-0.02em] text-center">
               Your Savings Overview
             </h3>
             
-            <div className="space-y-6">
+            <div className="space-y-3 mb-24">
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
                 <Text 
-                  className="block mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center"
+                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
                 >
                   Time Savings (Hours/Month)
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px]"
+                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
                 >
                   {results.timeSavings}
                 </Title>
@@ -186,13 +186,13 @@ export default function CalculatorSection() {
 
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
                 <Text 
-                  className="block mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center"
+                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
                 >
-                  Cost Savings (USD/Month)
+                  Cost Savings (Monthly)
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px]"
+                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
                 >
                   {results.costSavings}
                 </Title>
@@ -200,23 +200,29 @@ export default function CalculatorSection() {
 
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
                 <Text 
-                  className="block mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center"
+                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
                 >
-                  Annual Savings (USD)
+                  Annual Cost Savings
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px]"
+                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
                 >
                   {results.annualSavings}
                 </Title>
               </div>
+            </div>
 
-              <Button
+            <div className="absolute bottom-8 left-8 right-8">
+              <Button 
                 type="primary"
-                className="w-full h-[61px] mt-4 rounded-[12.65px] border border-[#DDDCE0] bg-[#016EC6]"
+                className="w-full h-[61px] rounded-t-[12.65px] bg-[#016EC6] hover:bg-[#016EC6]/90 flex items-center justify-center shadow-none border-none"
               >
-                Let Us Design Your Solution
+                <div className="flex-1 text-center">
+                  <span className="font-nunito text-[19px] font-bold leading-[34.58px] text-white">
+                    Let Us Design Your Solution
+                  </span>
+                </div>
               </Button>
             </div>
           </div>
