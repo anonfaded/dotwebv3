@@ -6,6 +6,7 @@ import ComparisonStats from '../ui/ComparisonStats';
 import AIWidgetSection from './AIWidgetSection';
 import AutomationSection from './AutomationSection';
 import ScalableSection from './ScalableSection';
+import CalculatorSection from './CalculatorSection';
 
 export default function ChatSection() {
   return (
@@ -29,6 +30,7 @@ export default function ChatSection() {
       <AIWidgetSection />
       <AutomationSection />
       <ScalableSection />
+      <CalculatorSection />
     </>
   );
 }

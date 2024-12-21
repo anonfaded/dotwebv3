@@ -27,6 +27,8 @@ const config: Config = {
       fontFamily: {
         'nunito': ['Nunito', 'sans-serif'],
         'nunito-sans': ['Nunito Sans', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
       },
       container: {
         center: true,
