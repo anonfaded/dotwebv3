@@ -80,7 +80,7 @@ export default function CalculatorSection() {
                     placeholder="Hourly wage in USD"
                     value={inputs.hourlyWage}
                     onChange={(e) => handleInputChange('hourlyWage', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
                   />
                 </div>
 
@@ -93,7 +93,7 @@ export default function CalculatorSection() {
                     placeholder="Monthly hours"
                     value={inputs.taskHours}
                     onChange={(e) => handleInputChange('taskHours', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
                   />
                 </div>
 
@@ -106,7 +106,7 @@ export default function CalculatorSection() {
                     placeholder="Total costs in USD"
                     value={inputs.employeeCosts}
                     onChange={(e) => handleInputChange('employeeCosts', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ export default function CalculatorSection() {
                     placeholder="Task volume per employee"
                     value={inputs.taskVolume}
                     onChange={(e) => handleInputChange('taskVolume', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
                   />
                 </div>
               </div>
