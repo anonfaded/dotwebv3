@@ -3,12 +3,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, Button } from 'antd';
+import { useState } from 'react';
 
 interface FooterProps {
   lang: string;
 }
 
 export default function Footer({ lang }: FooterProps) {
+  const [showLegalDropdown, setShowLegalDropdown] = useState(false);
+
   return (
     <section className="relative w-full h-[724px]">
       {/* Background Image - same as hero */}
@@ -103,25 +106,53 @@ export default function Footer({ lang }: FooterProps) {
             />
           </div>
 
-          {/* Right side - Legal Information and Settings */}
-          <div className="flex items-center gap-2 px-[15.84px] py-[9.9px] rounded-[7.92px_0_0_0]">
-            <Link 
-              href={`/${lang}/legal`}
-              className="flex items-center gap-2"
+          {/* Right side - Legal Information Dropdown */}
+          <div className="relative">
+            <button 
+              className="flex items-center gap-2 px-[15.84px] py-[9.9px] hover:bg-gray-50 rounded-lg transition-colors"
+              onClick={() => setShowLegalDropdown(!showLegalDropdown)}
+              onBlur={() => setTimeout(() => setShowLegalDropdown(false), 200)}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5L12 19M12 5L19 12M12 5L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Image 
+                src="/footer-arrowup.png" 
+                alt="Legal" 
+                width={19.8} 
+                height={19.8}
+              />
               <span className="font-nunito text-[17.12px] leading-[19.8px] text-[#0B0B0B]">
                 Legal Information
               </span>
-            </Link>
-            <Image 
-              src="/settings.png" 
-              alt="Settings" 
-              width={19.8} 
-              height={19.8}
-            />
+            </button>
+
+            {showLegalDropdown && (
+              <div 
+                className="absolute right-0 min-w-[250px] rounded-xl bg-white p-4 shadow-lg"
+                style={{ bottom: 'calc(100% + 16px)', zIndex: 100 }}
+                onMouseEnter={() => setShowLegalDropdown(true)}
+                onMouseLeave={() => setShowLegalDropdown(false)}
+              >
+                <div 
+                  className="absolute bottom-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
+                  style={{ right: '160px', zIndex: -1 }}
+                />
+                <div className="space-y-2">
+                  {[
+                    { title: 'Privacy Policy', href: `/${lang}/privacy` },
+                    { title: 'Terms & Conditions', href: `/${lang}/terms` },
+                    { title: 'Impressum', href: `/${lang}/impressum` },
+                  ].map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="block whitespace-nowrap px-4 py-2 rounded-lg transition-colors hover:bg-[#F6F2EF] text-[#677489]"
+                      onClick={() => setShowLegalDropdown(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
