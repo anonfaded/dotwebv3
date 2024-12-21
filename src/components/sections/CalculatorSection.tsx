@@ -126,13 +126,13 @@ export default function CalculatorSection() {
             </div>
 
             {/* Employees Section */}
-            <div className="w-[785.95px] h-[130.81px] pt-[25.95px] border border-[#DDDCE0] rounded-[12.65px] mt-6 bg-white">
-              <div className="w-[734.06px] h-[78.92px] mx-auto">
-                <label className="block mb-4 font-nunito text-[15.14px] font-semibold leading-[27.55px]">
+            <div className="w-[785.95px] border border-[#DDDCE0] rounded-[12.65px] mt-4 bg-white py-3">
+              <div className="w-[734.06px] mx-auto">
+                <label className="block mb-2 font-nunito text-[15.14px] font-semibold leading-[27.55px]">
                   Number of Employees
                 </label>
-                <div className="flex items-center gap-4">
-                  <div className="w-[604.33px] h-[25.95px]">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-[604.33px]">
                     <Slider
                       min={1}
                       max={100}
