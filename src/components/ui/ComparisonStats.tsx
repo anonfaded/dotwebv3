@@ -22,7 +22,7 @@ export default function ComparisonStats() {
 
         {/* Middle Comparison */}
         <div className="flex-1 mx-4 lg:mx-16 w-full lg:w-auto">
-          <h3 className="font-nunito text-3xl lg:text-[39.48px] font-bold leading-tight tracking-[-2.32px] text-[#2E2F35] mb-6 lg:mb-8 text-center">
+          <h3 className="font-nunito text-3xl lg:text-[39.48px] font-bold leading-none tracking-[-2.32px] text-[#2E2F35] mb-6 lg:mb-16 text-center whitespace-nowrap">
             Legacy Systems vs. Modern Workflows
           </h3>
           <div className="relative w-full max-w-[651.36px] mx-auto">

@@ -46,30 +46,30 @@ export default function ChatBox() {
           </div>
 
           {/* Pre-prompt Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8 lg:mb-10 w-full max-w-[1008px] mx-auto">
-            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 lg:p-6 min-h-[98.14px] w-full transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
-              <h4 className="font-nunito-sans text-base lg:text-[16.02px] font-bold leading-normal text-[#0E0E0E]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-2 mb-8 lg:mb-10 w-full max-w-[1008px] mx-auto">
+            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-6 h-[98.14px] w-full lg:w-[490px] transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
+              <h4 className="font-nunito-sans text-[16.02px] font-bold leading-[24.03px] text-[#0E0E0E]">
                 How can automation save us money?
               </h4>
-              <p className="font-lato text-sm lg:text-[14.02px] font-normal leading-relaxed text-[#8C8C8C]">
+              <p className="font-lato text-[14.02px] font-normal leading-[21.03px] text-[#8C8C8C]">
                 Discover how to cut costs and improve efficiency.
               </p>
             </div>
             
-            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 lg:p-6 min-h-[98.14px] w-full transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
-              <h4 className="font-nunito-sans text-base lg:text-[16.02px] font-bold leading-normal text-[#0E0E0E]">
+            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-6 h-[98.14px] w-full lg:w-[490px] transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
+              <h4 className="font-nunito-sans text-[16.02px] font-bold leading-[24.03px] text-[#0E0E0E]">
                 Can I reduce my team size with AI?
               </h4>
-              <p className="font-lato text-sm lg:text-[14.02px] font-normal leading-relaxed text-[#8C8C8C]">
+              <p className="font-lato text-[14.02px] font-normal leading-[21.03px] text-[#8C8C8C]">
                 Achieve more with fewer resources.
               </p>
             </div>
             
-            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 lg:p-6 min-h-[98.14px] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
-              <h4 className="font-nunito-sans text-base lg:text-[16.02px] font-bold leading-normal text-[#0E0E0E]">
+            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-6 h-[98.14px] w-full lg:w-[490px] relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
+              <h4 className="font-nunito-sans text-[16.02px] font-bold leading-[24.03px] text-[#0E0E0E]">
                 What services does DOTWEB offer?
               </h4>
-              <p className="font-lato text-sm lg:text-[14.02px] font-normal leading-relaxed text-[#8C8C8C]">
+              <p className="font-lato text-[14.02px] font-normal leading-[21.03px] text-[#8C8C8C]">
                 Explore tailored solutions for your business.
               </p>
               <Image
@@ -83,11 +83,11 @@ export default function ChatBox() {
               />
             </div>
             
-            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 lg:p-6 min-h-[98.14px] w-full transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
-              <h4 className="font-nunito-sans text-base lg:text-[16.02px] font-bold leading-normal text-[#0E0E0E]">
+            <div className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-6 h-[98.14px] w-full lg:w-[490px] transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer">
+              <h4 className="font-nunito-sans text-[16.02px] font-bold leading-[24.03px] text-[#0E0E0E]">
                 How reliable are your solutions?
               </h4>
-              <p className="font-lato text-sm lg:text-[14.02px] font-normal leading-relaxed text-[#8C8C8C]">
+              <p className="font-lato text-[14.02px] font-normal leading-[21.03px] text-[#8C8C8C]">
                 Learn about performance and dependability.
               </p>
             </div>
