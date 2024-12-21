@@ -18,7 +18,10 @@ export default function ChatSection() {
   const statsRef = useRef(null);
 
   useEffect(() => {
-    setIsMounted(true);
+    // Wait for next tick to ensure scroll position is restored
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 0);
   }, []);
 
   useLayoutEffect(() => {
@@ -34,19 +37,16 @@ export default function ChatSection() {
         
         // Position chatbox below start button
         const startButtonRect = startButton.getBoundingClientRect();
-        const startButtonBottom = startButtonRect.bottom;
+        const startButtonBottom = startButtonRect.bottom + window.scrollY;
         const paddingBelowButton = 3 * vh;
         const targetTopChatbox = startButtonBottom + paddingBelowButton;
         
         // Calculate chatbox transform relative to hero height
+        const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
         const heroHeight = heroSection.getBoundingClientRect().height;
-        const chatboxTransform = -(heroHeight - targetTopChatbox);
+        const chatboxTransform = -(heroHeight - (targetTopChatbox - heroTop));
         
         // Calculate stats transform based on chatbox position
-        const chatboxRect = chatboxElement.getBoundingClientRect();
-        const chatboxBottom = chatboxRect.bottom;
-        const paddingBelowChatbox = 6 * vh; // 6vh spacing between chatbox and stats
-        const targetTopStats = chatboxBottom + paddingBelowChatbox;
         const statsTransform = chatboxTransform;
         
         setTransforms({
@@ -56,8 +56,8 @@ export default function ChatSection() {
       }
     };
 
-    // Initial update
-    updatePositions();
+    // Initial update with a small delay to ensure scroll position is restored
+    const timeoutId = setTimeout(updatePositions, 0);
 
     // Update on resize only
     const handleResize = () => {
@@ -65,7 +65,10 @@ export default function ChatSection() {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+    };
   }, [isMounted]);
 
   return (
