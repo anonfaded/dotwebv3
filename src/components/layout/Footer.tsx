@@ -108,21 +108,31 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Right side - Legal Information Dropdown */}
           <div className="relative">
-            <button 
-              className="flex items-center gap-2 px-[15.84px] py-[9.9px] hover:bg-gray-50 rounded-lg transition-colors"
-              onClick={() => setShowLegalDropdown(!showLegalDropdown)}
-              onBlur={() => setTimeout(() => setShowLegalDropdown(false), 200)}
-            >
-              <Image 
-                src="/footer-arrowup.png" 
-                alt="Legal" 
-                width={19.8} 
-                height={19.8}
-              />
-              <span className="font-nunito text-[17.12px] leading-[19.8px] text-[#0B0B0B]">
-                Legal Information
-              </span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button 
+                className="flex items-center gap-2 px-[15.84px] py-[9.9px] hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setShowLegalDropdown(!showLegalDropdown)}
+                onBlur={() => setTimeout(() => setShowLegalDropdown(false), 200)}
+              >
+                <Image 
+                  src="/footer-arrowup.png" 
+                  alt="Legal" 
+                  width={19.8} 
+                  height={19.8}
+                />
+                <span className="font-nunito text-[17.12px] leading-[19.8px] text-[#0B0B0B]">
+                  Legal Information
+                </span>
+              </button>
+              <Link href={`/${lang}/settings`} className="rounded-lg p-2 transition-colors hover:bg-[#F6F2EF]">
+                <Image
+                  src="/settings.png"
+                  alt="Settings"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
 
             {showLegalDropdown && (
               <div 
@@ -133,7 +143,7 @@ export default function Footer({ lang }: FooterProps) {
               >
                 <div 
                   className="absolute bottom-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
-                  style={{ right: '160px', zIndex: -1 }}
+                  style={{ right: '205px', zIndex: -1 }}
                 />
                 <div className="space-y-2">
                   {[
