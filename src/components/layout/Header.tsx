@@ -22,9 +22,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-8">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8">
       <motion.header 
-        className="relative mx-auto mt-6 flex items-center justify-between rounded-2xl bg-white shadow-lg px-8 py-4"
+        className="relative w-full max-w-[1388px] h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white shadow-lg px-8"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
