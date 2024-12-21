@@ -85,16 +85,22 @@ export default function Footer({ lang }: FooterProps) {
         </Card>
 
         {/* Floating Footer Bar */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-8 w-full max-w-[1297px] h-[64.85px] bg-white rounded-[10.81px_0_0_0] shadow-[0px_0px_15px_0px_#00000008] flex items-center justify-between px-4 sm:px-[21.62px] mx-auto">
-          {/* Left side - Logo and Text */}
-          <div className="flex items-center gap-[21.62px] h-[36.7px]">
+        <div 
+          className="absolute left-1/2 -translate-x-1/2 bottom-8 w-full max-w-[1297px] h-[64.85px] bg-white flex items-center justify-between px-4 sm:px-[21.62px] mx-auto"
+          style={{
+            borderRadius: '10.81px',
+            boxShadow: '0px 0px 15px 0px #00000008'
+          }}
+        >
+          {/* Left side - Logo */}
+          <div className="flex items-center gap-[7.21px] w-[145px] h-[43px]">
             <Image 
               src="/footer.png" 
               alt="DotWeb Logo" 
-              width={36.7} 
-              height={36.7}
+              width={145}
+              height={43}
+              className="object-contain"
             />
-            <span className="font-nunito text-[17.12px]"> 2024</span>
           </div>
 
           {/* Right side - Legal Information and Settings */}
