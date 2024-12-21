@@ -20,7 +20,7 @@ interface HeroProps {
 
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
-    <section className="relative h-screen flex items-start justify-center overflow-x-hidden pt-[190px]">
+    <section className="relative min-h-screen flex items-start justify-center overflow-x-hidden pt-[10vh] lg:pt-[190px]">
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
@@ -39,20 +39,20 @@ export default function Hero({ lang, dictionary }: HeroProps) {
       <div className="absolute inset-0 bg-black/25 z-[1]" />
 
       <div className="container mx-auto px-4 relative z-[2]">
-        <div className="max-w-[1200px] mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           {/* Title row with left and right icons */}
           <div className="relative">
             {/* Left icon group */}
             <motion.div 
-              className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 top-[60px] hidden md:block"
+              className="absolute -translate-x-full left-0 lg:-left-16 xl:-left-20 top-[3.75rem] hidden md:block"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div 
-                className="w-[230px] bg-white rounded-3xl px-[21px] py-[0px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
+                className="w-[clamp(180px,15vw,230px)] min-w-fit bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center"
               >
-                <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center mt-3 text-[#016EC6]">
+                <p className="font-nunito-sans text-sm whitespace-nowrap text-[#016EC6] mt-2 mb-2 px-3">
                   AI Provided Personalized Answers
                 </p>
               </div>
@@ -62,6 +62,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                   alt="Hero Icon 1"
                   width={77}
                   height={62}
+                  className="w-auto h-auto max-w-[clamp(50px,6vw,77px)]"
                   priority
                   unoptimized
                 />
@@ -70,7 +71,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 top-[10px] hidden md:block mt-[-27px]"
+              className="absolute translate-x-full right-0 lg:-right-16 xl:-right-20 top-[0.625rem] hidden md:block -mt-[1.7rem]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -80,6 +81,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 alt="Hero Icon Combined"
                 width={125}
                 height={110}
+                className="w-auto h-auto max-w-[clamp(80px,8vw,125px)]"
                 priority
                 unoptimized
               />
@@ -87,12 +89,12 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Main Title */}
             <motion.div
-              className="w-[812px] max-w-[90%] mx-auto space-y-[29.45px]"
+              className="w-full max-w-[812px] mx-auto space-y-[clamp(1rem,3vw,1.8rem)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="font-nunito text-[64px] font-semibold leading-[70.4px] tracking-[-0.03em] text-center">
+              <h1 className="font-nunito text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-center">
                 <span className="block">Workflows Built for</span>
                 <span className="block">
                   <span className="bg-white text-[#016EC6] rounded-xl px-4 inline-block">Reduced Overhead</span> and
@@ -105,7 +107,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
             <div className="flex items-center justify-center gap-8 relative">
               {/* Left icon group */}
               <motion.div 
-                className="absolute -translate-x-full -left-8 md:-left-12 lg:-left-16 xl:-left-20 hidden md:block -top-5"
+                className="absolute -translate-x-full left-0 lg:-left-16 xl:-left-20 hidden md:block -top-5"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -116,6 +118,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                     alt="Hero Icon Combined Left"
                     width={125}
                     height={55}
+                    className="w-auto h-auto max-w-[clamp(80px,8vw,125px)]"
                     priority
                     unoptimized
                     className="mb-[0px] ml-[200px]"
@@ -156,15 +159,15 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Right icon group */}
               <motion.div 
-                className="absolute translate-x-full -right-8 md:-right-12 lg:-right-16 xl:-right-20 hidden md:block mt-[27px]"
+                className="absolute translate-x-full right-0 lg:-right-16 xl:-right-20 hidden md:block mt-[27px]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div 
-                  className="w-[230px] bg-white rounded-3xl px-[21px] py-[0px] mb-1 shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center mr-[130px]"
+                  className="w-[clamp(180px,15vw,230px)] min-w-fit bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] flex justify-center mr-[130px]"
                 >
-                  <p className="font-nunito-sans text-[12px] font-normal leading-[16.8px] text-center mt-3">
+                  <p className="font-nunito-sans text-sm whitespace-nowrap py-1 px-3 mt-2 mb-2">
                     Product Explained, Lead Captured.
                   </p>
                 </div>
@@ -173,6 +176,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                   alt="Hero Icon 5"
                   width={89}
                   height={62}
+                  className="w-auto h-auto max-w-[clamp(50px,6vw,89px)]"
                   priority
                   unoptimized
                   className="ml-[70px]"
@@ -182,6 +186,14 @@ export default function Hero({ lang, dictionary }: HeroProps) {
           </div>
         </div>
       </div>
+      {/* Chat Section */}
+      <motion.div
+        className="relative mt-16 md:mt-24 lg:mt-32"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+      </motion.div>
     </section>
   );
 }
