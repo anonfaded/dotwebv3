@@ -21,19 +21,15 @@ interface HeroProps {
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
     <section className="hero-section relative min-h-screen flex items-start justify-center overflow-x-hidden pt-[10vh] lg:pt-[190px]">
-      <div className="absolute inset-0 z-0">
-        <div className="relative w-full h-full">
-          <Image
-            src="/hero-bg.png"
-            alt="Hero Background"
-            fill
-            priority
-            quality={100}
-            unoptimized
-            className="opacity-75"
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/hero-bg.png"
+          alt="Background pattern"
+          fill
+          className="object-cover w-full opacity-20"
+          priority
+        />
       </div>
       
       <div className="absolute inset-0 bg-black/25 z-[1]" />
