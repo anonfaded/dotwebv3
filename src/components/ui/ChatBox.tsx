@@ -4,14 +4,11 @@ import Image from 'next/image';
 
 export default function ChatBox() {
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 w-[1230px] h-[868px] bg-white rounded-lg overflow-hidden shadow-lg z-[10] isolate">
-      {/* Main white background wrapper */}
-      <div className="absolute inset-0 bg-white"></div>
-      
+    <div className="w-[1230px] h-[868px] bg-white rounded-lg shadow-lg z-[5] relative">
       {/* Content */}
-      <div className="relative z-10">
+      <div className="h-full flex flex-col">
         {/* Header Section */}
-        <div className="flex justify-between items-center px-12 py-8 bg-[#0B0B0B]">
+        <div className="flex justify-between items-center px-12 py-8 bg-[#0B0B0B] rounded-t-lg">
           <div className="space-y-2">
             <h3 className="font-nunito text-[21.38px] font-bold leading-[29.16px] text-white">
               Ask About Smarter Automation Solutions 
@@ -31,7 +28,7 @@ export default function ChatBox() {
         </div>
 
         {/* Main Content */}
-        <div className="px-12 py-20 bg-white">
+        <div className="flex-1 px-12 py-20 bg-white rounded-b-lg">
           <div className="flex flex-col items-center mb-20">
             <div className="w-[45.42px] h-[45.42px] mb-8">
               <Image

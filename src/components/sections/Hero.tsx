@@ -20,7 +20,7 @@ interface HeroProps {
 
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-x-hidden pt-[10vh] lg:pt-[190px]">
+    <section className="hero-section relative min-h-screen flex items-start justify-center overflow-x-hidden pt-[10vh] lg:pt-[190px]">
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
@@ -128,14 +128,14 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Buttons */}
               <motion.div 
-                className="flex items-center gap-8 mt-12"
+                className="flex items-center gap-8 mt-12 hero-last-element"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <Link
                   href={`/${lang}/start`}
-                  className="flex items-center gap-[21.21px] bg-[#0B0B0B] text-white rounded-xl px-[37.71px] py-[18.86px] hover:bg-black/90 transition-colors"
+                  className="start-button flex items-center gap-[21.21px] bg-[#0B0B0B] text-white rounded-xl px-[37.71px] py-[18.86px] hover:bg-black/90 transition-colors z-20"
                 >
                   <span className="text-[18.86px] font-semibold">
                     {dictionary.navigation.start}
