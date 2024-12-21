@@ -6,29 +6,31 @@ import "./globals.css";
 import 'antd/dist/reset.css';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const lato = Lato({
-  variable: "--font-lato",
   weight: ['400', '700'],
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const nunito = Nunito({
-  variable: "--font-nunito",
   subsets: ["latin"],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-nunito',
 });
 
 export const metadata: Metadata = {
@@ -42,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${lato.variable} ${nunito.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${geistSans.className} ${geistMono.className} ${inter.className} ${lato.className} ${nunito.variable}`}>
+      <body className={nunito.className}>{children}</body>
     </html>
   );
 }

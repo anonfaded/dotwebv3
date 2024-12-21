@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import ChatBox from '../ui/ChatBox';
 import ComparisonStats from '../ui/ComparisonStats';
 import AIWidgetSection from './AIWidgetSection';
@@ -9,81 +9,117 @@ import ScalableSection from './ScalableSection';
 import CalculatorSection from './CalculatorSection';
 
 export default function ChatSection() {
-  const [chatboxStyle, setChatboxStyle] = useState({
-    transform: 'translateY(0px)',
-    sectionPadding: '0px'
+  const [transforms, setTransforms] = useState({
+    chatbox: 'translateY(0px)',
+    stats: 'translateY(0px)'
   });
+  const [isMounted, setIsMounted] = useState(false);
   const chatboxRef = useRef(null);
+  const statsRef = useRef(null);
 
   useEffect(() => {
-    const updateChatboxPosition = () => {
+    setIsMounted(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!isMounted) return;
+
+    const updatePositions = () => {
       const heroSection = document.querySelector('.hero-section');
       const startButton = document.querySelector('.start-button');
       const chatboxElement = document.querySelector('.chatbox-wrapper');
+      const statsElement = statsRef.current;
       
-      if (heroSection && startButton && chatboxElement) {
+      if (heroSection && startButton && chatboxElement && statsElement) {
+        // Get viewport height for relative calculations
+        const vh = window.innerHeight / 100;
+        
+        // Position chatbox below start button
         const startButtonRect = startButton.getBoundingClientRect();
         const startButtonBottom = startButtonRect.bottom + window.scrollY;
-        const chatboxRect = chatboxElement.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+        const paddingBelowButton = 3 * vh; // 3vh padding
+        const targetTopChatbox = startButtonBottom + paddingBelowButton;
         
-        // Add padding below the button
-        const paddingBelowButton = 40;
-        const targetTop = startButtonBottom + paddingBelowButton;
-        
-        // Calculate transform needed to position chatbox below button
+        // Calculate chatbox transform
         const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-        const transformNeeded = -(heroSection.getBoundingClientRect().height - (targetTop - heroTop));
-        
-        // Calculate actual space needed between chatbox and stats
-        const chatboxHeight = chatboxRect.height;
-        const screenRatio = viewportHeight / chatboxHeight;
-        
-        // Base padding on screen size ratio
-        let calculatedPadding = 0;
-        
-        if (screenRatio > 1.5) { // Large screens
-          calculatedPadding = Math.max(0, Math.min(10, transformNeeded / 20));
-        } else if (screenRatio > 1.2) { // Medium screens
-          calculatedPadding = Math.max(10, Math.min(20, transformNeeded / 15));
-        } else { // Small screens
-          calculatedPadding = Math.max(20, Math.min(30, transformNeeded / 10));
-        }
+        const chatboxTransform = -(heroSection.getBoundingClientRect().height - (targetTopChatbox - heroTop));
 
-        setChatboxStyle({
-          transform: `translateY(${transformNeeded}px)`,
-          sectionPadding: `${calculatedPadding}px`
+        // Position stats below chatbox
+        const chatboxRect = chatboxElement.getBoundingClientRect();
+        const chatboxBottom = chatboxRect.bottom;
+        const paddingBelowChatbox = 3 * vh; // 3vh padding
+        const targetTopStats = chatboxBottom + paddingBelowChatbox;
+
+        // Calculate stats transform relative to its original position
+        const statsRect = statsElement.getBoundingClientRect();
+        const statsOriginalTop = statsRect.top - parseFloat(getComputedStyle(statsElement).transform.split(',')[5] || '0');
+        const statsTransform = targetTopStats - statsOriginalTop;
+
+        setTransforms({
+          chatbox: `translateY(${chatboxTransform}px)`,
+          stats: `translateY(${statsTransform}px)`
         });
       }
     };
 
-    updateChatboxPosition();
-    window.addEventListener('resize', updateChatboxPosition);
-    window.addEventListener('scroll', updateChatboxPosition);
+    // Initial update
+    updatePositions();
+
+    // Add event listeners with debounce
+    let resizeTimeout: NodeJS.Timeout;
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        window.requestAnimationFrame(updatePositions);
+      }, 100);
+    };
+
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        window.requestAnimationFrame(updatePositions);
+      }, 50);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('resize', updateChatboxPosition);
-      window.removeEventListener('scroll', updateChatboxPosition);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(resizeTimeout);
+      clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [isMounted]);
 
   return (
     <>
       <div className="bg-[#FAF8F7] relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-[1200px] mx-auto">
-            <section>
+          <div className="max-w-[90%] lg:max-w-[85%] xl:max-w-[1200px] mx-auto">
+            <section className="relative">
               <div className="w-full flex flex-col items-center">
                 {/* ChatBox wrapper */}
-                <div style={{ transform: chatboxStyle.transform }} className="relative z-10 chatbox-wrapper" ref={chatboxRef}>
+                <div 
+                  style={{ transform: transforms.chatbox }} 
+                  className="relative z-10 chatbox-wrapper w-full"
+                  ref={chatboxRef}
+                >
                   <ChatBox />
                 </div>
                 
-                {/* ComparisonStats with proper spacing */}
-                <div style={{ paddingTop: chatboxStyle.sectionPadding }} className="relative z-0 w-full">
-                  <div className="pb-16">
-                    <ComparisonStats />
-                  </div>
+                {/* ComparisonStats - positioned relative to chatbox */}
+                <div 
+                  ref={statsRef}
+                  className="relative z-0 w-full mt-[-2vh]"
+                  style={{ 
+                    transform: transforms.stats,
+                    transition: 'transform 0.3s ease-out'
+                  }}
+                >
+                  <ComparisonStats />
                 </div>
               </div>
             </section>
