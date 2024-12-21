@@ -28,7 +28,7 @@ export default function ChatBox() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 px-6 sm:px-8 lg:px-12 py-12 lg:py-20 bg-white rounded-b-lg">
+        <div className="flex-1 px-6 sm:px-8 lg:px-12 pt-12 lg:pt-20 pb-6 lg:pb-8 bg-white rounded-b-lg">
           <div className="flex flex-col items-center mb-12 lg:mb-20">
             <div className="w-[45.42px] h-[45.42px] mb-6 lg:mb-8">
               <Image
@@ -123,12 +123,12 @@ export default function ChatBox() {
           </div>
 
           {/* Powered By Logo */}
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center">
             <Image
               src="/poweredby.png"
-              alt="Powered By"
-              width={181.69}
-              height={33.84}
+              alt="Powered by Dotweb"
+              width={173.33}
+              height={24.42}
               priority
               unoptimized
             />
