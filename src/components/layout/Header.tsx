@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 interface HeaderProps {
   lang: string;
@@ -20,6 +20,7 @@ interface HeaderProps {
 
 export default function Header({ lang, dictionary }: HeaderProps) {
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const solutionsButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8">
@@ -46,6 +47,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             {/* Solutions dropdown */}
             <div className="relative">
               <button 
+                ref={solutionsButtonRef}
                 className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black"
                 onClick={() => setShowSolutionsDropdown(!showSolutionsDropdown)}
                 onBlur={() => setTimeout(() => setShowSolutionsDropdown(false), 200)}
@@ -71,60 +73,131 @@ export default function Header({ lang, dictionary }: HeaderProps) {
 
               {showSolutionsDropdown && (
                 <div 
-                  className="absolute left-0 w-[374px] rounded-xl bg-white p-6 shadow-lg"
-                  style={{ top: 'calc(100% + 45px)', zIndex: 100 }}
+                  className="fixed w-[374px] h-[272px] top-[124px] left-0 rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D]"
+                  style={{ 
+                    zIndex: 100,
+                    left: solutionsButtonRef.current ? `${solutionsButtonRef.current.getBoundingClientRect().left}px` : 'auto'
+                  }}
                   onMouseEnter={() => setShowSolutionsDropdown(true)}
                   onMouseLeave={() => setShowSolutionsDropdown(false)}
                 >
+                  {/* Triangular Arrow */}
                   <div 
-                    className="absolute left-[20px] top-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
-                    style={{ zIndex: -1 }}
+                    className="absolute top-[-10px] w-0 h-0 
+                               border-l-[10px] border-l-transparent 
+                               border-r-[10px] border-r-transparent 
+                               border-b-[10px] border-b-white"
+                    style={{
+                      left: solutionsButtonRef.current 
+                        ? `${solutionsButtonRef.current.getBoundingClientRect().width / 2 - 10}px` 
+                        : '50%'
+                    }}
                   />
-                  <p className="font-nunito text-[12px] font-[600] leading-[18px] tracking-[0.5px] text-[#97A3B7] mb-4">
-                    Werkzeuge für Immobilienprofis
-                  </p>
-                  
-                  {[
-                    {
-                      icon: '/KI-Widget.png',
-                      title: 'KI-Widget',
-                      desc: 'Intelligente Tools für Verkaufsmandate.'
-                    },
-                    {
-                      icon: '/mandatscout.png',
-                      title: 'Mandatscout',
-                      desc: 'Private Verkäufer effizient finden.'
-                    },
-                    {
-                      icon: '/ki-schreibwerkzeuge.png',
-                      title: 'KI-Schreibwerkzeuge',
-                      desc: 'Texte automatisch und präzise erstellen.'
-                    },
-                    {
-                      icon: '/kundenwebseiten.png',
-                      title: 'Kundenwebseiten',
-                      desc: 'Lead-Magnete für mehr Kundenanfragen.'
-                    }
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3 mb-6 last:mb-0">
-                      <Image 
-                        src={item.icon} 
-                        alt={item.title} 
-                        width={24} 
-                        height={24} 
-                        priority 
-                        unoptimized
-                      />
-                      <div>
-                        <h3 className="font-nunito text-[16.03px] font-[500] leading-[26.72px] text-[#111B29]">
-                          {item.title}
-                        </h3>
-                        <p className="font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-[#677489]">
-                          {item.desc}
-                        </p>
+
+                  <div className="w-[321px] h-[223px] mx-[18px] mt-[24px] flex flex-col gap-[16px]">
+                    {/* Header */}
+                    <h3 className="w-[321px] h-[18px] font-nunito text-[12px] font-[600] leading-[18px] tracking-[0.5px] text-left text-[#97A3B7]"
+                        style={{
+                          textUnderlinePosition: 'from-font',
+                          textDecorationSkipInk: 'none'
+                        }}
+                    >
+                      Tools for Automation Experts
+                    </h3>
+
+                    {/* Menu Items Container */}
+                    <div className="w-[321px] h-[189px] flex flex-col gap-[20px]">
+                      {/* Row 1 */}
+                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                        <Image 
+                          src="/solutions1.png" 
+                          alt="Intelligent Automation" 
+                          width={24} 
+                          height={24} 
+                          priority 
+                          unoptimized
+                        />
+                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
+                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                              style={{
+                                textUnderlinePosition: 'from-font',
+                                textDecorationSkipInk: 'none'
+                              }}
+                          >
+                            Intelligent Automation Tools
+                          </h4>
+                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                             style={{
+                               textUnderlinePosition: 'from-font',
+                               textDecorationSkipInk: 'none'
+                             }}
+                          >
+                            Smart solutions for efficient operations.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Row 2 */}
+                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                        <Image 
+                          src="/solutions2.png" 
+                          alt="Smart Lead Capture" 
+                          width={20} 
+                          height={18.76} 
+                          priority 
+                          unoptimized
+                        />
+                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
+                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                              style={{
+                                textUnderlinePosition: 'from-font',
+                                textDecorationSkipInk: 'none'
+                              }}
+                          >
+                            Smart Lead Capture Systems
+                          </h4>
+                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                             style={{
+                               textUnderlinePosition: 'from-font',
+                               textDecorationSkipInk: 'none'
+                             }}
+                          >
+                            Efficient tools for capturing leads.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Row 3 */}
+                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                        <Image 
+                          src="/solutions3.png" 
+                          alt="AI Process Optimization" 
+                          width={20} 
+                          height={20} 
+                          priority 
+                          unoptimized
+                        />
+                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
+                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                              style={{
+                                textUnderlinePosition: 'from-font',
+                                textDecorationSkipInk: 'none'
+                              }}
+                          >
+                            AI-Powered Process Optimization
+                          </h4>
+                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                             style={{
+                               textUnderlinePosition: 'from-font',
+                               textDecorationSkipInk: 'none'
+                             }}
+                          >
+                            Streamline tasks and boost productivity.
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               )}
             </div>
