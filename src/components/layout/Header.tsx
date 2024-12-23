@@ -108,7 +108,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     {/* Menu Items Container */}
                     <div className="w-[321px] h-[189px] flex flex-col gap-[20px]">
                       {/* Row 1 */}
-                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                      <div 
+                        className="w-[321px] h-[49px] flex items-start gap-[10px] p-2 rounded-lg cursor-pointer group"
+                        onClick={() => {/* Add navigation or action for first row */}}
+                      >
                         <Image 
                           src="/solutions1.png" 
                           alt="Intelligent Automation" 
@@ -116,9 +119,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           height={24} 
                           priority 
                           unoptimized
+                          className="group-hover:scale-105 transition-transform duration-200"
                         />
-                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
-                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                        <div className="w-[287px] flex flex-col justify-center">
+                          <h4 className="w-[287px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29] 
+                                         group-hover:text-blue-600 transition-colors duration-200"
                               style={{
                                 textUnderlinePosition: 'from-font',
                                 textDecorationSkipInk: 'none'
@@ -126,7 +131,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           >
                             Intelligent Automation Tools
                           </h4>
-                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                          <p className="w-[287px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489] 
+                                        group-hover:text-blue-500 transition-colors duration-200"
                              style={{
                                textUnderlinePosition: 'from-font',
                                textDecorationSkipInk: 'none'
@@ -138,7 +144,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       </div>
 
                       {/* Row 2 */}
-                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                      <div 
+                        className="w-[321px] h-[49px] flex items-start gap-[10px] p-2 rounded-lg cursor-pointer group"
+                        onClick={() => {/* Add navigation or action for second row */}}
+                      >
                         <Image 
                           src="/solutions2.png" 
                           alt="Smart Lead Capture" 
@@ -146,9 +155,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           height={18.76} 
                           priority 
                           unoptimized
+                          className="group-hover:scale-105 transition-transform duration-200"
                         />
-                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
-                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                        <div className="w-[287px] flex flex-col justify-center">
+                          <h4 className="w-[287px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29] 
+                                         group-hover:text-blue-600 transition-colors duration-200"
                               style={{
                                 textUnderlinePosition: 'from-font',
                                 textDecorationSkipInk: 'none'
@@ -156,7 +167,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           >
                             Smart Lead Capture Systems
                           </h4>
-                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                          <p className="w-[287px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489] 
+                                        group-hover:text-blue-500 transition-colors duration-200"
                              style={{
                                textUnderlinePosition: 'from-font',
                                textDecorationSkipInk: 'none'
@@ -168,7 +180,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       </div>
 
                       {/* Row 3 */}
-                      <div className="w-[321px] h-[49px] flex items-start gap-[10px]">
+                      <div 
+                        className="w-[321px] h-[49px] flex items-start gap-[10px] p-2 rounded-lg cursor-pointer group"
+                        onClick={() => {/* Add navigation or action for third row */}}
+                      >
                         <Image 
                           src="/solutions3.png" 
                           alt="AI Process Optimization" 
@@ -176,9 +191,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           height={20} 
                           priority 
                           unoptimized
+                          className="group-hover:scale-105 transition-transform duration-200"
                         />
-                        <div className="w-[287px] h-[49px] flex flex-col gap-[2px]">
-                          <h4 className="w-[287px] h-[27px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29]"
+                        <div className="w-[287px] flex flex-col justify-center">
+                          <h4 className="w-[287px] font-nunito text-[16.03px] font-[500] leading-[26.72px] text-left text-[#111B29] 
+                                         group-hover:text-blue-600 transition-colors duration-200"
                               style={{
                                 textUnderlinePosition: 'from-font',
                                 textDecorationSkipInk: 'none'
@@ -186,7 +203,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           >
                             AI-Powered Process Optimization
                           </h4>
-                          <p className="w-[248px] h-[20px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489]"
+                          <p className="w-[287px] font-nunito-sans text-[13px] font-[500] leading-[19.5px] text-left text-[#677489] 
+                                        group-hover:text-blue-500 transition-colors duration-200"
                              style={{
                                textUnderlinePosition: 'from-font',
                                textDecorationSkipInk: 'none'
