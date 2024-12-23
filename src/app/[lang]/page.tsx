@@ -14,7 +14,7 @@ async function DictionaryProvider({
   children 
 }: { 
   lang: string;
-  children: (dictionary: any) => React.ReactNode;
+  children: (dictionary: Record<string, unknown>) => React.ReactNode;
 }) {
   const dictionary = await getDictionary(lang);
   return children(dictionary);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Card, Input, Slider, Button, Typography } from 'antd';
+import { Input, Slider, Button, Typography } from 'antd';
 import Image from 'next/image';
 
 const { Title, Text } = Typography;
@@ -29,10 +29,6 @@ export default function CalculatorSection() {
     setInputs(prev => ({ ...prev, numEmployees: value }));
   };
 
-  useEffect(() => {
-    calculateResults();
-  }, [inputs]);
-
   const calculateResults = () => {
     const { hourlyWage, taskHours, numEmployees } = inputs;
 
@@ -48,6 +44,10 @@ export default function CalculatorSection() {
       });
     }
   };
+
+  useEffect(() => {
+    calculateResults();
+  }, [inputs, calculateResults]);
 
   return (
     <section className="w-full bg-[#0B0B0B] py-16">

@@ -44,7 +44,7 @@ export default function ExpertiseHeroSection() {
               href="#"
               className="text-[#F7F2EF] text-[19.97px] font-nunitoSans font-semibold leading-[35.95px] underline"
             >
-              See What's Possible
+              See What&rsquo;s Possible
             </Link>
           </div>
         </div>

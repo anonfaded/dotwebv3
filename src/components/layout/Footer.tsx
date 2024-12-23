@@ -82,7 +82,7 @@ export default function Footer({ lang }: FooterProps) {
                 textDecorationSkipInk: 'none'
               }}
             >
-              See What's Possible
+              See What&rsquo;s Possible
             </Link>
           </div>
         </Card>

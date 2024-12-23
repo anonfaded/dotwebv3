@@ -114,10 +114,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                     alt="Hero Icon Combined Left"
                     width={125}
                     height={55}
-                    className="w-auto h-auto max-w-[clamp(80px,8vw,125px)]"
+                    className="w-auto h-auto max-w-[clamp(80px,8vw,125px)] mb-[0px] ml-[200px]"
                     priority
                     unoptimized
-                    className="mb-[0px] ml-[200px]"
                   />
                 </div>
               </motion.div>
@@ -172,10 +171,9 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                   alt="Hero Icon 5"
                   width={89}
                   height={62}
-                  className="w-auto h-auto max-w-[clamp(50px,6vw,89px)]"
+                  className="w-auto h-auto max-w-[clamp(50px,6vw,89px)] ml-[70px]"
                   priority
                   unoptimized
-                  className="ml-[70px]"
                 />
               </motion.div>
             </div>
