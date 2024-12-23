@@ -38,7 +38,7 @@ export default function ScalableSection() {
             </div>
 
             {/* Right Content - Window Frame with Background Layers */}
-            <div className="relative lg:ml-auto translate-x-[270px]">
+            <div className="absolute right-[-10.5vw] top-1/2 -translate-y-1/2">
               <div className="relative">
                 {/* Background layers */}
                 <div className="absolute -left-8 -top-5 bottom-0 w-[720px] bg-[#e2ddd8] rounded-xl" />
