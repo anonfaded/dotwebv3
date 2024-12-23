@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Input, Slider, Button, Typography } from 'antd';
 import Image from 'next/image';
 
@@ -29,7 +29,7 @@ export default function CalculatorSection() {
     setInputs(prev => ({ ...prev, numEmployees: value }));
   };
 
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     const { hourlyWage, taskHours, numEmployees } = inputs;
 
     if (hourlyWage && taskHours) {
@@ -43,11 +43,11 @@ export default function CalculatorSection() {
         annualSavings: `$${Math.round(annualSavings).toLocaleString()}`
       });
     }
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateResults();
-  }, [inputs, calculateResults]);
+  }, [calculateResults]);
 
   return (
     <section className="w-full bg-[#0B0B0B] py-16">
