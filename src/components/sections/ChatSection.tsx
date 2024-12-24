@@ -49,21 +49,21 @@ export default function ChatSection() {
 
     return (
         <>
-            <div className="bg-[#FAF8F7] relative -mb-10">
+            <div className="bg-[##f5faff] relative -mb-10">
                 <div className="container mx-auto px-4">
                     <div className="max-w-[90%] lg:max-w-[85%] xl:max-w-[1200px] mx-auto">
                         <section className="relative">
-                            <div className="w-full flex flex-col items-center py-10">
+                            <div className="w-full flex flex-col items-center">
                                 {/* ChatBox wrapper */}
                                 <div
-                                    className="relative z-10 chatbox-wrapper w-full"
+                                    className="relative z-10 w-full"
                                      style={{marginTop: `${chatboxMarginTop}px`}}
                                 >
                                     <ChatBox />
                                 </div>
 
                                 {/* ComparisonStats - positioned relative to chatbox */}
-                                <div className="relative z-0 w-full mt-[6vh] mb-[6vh]">
+                                <div className="relative z-0 w-full mt-[6vh] mb-[4rem]">
                                     <ComparisonStats />
                                 </div>
                             </div>

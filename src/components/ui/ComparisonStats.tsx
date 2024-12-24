@@ -6,28 +6,28 @@ import Image from 'next/image';
 export default function ComparisonStats() {
   return (
     <motion.div 
-      className="w-full max-w-[90%] lg:max-w-[85%] xl:max-w-[1230px] mx-auto bg-[#F6F2EF] rounded-2xl p-4 sm:p-6 lg:p-8"
+      className="w-full bg-[#F6F2EF] rounded-2xl p-[clamp(10px,1.2vw,20px)] sm:p-[clamp(12px,1.5vw,22px)] lg:p-[clamp(16px,1.5vw,24px)] min-w-[320px] max-w-[1200px] mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-4">
         {/* Left Stat */}
-        <div className="text-center lg:w-1/4">
-          <h2 className="font-nunito text-4xl lg:text-[47px] font-bold leading-tight tracking-[-2px] text-[#2E2F35] mb-2">15h</h2>
-          <p className="font-lato text-sm leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto">
+        <div className="text-center lg:w-1/4 w-full space-y-2 sm:space-y-4">
+          <h2 className="font-nunito text-[clamp(20px,3.2vw,47px)] font-bold leading-tight tracking-[-2px] text-[#2E2F35]">15h</h2>
+          <p className="font-lato text-[clamp(10px,1.1vw,14px)] leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto">
             Time saved per employee each month through optimized workflows.
           </p>
         </div>
 
         {/* Middle Comparison */}
-        <div className="flex-1 mx-4 lg:mx-16 w-full lg:w-auto">
-          <h3 className="font-nunito text-3xl lg:text-[39.48px] font-bold leading-none tracking-[-2.32px] text-[#2E2F35] mb-6 lg:mb-16 text-center whitespace-nowrap">
-            Legacy Systems vs. Modern Workflows
-          </h3>
-          <div className="relative w-full max-w-[651.36px] mx-auto">
+        <div className="flex-1 w-full lg:w-auto flex items-center justify-center flex-col px-4 lg:px-0 relative">
+            <h3 className="font-nunito text-[clamp(18px,2.5vw,39.48px)] font-bold leading-none tracking-[-2.32px] text-[#2E2F35] text-center whitespace-nowrap relative top-0">
+                Legacy Systems vs. Modern Workflows
+            </h3>
+          <div className="relative w-full max-w-[651.36px] mx-auto mt-[clamp(40px,6vh,80px)]">
             {/* Middle icon */}
-            <div className="absolute left-[35%] -top-8">
+            <div className="absolute left-[35%] -top-[clamp(30px,4vh,50px)]">
               <Image
                 src="/bar.png"
                 alt="Progress Bar Icon"
@@ -63,9 +63,9 @@ export default function ComparisonStats() {
         </div>
 
         {/* Right Stat */}
-        <div className="text-center lg:w-1/4">
-          <h2 className="font-nunito text-4xl lg:text-[47px] font-bold leading-tight tracking-[-2px] text-[#2E2F35] mb-2">2x</h2>
-          <p className="font-lato text-sm leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto">
+        <div className="text-center lg:w-1/4 w-full space-y-2 sm:space-y-4">
+          <h2 className="font-nunito text-[clamp(20px,3.2vw,47px)] font-bold leading-tight tracking-[-2px] text-[#2E2F35]">2x</h2>
+          <p className="font-lato text-[clamp(10px,1.1vw,14px)] leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto">
             Accelerated project completion rates through intelligent automation.
           </p>
         </div>
