@@ -51,28 +51,30 @@ export default function CalculatorSection() {
 
   return (
     <section className="w-full bg-[#0B0B0B] py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-center gap-8">
+      <div className="container mx-auto px-4 max-w-[1400px]">
+        <div className="flex flex-col md:flex-row justify-center gap-8 w-full">
           {/* Left Column - Calculator Inputs */}
-          <div className="w-[837.85px] h-[616.84px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-8">
-            <h2 className="text-center mb-8 px-8 font-nunito text-[25.3px] font-bold leading-[27.83px] tracking-[-0.02em]">
-              Estimate Your Savings with Smart Automation
-            </h2>
-            
-            <p className="text-center mb-8 font-nunito-sans text-[14.76px] leading-[22.14px]">
-              Discover how much time and money your team can save by automating repetitive tasks
-              and focusing on what matters most.
-            </p>
+          <div className="w-full md:w-[837.85px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-6 md:p-8 space-y-6">
+            <div className="text-center">
+              <h2 className="mb-4 font-nunito text-[22px] md:text-[25.3px] font-bold leading-tight tracking-[-0.02em]">
+                Estimate Your Savings with Smart Automation
+              </h2>
+              
+              <p className="mb-6 font-nunito-sans text-[14px] md:text-[14.76px] text-gray-600 leading-relaxed">
+                Discover how much time and money your team can save by automating repetitive tasks
+                and focusing on what matters most.
+              </p>
+            </div>
 
             {/* Details Section */}
-            <div className="w-[785.95px] h-[279.98px] pt-[25.95px] border border-[#DDDCE0] rounded-[12.65px] bg-white">
-              <h3 className="mb-[25.95px] px-[25.95px] font-nunito text-[19.46px] font-medium leading-[26.54px] text-left">
+            <div className="border border-[#DDDCE0] rounded-[12.65px] bg-white p-6 space-y-6">
+              <h3 className="font-nunito text-[18px] md:text-[19.46px] font-medium text-left">
                 Enter Your Details to Calculate Savings
               </h3>
 
-              <div className="w-[734.06px] h-[74.6px] mx-auto gap-[12.97px] grid grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block mb-2 w-[361.08px] h-[28px] font-inter text-[15.14px] leading-[27.55px]">
+                  <label className="block mb-2 font-inter text-[14px] text-gray-700">
                     Average Hourly Wage
                   </label>
                   <Input
@@ -80,12 +82,12 @@ export default function CalculatorSection() {
                     placeholder="Hourly wage in USD"
                     value={inputs.hourlyWage}
                     onChange={(e) => handleInputChange('hourlyWage', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
+                    className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 w-[361.08px] h-[28px] font-inter text-[15.14px] leading-[27.55px]">
+                  <label className="block mb-2 font-inter text-[14px] text-gray-700">
                     Hours Spent on Task Handling
                   </label>
                   <Input
@@ -93,12 +95,12 @@ export default function CalculatorSection() {
                     placeholder="Monthly hours"
                     value={inputs.taskHours}
                     onChange={(e) => handleInputChange('taskHours', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
+                    className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 w-[361.08px] h-[28px] font-inter text-[15.14px] leading-[27.55px]">
+                  <label className="block mb-2 font-inter text-[14px] text-gray-700">
                     Monthly Employee Costs
                   </label>
                   <Input
@@ -106,12 +108,12 @@ export default function CalculatorSection() {
                     placeholder="Total costs in USD"
                     value={inputs.employeeCosts}
                     onChange={(e) => handleInputChange('employeeCosts', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
+                    className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 w-[361.08px] h-[28px] font-inter text-[15.14px] leading-[27.55px]">
+                  <label className="block mb-2 font-inter text-[14px] text-gray-700">
                     Current or Planned Task Volume
                   </label>
                   <Input
@@ -119,43 +121,43 @@ export default function CalculatorSection() {
                     placeholder="Task volume per employee"
                     value={inputs.taskVolume}
                     onChange={(e) => handleInputChange('taskVolume', e.target.value)}
-                    className="w-[361.08px] h-[47.57px] px-[12.97px] py-[15.14px] rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px] leading-[17.3px]"
+                    className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
                   />
                 </div>
               </div>
             </div>
 
             {/* Employees Section */}
-            <div className="w-[785.95px] border border-[#DDDCE0] rounded-[12.65px] mt-4 bg-white py-3">
-              <div className="w-[734.06px] mx-auto">
-                <label className="block mb-2 font-nunito text-[15.14px] font-semibold leading-[27.55px]">
+            <div className="border border-[#DDDCE0] rounded-[12.65px] bg-white p-6">
+              <div className="space-y-4">
+                <label className="block font-nunito text-[16px] font-semibold text-gray-800">
                   Number of Employees
                 </label>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="w-[604.33px]">
+                <div className="flex items-center space-x-4">
+                  <div className="flex-grow">
                     <Slider
                       min={1}
                       max={100}
                       value={inputs.numEmployees}
                       onChange={handleSliderChange}
-                      className="[&_.ant-slider-track]:!bg-[#0B0B0B] [&_.ant-slider-handle]:border-[#0B0B0B] [&_.ant-slider-handle:hover]:!border-[#0B0B0B]"
-                      styles={{
-                        rail: {
-                          backgroundColor: '#E5E5E5'
-                        }
+                      trackStyle={{ backgroundColor: '#0B0B0B' }}
+                      railStyle={{ backgroundColor: '#E5E5E5' }}
+                      handleStyle={{ 
+                        borderColor: '#0B0B0B', 
+                        backgroundColor: '#0B0B0B' 
                       }}
                     />
                   </div>
-                  <div className="w-[82.16px] h-[50.92px] flex items-center justify-center border border-[#DDDCE0] rounded-[12.65px]">
-                    <span className="font-nunito text-[16px] font-semibold leading-[21.62px] tracking-[0.108px]">
+                  <div className="w-[90px] h-[50px] flex items-center justify-center border border-[#DDDCE0] rounded-[12.65px] px-2">
+                    <span className="font-nunito text-[16px] font-semibold mr-2">
                       {inputs.numEmployees}×
                     </span>
                     <Image
                       src="/employee.png"
                       alt="Employee"
-                      width={14.76}
-                      height={14.76}
-                      className="ml-1"
+                      width={20}
+                      height={20}
+                      className="inline-block"
                     />
                   </div>
                 </div>
@@ -164,65 +166,59 @@ export default function CalculatorSection() {
           </div>
 
           {/* Right Column - Results */}
-          <div className="w-[422px] h-[617px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-8 relative">
-            <h3 className="mb-4 font-nunito text-[25.3px] font-bold leading-[27.83px] tracking-[-0.02em] text-center">
-              Your Savings Overview
-            </h3>
+          <div className="w-full md:w-[422px] bg-white rounded-[12.65px] border border-[#DDDCE0] p-6 md:p-8 flex flex-col">
+            <div className="text-center mb-6">
+              <h3 className="font-nunito text-[22px] md:text-[25.3px] font-bold leading-tight tracking-[-0.02em]">
+                Your Savings Overview
+              </h3>
+            </div>
             
-            <div className="space-y-3 mb-24">
+            <div className="space-y-4 flex-grow">
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
-                <Text 
-                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
-                >
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
                   Time Savings (Hours/Month)
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
                 >
                   {results.timeSavings}
                 </Title>
               </div>
 
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
-                <Text 
-                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
-                >
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
                   Cost Savings (Monthly)
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
                 >
                   {results.costSavings}
                 </Title>
               </div>
 
               <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
-                <Text 
-                  className="block w-[317.84px] h-[29px] mx-auto mb-2 font-lato text-[16px] font-semibold leading-[29.12px] text-center text-[#2A2A2A]"
-                >
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
                   Annual Cost Savings
                 </Text>
                 <Title 
                   level={3}
-                  className="text-center font-nunito text-[21.62px] font-semibold leading-[29.49px] text-[#2A2A2A]"
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
                 >
                   {results.annualSavings}
                 </Title>
               </div>
             </div>
 
-            <div className="absolute bottom-8 left-8 right-8">
+            <div className="mt-6">
               <Button 
                 type="primary"
-                className="w-full h-[61px] rounded-t-[12.65px] bg-[#016EC6] hover:bg-[#016EC6]/90 flex items-center justify-center shadow-none border-none"
+                className="w-full h-[54px] rounded-[12.65px] bg-[#016EC6] hover:bg-[#016EC6]/90 flex items-center justify-center shadow-none border-none"
               >
-                <div className="flex-1 text-center">
-                  <span className="font-nunito text-[19px] font-bold leading-[34.58px] text-white">
-                    Let Us Design Your Solution
-                  </span>
-                </div>
+                <span className="font-nunito text-[16px] font-bold text-white">
+                  Let Us Design Your Solution
+                </span>
               </Button>
             </div>
           </div>

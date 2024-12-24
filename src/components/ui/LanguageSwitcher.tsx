@@ -52,12 +52,17 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
 
       {showDropdown && (
         <div 
-          className="fixed w-[72px] h-[104px] top-[124px] rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D]"
+          className="fixed w-[120px] h-[180px] top-[124px] rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D]"
           style={{ 
             zIndex: 100,
             left: buttonRef.current 
-              ? `${buttonRef.current.getBoundingClientRect().left + buttonRef.current.getBoundingClientRect().width - 72}px` 
-              : 'auto'
+              ? (window.innerWidth < 1024 
+                  ? `${buttonRef.current.getBoundingClientRect().left}px` 
+                  : `${buttonRef.current.getBoundingClientRect().left + buttonRef.current.getBoundingClientRect().width - 120}px`)
+              : 'auto',
+            top: window.innerWidth < 1024 
+              ? `${buttonRef.current ? buttonRef.current.getBoundingClientRect().bottom + 10 : 124}px`
+              : '124px'
           }}
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
@@ -85,7 +90,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                   className={`
                     w-full h-full
                     flex items-center justify-center
-                    font-nunito text-[11px] font-[500] 
+                    font-nunito text-[14px] font-[500] 
                     leading-[16.67px] text-center 
                     text-[#0B0B0B] 
                     transition-colors 
@@ -100,17 +105,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                     textUnderlinePosition: 'from-font',
                     textDecorationSkipInk: 'none'
                   }}
-                  onClick={() => setShowDropdown(false)}
                 >
                   {name}
                 </Link>
-                {/* Divider - only for Deutsch and Français */}
-                {index < Object.keys(langs).length - 1 && (
-                  <div 
-                    className="w-[47px] h-[0px] border-t border-[#F2F2F2] absolute"
-                    style={{ top: `${(index + 1) * (100 / Object.keys(langs).length)}%` }}
-                  />
-                )}
               </div>
             ))}
           </div>
