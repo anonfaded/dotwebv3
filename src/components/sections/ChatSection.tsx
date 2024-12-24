@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import ChatBox from '../ui/ChatBox';
 import ComparisonStats from '../ui/ComparisonStats';
 import AIWidgetSection from './AIWidgetSection';
@@ -9,101 +9,72 @@ import ScalableSection from './ScalableSection';
 import CalculatorSection from './CalculatorSection';
 
 export default function ChatSection() {
-  const [transforms, setTransforms] = useState({
-    chatbox: 0,
-    stats: 0
-  });
-  const [isMounted, setIsMounted] = useState(false);
-  const chatboxRef = useRef(null);
-  const statsRef = useRef(null);
+    const [chatboxMarginTop, setChatboxMarginTop] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    // Wait for next tick to ensure scroll position is restored
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
-  }, []);
+    useEffect(() => {
+        // Wait for next tick to ensure scroll position is restored
+        setTimeout(() => {
+            setIsMounted(true);
+        }, 0);
+    }, []);
 
   useLayoutEffect(() => {
-    if (!isMounted) return;
+        if (!isMounted) return;
 
-    const updatePositions = () => {
-      const heroSection = document.querySelector('.hero-section');
-      const startButton = document.querySelector('.start-button');
-      const chatboxElement = document.querySelector('.chatbox-wrapper');
-      
-      if (heroSection && startButton && chatboxElement) {
-        const vh = window.innerHeight / 100;
-        
-        // Position chatbox below start button
-        const startButtonRect = startButton.getBoundingClientRect();
-        const startButtonBottom = startButtonRect.bottom + window.scrollY;
-        const paddingBelowButton = 3 * vh;
-        const targetTopChatbox = startButtonBottom + paddingBelowButton;
-        
-        // Calculate chatbox transform relative to hero height
-        const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-        const heroHeight = heroSection.getBoundingClientRect().height;
-        const chatboxTransform = -(heroHeight - (targetTopChatbox - heroTop));
-        
-        // Calculate stats transform based on chatbox position
-        const statsTransform = chatboxTransform;
-        
-        setTransforms({
-          chatbox: chatboxTransform,
-          stats: statsTransform
-        });
-      }
-    };
+        const updatePositions = () => {
+            const vh = window.innerHeight / 100;
 
-    // Initial update with a small delay to ensure scroll position is restored
-    const timeoutId = setTimeout(updatePositions, 0);
+            // Calculate dynamic margin top for chatbox
+            const baseMargin = -18 * vh;
+            const screenHeightFactor = window.innerHeight / 1080; // Base height for scaling
+            const dynamicMargin = baseMargin - (10 * vh * (screenHeightFactor - 1));
+            setChatboxMarginTop(dynamicMargin);
+        };
 
-    // Update on resize only
-    const handleResize = () => {
-      requestAnimationFrame(updatePositions);
-    };
+      // Initial update with a small delay to ensure scroll position is restored
+        const timeoutId = setTimeout(updatePositions, 0);
 
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timeoutId);
-    };
-  }, [isMounted]);
+        // Update on resize only
+        const handleResize = () => {
+            requestAnimationFrame(updatePositions);
+        };
 
-  return (
-    <>
-      <div className="bg-[#FAF8F7] relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-[90%] lg:max-w-[85%] xl:max-w-[1200px] mx-auto">
-            <section className="relative">
-              <div className="w-full flex flex-col items-center">
-                {/* ChatBox wrapper */}
-                <div 
-                  style={{ transform: `translateY(${transforms.chatbox}px)` }} 
-                  className="relative z-10 chatbox-wrapper w-full"
-                  ref={chatboxRef}
-                >
-                  <ChatBox />
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+             clearTimeout(timeoutId)
+        };
+    }, [isMounted]);
+
+    return (
+        <>
+            <div className="bg-[#FAF8F7] relative -mb-10">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-[90%] lg:max-w-[85%] xl:max-w-[1200px] mx-auto">
+                        <section className="relative">
+                            <div className="w-full flex flex-col items-center py-10">
+                                {/* ChatBox wrapper */}
+                                <div
+                                    className="relative z-10 chatbox-wrapper w-full"
+                                     style={{marginTop: `${chatboxMarginTop}px`}}
+                                >
+                                    <ChatBox />
+                                </div>
+
+                                {/* ComparisonStats - positioned relative to chatbox */}
+                                <div className="relative z-0 w-full mt-[6vh] mb-[6vh]">
+                                    <ComparisonStats />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                
-                {/* ComparisonStats - positioned relative to chatbox */}
-                <div 
-                  ref={statsRef}
-                  className="relative z-0 w-full mt-[6vh]"
-                  style={{ transform: `translateY(${transforms.stats}px)` }}
-                >
-                  <ComparisonStats />
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      <AIWidgetSection />
-      <AutomationSection />
-      <ScalableSection />
-      <CalculatorSection />
-    </>
-  );
+            </div>
+            <AIWidgetSection />
+            <AutomationSection />
+            <ScalableSection />
+            <CalculatorSection />
+        </>
+    );
 }
