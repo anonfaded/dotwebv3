@@ -113,7 +113,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   height={20} 
                   priority 
                 />
-                <span>{navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || item}</span>
+                <span>{navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}</span>
               </Link>
             ))}
 
@@ -233,7 +233,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     priority 
                   />
                   <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">
-                    {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || item}
+                    {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
                   </span>
                 </Link>
               ))}
