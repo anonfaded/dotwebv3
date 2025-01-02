@@ -42,13 +42,13 @@ export default function Hero({ lang, dictionary }: HeroProps) {
           <div className="relative flex flex-col items-center">
             {/* Left icon group */}
             <motion.div 
-              className="absolute left-0 top-0 hidden lg:block -translate-x-full"
+              className="absolute left-0 top-0 hidden lg:block -translate-x-[85%]"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center h-full">
-                <p className="font-nunito-sans text-xs sm:text-sm text-[#016EC6] whitespace-nowrap my-0">
+              <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-1 sm:py-2 px-2 sm:px-4 flex items-center justify-center h-full">
+                <p className="font-nunito-sans text-[10px] sm:text-xs text-[#016EC6] whitespace-nowrap my-0">
                   AI Provided Personalized Answers
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute right-0 top-0 hidden lg:block translate-x-full"
+              className="absolute right-0 top-0 hidden lg:block"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -148,13 +148,13 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Right icon group */}
               <motion.div 
-                className="absolute right-0 top-0 hidden lg:block translate-x-full"
+                className="absolute right-0 top-0 hidden lg:block"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center h-full">
-                  <p className="font-nunito-sans text-xs sm:text-sm text-[#016EC6] whitespace-nowrap my-0">
+                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-1 sm:py-2 px-2 sm:px-4 flex items-center justify-center h-full">
+                  <p className="font-nunito-sans text-[10px] sm:text-xs text-[#016EC6] whitespace-nowrap my-0">
                     Product Explained, Lead Captured.
                   </p>
                 </div>
