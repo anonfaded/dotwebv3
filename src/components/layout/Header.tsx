@@ -71,7 +71,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               </button>
 
               {showSolutionsDropdown && (
-                <div className="mt-4 bg-gray-50 rounded-lg p-4 space-y-4">
+                <div className="mt-6 bg-gray-50 rounded-lg p-4 space-y-4">
                   {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                     <Link 
                       key={index}
@@ -185,37 +185,44 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 </button>
 
                 {showSolutionsDropdown && (
-                  <div 
-                    className="absolute w-[374px] top-[40px] left-0 rounded-[12px] bg-white shadow-lg"
-                    onMouseEnter={() => setShowSolutionsDropdown(true)}
-                    onMouseLeave={() => setShowSolutionsDropdown(false)}
-                  >
-                    <div className="p-4 space-y-4">
-                      {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
-                        <Link 
-                          key={index}
-                          href="#" 
-                          className="block py-3 px-2 hover:bg-gray-100 rounded flex items-center space-x-3"
-                        >
-                          <Image 
-                            src={`/solutions${index + 1}.png`}
-                            alt={item} 
-                            width={24} 
-                            height={24} 
-                            priority 
-                          />
-                          <div>
-                            <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
-                              {item}
-                            </h4>
-                            <p className="font-nunito-sans text-[12px] text-gray-600">
-                              {['Smart solutions for efficient operations', 'Efficient tools for capturing leads', 'Streamline tasks and boost productivity'][index]}
-                            </p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                  <div className="absolute top-20 left-0 w-[374px]">
+  {/* Arrow */}
+  <div     className="absolute top-[-8px] left-[30%] transform -translate-x-1/2 w-4 h-4 bg-white rotate-45  z-10"></div>
+
+  {/* Dropdown Content */}
+  <div 
+    className="rounded-[12px] bg-white shadow-lg py-4 px-4"
+    onMouseEnter={() => setShowSolutionsDropdown(true)}
+    onMouseLeave={() => setShowSolutionsDropdown(false)}
+  >
+    <div className="space-y-4">
+      {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
+        <Link 
+          key={index}
+          href="#" 
+          className="block py-3 px-2 hover:bg-gray-100 rounded flex items-center space-x-3"
+        >
+          <Image 
+            src={`/solutions${index + 1}.png`}
+            alt={item} 
+            width={24} 
+            height={24} 
+            priority 
+          />
+          <div>
+            <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
+              {item}
+            </h4>
+            <p className="font-nunito-sans text-[12px] text-gray-600">
+              {['Smart solutions for efficient operations', 'Efficient tools for capturing leads', 'Streamline tasks and boost productivity'][index]}
+            </p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
+
                 )}
               </div>
 
