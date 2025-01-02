@@ -100,7 +100,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             </div>
 
             {/* Other Navigation Items */}
-            {['case-studies', 'contact'].map((item, index) => (
+            {['case-studies', 'contact'].map((item) => (
               <Link 
                 key={item}
                 href={`/${lang}/${item}`} 
@@ -113,7 +113,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   height={20} 
                   priority 
                 />
-                <span>{navigation.caseStudies || item}</span>
+                <span>{navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || item}</span>
               </Link>
             ))}
 
@@ -233,7 +233,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     priority 
                   />
                   <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">
-                    {navigation.caseStudies || item}
+                    {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || item}
                   </span>
                 </Link>
               ))}
