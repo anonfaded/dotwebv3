@@ -47,8 +47,8 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] p-2 mb-2">
-                <p className="font-nunito-sans text-xs sm:text-sm text-[#016EC6] whitespace-nowrap">
+              <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center h-full">
+                <p className="font-nunito-sans text-xs sm:text-sm text-[#016EC6] whitespace-nowrap my-0">
                   AI Provided Personalized Answers
                 </p>
               </div>
@@ -153,12 +153,12 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] p-2 mb-2">
-                  <p className="font-nunito-sans text-xs sm:text-sm whitespace-nowrap">
+                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center h-full">
+                  <p className="font-nunito-sans text-xs sm:text-sm text-[#016EC6] whitespace-nowrap my-0">
                     Product Explained, Lead Captured.
                   </p>
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-center">
                   <Image
                     src="/hero-icon4.png"
                     alt="Hero Icon 5"
@@ -185,4 +185,3 @@ export default function Hero({ lang, dictionary }: HeroProps) {
     </section>
   );
 }
-
