@@ -21,7 +21,7 @@ interface HeroProps {
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
     
-    <section className="relative h-[1030px] flex flex-col justify-start overflow-hidden z-[-9]">
+    <section className="relative h-[800px] sm:h-[900px] lg:h-[1030px] flex flex-col justify-start overflow-hidden z-[-9]">
       {/* adjust above height to make the hero shorter, and the z index is making the overlap of chatsection smooth else the color would be dull visible */}
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
