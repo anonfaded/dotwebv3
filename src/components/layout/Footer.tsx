@@ -13,7 +13,7 @@ export default function Footer({ lang }: FooterProps) {
   const [showLegalDropdown, setShowLegalDropdown] = useState(false);
 
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[724px]">
+    <section className="relative w-full min-h-[500px] md:min-h-[724px]">
       {/* Background Image - same as hero */}
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -28,25 +28,26 @@ export default function Footer({ lang }: FooterProps) {
       <div className="relative w-full max-w-[1440px] h-full mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Black Content Box */}
         <Card 
-          className="absolute left-1/2 -translate-x-1/2 top-[60px] w-[calc(100%-32px)] max-w-[1297px] bg-[#0B0B0B]"
+          className="absolute left-1/2 -translate-x-1/2 top-[40px] sm:top-[60px] w-[calc(100%-32px)] max-w-[1297px] bg-[#0B0B0B]"
           style={{ 
             borderRadius: '12.5px',
-            minHeight: '400px',
+            minHeight: 'auto',
+            height: 'auto',
             paddingBottom: '1rem'
           }}
           bodyStyle={{ 
-            height: '100%',
+            height: 'auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '1.5rem',
-            paddingTop: '0',
+            padding: '1rem',
+            paddingTop: '1rem',
             paddingBottom: '1rem'
           }}
         >
           {/* Text Content */}
-          <div className="w-full max-w-[852px] text-center mb-8 md:mb-12 pt-8 md:pt-16">
+          <div className="w-full max-w-[852px] text-center mb-6 md:mb-8 pt-6 md:pt-12">
             <h2 className="font-nunito text-[28px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-semibold leading-[1.2] tracking-[-1.5px] md:tracking-[-2.67px] text-[#F7F2EF]">
               Our Expertise
               <br />
@@ -55,7 +56,7 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Buttons Container */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-2">
             <Button 
               type="text"
               className="flex items-center w-full md:w-[565.32px] h-[50px] md:h-[69.91px] bg-[#F7F2EF] rounded-[87.38px] hover:bg-[#e7e2df] group"
@@ -98,7 +99,7 @@ export default function Footer({ lang }: FooterProps) {
 
       {/* Floating Footer Bar - Moved below CTA section */}
       <div 
-        className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-[calc(400px+60px+64px)] sm:mt-[calc(508.06px+60px+32px)]"
+        className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-[calc(350px+40px+32px)] sm:mt-[calc(508.06px+60px+32px)]"
       >
         <div 
           className="w-[calc(100%-32px)] max-w-[1297px] mx-auto h-auto md:h-[64.85px] bg-white flex flex-col md:flex-row items-center justify-between px-4 sm:px-[21.62px] py-4 md:py-0 relative"
