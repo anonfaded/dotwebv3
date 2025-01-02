@@ -21,7 +21,7 @@ interface HeroProps {
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
     
-    <section className="relative h-[800px] sm:h-[900px] lg:h-[1030px] flex flex-col justify-start overflow-hidden z-[-9]">
+    <section className="relative h-[800px] sm:h-[900px] lg:h-[1030px] flex flex-col justify-start overflow-hidden z-[1]">
       {/* adjust above height to make the hero shorter, and the z index is making the overlap of chatsection smooth else the color would be dull visible */}
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
@@ -34,15 +34,15 @@ export default function Hero({ lang, dictionary }: HeroProps) {
         />
       </div>
       
-      <div className="absolute inset-0 bg-black/25 z-[1]" />
+      <div className="absolute inset-0 bg-black/25 z-[2]" />
 
-      <div className="container mx-auto px-4 relative z-[2] flex flex-col items-center justify-start h-full pt-[175px]">
+      <div className="container mx-auto px-4 relative z-[3] flex flex-col items-center justify-start h-full pt-[175px]">
         <div className="w-full max-w-6xl mx-auto relative">
           {/* Title row with left and right icons */}
-          <div className="relative flex flex-col items-center">
+          <div className="relative flex flex-col items-center z-[4]">
             {/* Left icon group */}
             <motion.div 
-              className="absolute left-0 top-0 hidden lg:block -translate-x-[85%]"
+              className="absolute left-0 top-0 hidden lg:block -translate-x-[0%] mt-8 "
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -66,24 +66,24 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute right-0 top-0 hidden lg:block"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute right-0 top-0 hidden lg:block translate-x-[50%]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Image
                 src="/hero-icon2.png"
                 alt="Hero Icon Combined"
                 width={125}
                 height={110}
-                className="w-auto h-auto max-w-[clamp(80px,8vw,125px)]"
+                className="w-auto h-auto max-w-[clamp(80px,8vw,125px)] -mt-10"
                 priority
               />
             </motion.div>
 
             {/* Main Title */}
             <motion.div
-              className="w-full max-w-[812px] mx-auto space-y-4 md:space-y-6 mb-8 md:mb-12"
+              className="w-full max-w-[812px] mx-auto space-y-4 md:space-y-6 mb-8 md:mb-12 select-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -111,14 +111,14 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                   alt="Hero Icon Combined Left"
                   width={125}
                   height={55}
-                  className="w-auto h-auto max-w-[clamp(80px,8vw,125px)]"
+                  className="w-auto h-auto max-w-[clamp(80px,8vw,125px)] ml-32"
                   priority
                 />
               </motion.div>
 
               {/* Buttons */}
               <motion.div 
-                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mt-8 sm:mt-12"
+                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mt-8 sm:mt-12 z-10 relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -148,7 +148,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Right icon group */}
               <motion.div 
-                className="absolute right-0 top-0 hidden lg:block"
+                className="absolute right-0 top-0 hidden lg:block translate-x-80%]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}

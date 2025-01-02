@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export default function ChatBox() {
   return (
-    <div className="w-full bg-white rounded-lg shadow-lg relative min-w-[320px]">
+    <div className="w-full bg-gray-900 rounded-lg shadow-lg relative min-w-[320px]">
       {/* Content */}
       <div className="h-full flex flex-col">
         {/* Header Section */}
         <div className="flex justify-between items-center px-[clamp(10px,2vw,12px)] sm:px-[clamp(10px,2vw,14px)] lg:px-[clamp(12px,2.2vw,18px)] py-[clamp(10px,1.5vw,12px)] lg:py-[clamp(10px,1.5vw,14px)] bg-[#0B0B0B] rounded-t-lg">
-          <div className="space-y-2 px-[clamp(5px,1vw,10px)] py-[clamp(3px,0.5vw,6px)]">
+          <div className="space-y-2 px-[clamp(5px,1vw,10px)] py-[clamp(3px,0.5vw,6px)] ">
             <h3 className="font-nunito text-[clamp(14px,2vw,21.38px)] font-bold leading-tight text-white">
               Ask About Smarter Automation Solutions 
             </h3>

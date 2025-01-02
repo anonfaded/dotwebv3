@@ -11,18 +11,18 @@ import CalculatorSection from './CalculatorSection';
 export default function ChatSection() {
     return (
         <>
-            <div className="bg-[#f5faff] min-h-[871px] -mt-40 relative z-0">
-                <div className="container mx-auto px-4 pt-40 pb-20">
+            <div className="bg-[#f5faff] min-h-[600px] relative z-1 top-[0px]">
+                <div className="absolute top-0 left-0 right-0 h-40 bg-[#f5faff]"></div>
+                <div className="container mx-auto px-4 pt-0 pb-10">
                     <div className="max-w-[90%] lg:max-w-[85%] xl:max-w-[1200px] mx-auto">
                         <section className="relative">
-                            <div className="w-full flex flex-col items-center">
+                            <div className="grid grid-cols-1 gap-8">
                                 {/* ChatBox wrapper */}
-                                <div className="relative z-10 w-full -mt-60 sm:-mt-80">
+                                <div className="relative z-10 w-full -mt-80 sm:-mt-100">
                                     <ChatBox />
                                 </div>
-
                                 {/* ComparisonStats - positioned relative to chatbox */}
-                                <div className="relative z-0 w-full mt-8 sm:mt-12 lg:mt-20">
+                                <div className="relative z-0 w-full mt-0 sm:mt-2 lg:mt-4">
                                     <ComparisonStats />
                                 </div>
                             </div>
@@ -37,4 +37,3 @@ export default function ChatSection() {
         </>
     );
 }
-
