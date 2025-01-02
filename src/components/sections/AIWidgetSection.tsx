@@ -75,7 +75,7 @@ export default function AIWidgetSection() {
                         src="/widget-screenshot.png"
                         alt="AI Widget Interface"
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-left"
                         priority
                       />
                     </div>

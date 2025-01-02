@@ -75,7 +75,7 @@ export default function ScalableSection() {
                         src="/widget-screenshot3.png"
                         alt="Scalable Platform Interface"
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-left"
                         priority
                       />
                     </div>
