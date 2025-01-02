@@ -6,13 +6,13 @@ import { Card } from 'antd';
 
 export default function AutomationSection() {
   return (
-    <section className="h-[671px] bg-[#F5FAFF] relative overflow-hidden">
-      <div className="container mx-auto pl-4 relative z-10 h-full flex items-center">
+    <section className="bg-[#F5FAFF] relative overflow-hidden min-h-[671px] py-16 lg:h-[671px] lg:py-0">
+      <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
         <div className="max-w-[1200px] mx-auto w-full">
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:flex-row items-center">
             {/* Left Content */}
-            <div className="lg:max-w-[480px]">
+            <div className="w-full lg:w-1/2 lg:max-w-[480px] mb-12 lg:mb-0">
               <div 
                 className="w-[216px] h-[35px] bg-[#d8e9f5] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
@@ -20,49 +20,47 @@ export default function AutomationSection() {
                   WORKFLOW EFFICIENCY
                 </span>
               </div>
-              <h2 className="font-nunito text-[41.2px] font-bold leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
+              <h2 className="font-nunito text-[32px] lg:text-[41.2px] font-bold leading-tight lg:leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
                 Marketing Automation Made Simple for Teams
               </h2>
-              <p className="font-lato text-[19.51px] leading-[29.27px] text-[#2A2A2A] mb-8">
+              <p className="font-lato text-[16px] lg:text-[19.51px] leading-relaxed lg:leading-[29.27px] text-[#2A2A2A] mb-8">
                 IMMOIQ&apos;s automation tools make it easy to generate exposé PDFs, open house invitations, follow-up emails, and polished client presentations. By eliminating manual tasks, real estate professionals can save time and focus on strengthening client relationships.
               </p>
               <Link 
                 href="#"
-                className="inline-flex items-center bg-[#016EC6] text-white px-[40.89px] py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-opacity"
+                className="inline-flex items-center bg-[#016EC6] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-opacity"
               >
-                <span className="text-[19.51px]">See How Automation Saves Time</span>
-                <svg className="ml-6 w-4 h-4" viewBox="0 0 16 16" fill="none">
+                <span className="text-[16px] lg:text-[19.51px]">See How Automation Saves Time</span>
+                <svg className="ml-4 lg:ml-6 w-4 h-4" viewBox="0 0 16 16" fill="none">
                   <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
             </div>
 
             {/* Right Content - Window Frame with Background Layers */}
-            <div className="absolute right-[-10.5vw] top-1/2 -translate-y-1/2">
-              <div className="relative">
+            <div className="w-full lg:w-1/2 lg:absolute lg:right-[-10vw] lg:top-1/2 lg:-translate-y-1/2">
+              <div className="relative w-full max-w-[680px] mx-auto lg:mx-0">
                 {/* Background layers */}
-                <div className="absolute -left-8 -top-5 bottom-0 w-[720px] bg-[#016EC6] rounded-xl" />
-                <div className="absolute -left-4 top-12 -bottom-3 w-[645px] bg-[#f5faff] rounded-xl" />
+                <div className="absolute -left-4 lg:-left-8 -top-3 lg:-top-5 -bottom-3 lg:bottom-0 w-[calc(100%+32px)] lg:w-[calc(100%+64px)] bg-[#016EC6] rounded-xl" />
+                <div className="absolute -left-2 lg:-left-4 top-6 lg:top-12 -bottom-1 lg:-bottom-3 w-[calc(100%+16px)] lg:w-[calc(100%+32px)] bg-[#f5faff] rounded-xl" />
                 
                 {/* Card container with overflow */}
                 <div className="relative">
                   <Card
-                    className="overflow-hidden w-[680px] [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
-                    styles={{ 
-                      body: { 
-                        padding: 0,
-                        background: '#1E1E1E',
-                        height: '500px',
-                        border: 'none',
-                      },
-                      header: {
-                        background: '#2A2A2A',
-                        border: 'none',
-                        borderBottom: 0,
-                        padding: '12px 16px',
-                        minHeight: 'auto',
-                        marginBottom: 0,
-                      }
+                    className="overflow-hidden w-full [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
+                    bodyStyle={{ 
+                      padding: 0,
+                      background: '#1E1E1E',
+                      height: '500px',
+                      border: 'none',
+                    }}
+                    headStyle={{
+                      background: '#2A2A2A',
+                      border: 'none',
+                      borderBottom: 0,
+                      padding: '12px 16px',
+                      minHeight: 'auto',
+                      marginBottom: 0,
                     }}
                     title={
                       <div className="flex space-x-2">
@@ -77,9 +75,8 @@ export default function AutomationSection() {
                         src="/widget-screenshot2.png"
                         alt="Automation Interface"
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                         priority
-                        unoptimized
                       />
                     </div>
                   </Card>
@@ -92,3 +89,4 @@ export default function AutomationSection() {
     </section>
   );
 }
+
