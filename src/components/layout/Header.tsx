@@ -260,10 +260,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               className="z-50 p-2" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-black transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`w-full h-0.5 bg-black transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-full h-0.5 bg-black transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <div className="w-6 h-5 flex flex-col justify-between relative">
+                <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute rotate-45 top-1/2' : 'relative top-0'}`}></span>
+                <span className={`w-full h-0.5 bg-black transition-all ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute -rotate-45 top-1/2' : 'relative bottom-0'}`}></span>
               </div>
             </button>
           )}
