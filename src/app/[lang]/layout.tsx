@@ -60,9 +60,11 @@ export default async function LocaleLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </head>
-      <body className={`${nunito.variable} ${nunitoSans.variable}`} suppressHydrationWarning>
-        <Header lang={params.lang} dictionary={dictionary} />
-        <main className="min-h-screen">{children}</main>
+      <body className={`${nunito.variable} ${nunitoSans.variable} flex flex-col min-h-screen`} suppressHydrationWarning>
+        <div className="flex-grow">
+          <Header lang={params.lang} dictionary={dictionary} />
+          <main className="min-h-[calc(100vh-200px)]">{children}</main>
+        </div>
         <Footer lang={params.lang} />
       </body>
     </html>
