@@ -13,7 +13,7 @@ export default function Footer({ lang }: FooterProps) {
   const [showLegalDropdown, setShowLegalDropdown] = useState(false);
 
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[724px] pb-20">
+    <section className="relative w-full bg-white py-10">
       {/* Background Image - same as hero */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image
@@ -29,10 +29,10 @@ export default function Footer({ lang }: FooterProps) {
         />
       </div>
 
-      <div className="relative w-full max-w-[1440px] h-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Black Content Box */}
         <Card 
-          className="absolute left-1/2 -translate-x-1/2 top-[40px] sm:top-[60px] w-[calc(100%-32px)] max-w-[1297px] bg-[#0B0B0B]"
+          className="w-full max-w-[1297px] mx-auto bg-[#0B0B0B] mb-10"
           style={{ 
             borderRadius: '12.5px',
             minHeight: 'auto',
@@ -99,15 +99,10 @@ export default function Footer({ lang }: FooterProps) {
             </Link>
           </div>
         </Card>
-      </div>
 
-      {/* Floating Footer Bar - Improved Responsiveness */}
-      <div 
-        className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 
-                   mt-[350px] sm:mt-[500px] md:mt-[600px] lg:mt-[700px]"
-      >
+        {/* Floating Footer Bar */}
         <div 
-          className="w-[calc(100%-32px)] max-w-[1297px] mx-auto h-auto md:h-[64.85px] 
+          className="w-full max-w-[1297px] mx-auto h-auto md:h-[64.85px] 
                      bg-white flex flex-col md:flex-row items-center justify-between 
                      px-4 sm:px-[21.62px] py-4 md:py-0 relative"
           style={{
