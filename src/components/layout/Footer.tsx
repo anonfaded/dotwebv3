@@ -113,8 +113,8 @@ export default function Footer({ lang }: FooterProps) {
             <Image 
               src="/footer.png" 
               alt="DotWeb Logo" 
-              width={120}
-              height={36}
+              width={170}
+              height={55}
               className="object-contain"
             />
           </div>
