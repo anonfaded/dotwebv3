@@ -105,7 +105,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   <>
                     {/* Invisible connection area between button and menu */}
                     <div 
-                      className="absolute w-full h-[69px] bottom-0 translate-y-full"
+                      className="absolute w-full h-[60px] bottom-0 translate-y-full"
                       style={{ pointerEvents: 'auto' }}
                     />
                     
@@ -124,14 +124,14 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     >
                       {/* Arrow */}
                       <div 
-                        className="absolute top-[60px] left-[20%] transform -translate-x-1/2 w-4 h-4 bg-white rotate-45 z-10"
+                        className="absolute top-[52px] left-[20%] transform -translate-x-1/2 w-4 h-4 bg-white rotate-45 z-10"
                         style={{
                           transform: showSolutionsDropdown ? 'translateX(-50%) rotate(225deg)' : 'translateX(-50%) rotate(45deg)'
                         }}
                       />
 
                       {/* Menu content */}
-                      <div className="absolute top-[69px] w-full rounded-[12px] bg-white shadow-lg py-2 px-4 z-20">
+                      <div className="absolute top-[60px] w-full rounded-[12px] bg-white shadow-lg py-2 px-4 z-20">
                         <div className="space-y-2 pt-2">
                           {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                             <Link 

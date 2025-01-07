@@ -56,7 +56,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <>
           {/* Invisible connection area between button and dropdown */}
           <div 
-            className="absolute w-full h-[69px] bottom-0 translate-y-full"
+            className="absolute w-full h-[50px] bottom-0 translate-y-full"
             style={{ pointerEvents: 'auto' }}
           />
           
@@ -69,7 +69,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
               top: '100%',
             }}
           >
-            <div className="absolute top-[69px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
+            <div className="absolute top-[50px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
               {/* Triangular Arrow */}
               <div
                 className="absolute top-[-10px] left-1/2 -translate-x-1/2
