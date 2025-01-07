@@ -115,29 +115,29 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute w-[374px]"
+                      className="absolute w-auto"
                       style={{
-                        left: '50%',
-                        transform: 'translateX(-30%)',
+                        left: 0,
+                        transform: 'translateX(0)',
                         top: '100%',
                       }}
                     >
                       {/* Arrow */}
                       <div 
-                        className="absolute top-[52px] left-[20%] transform -translate-x-1/2 w-4 h-4 bg-white rotate-45 z-10"
+                        className="absolute top-[52px] right-[-121px] w-4 h-4 bg-white rotate-45 z-10"
                         style={{
-                          transform: showSolutionsDropdown ? 'translateX(-50%) rotate(225deg)' : 'translateX(-50%) rotate(45deg)'
+                          transform: showSolutionsDropdown ? 'rotate(225deg)' : 'rotate(45deg)'
                         }}
                       />
 
                       {/* Menu content */}
-                      <div className="absolute top-[60px] w-full rounded-[12px] bg-white shadow-lg py-2 px-4 z-20">
-                        <div className="space-y-2 pt-2">
+                      <div className="absolute top-[60px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20">
+                        <div className="space-y-1 pb-0">
                           {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                             <Link 
                               key={index}
                               href="#" 
-                              className="block py-1 px-2 hover:bg-gray-100 rounded flex items-center space-x-3"
+                              className="block py-1 px-1 hover:bg-gray-100 rounded flex items-center space-x-2 items-start"
                             >
                               <Image 
                                 src={`/solutions${index + 1}.png`}
@@ -145,7 +145,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                                 width={24} 
                                 height={24} 
                                 priority 
-                                className="filter brightness-0"
+                                className="filter brightness-0 self-start mt-1"
                               />
                               <div>
                                 <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
