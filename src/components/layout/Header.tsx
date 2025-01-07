@@ -132,12 +132,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
 
                       {/* Menu content */}
                       <div className="absolute top-[60px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20">
-                        <div className="space-y-1 pb-0">
+                        <div className="space-y-1 pt-2 pb-0">
                           {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                             <Link 
                               key={index}
                               href="#" 
-                              className="block py-1 px-1 hover:bg-gray-100 rounded flex items-center space-x-2 items-start"
+                              className={`block py-1 px-1 rounded flex items-center space-x-2 items-start group ${index === 2 ? 'pb-0' : 'pb-1'}`}
                             >
                               <Image 
                                 src={`/solutions${index + 1}.png`}
@@ -145,13 +145,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                                 width={24} 
                                 height={24} 
                                 priority 
-                                className="filter brightness-0 self-start mt-1"
+                                className="filter brightness-0 self-start mt-1 group-hover:filter-none group-hover:brightness-100"
                               />
                               <div>
-                                <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
+                                <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A] group-hover:text-[#2563EB]">
                                   {item}
                                 </h4>
-                                <p className="font-nunito-sans text-[12px] text-gray-600">
+                                <p className="font-nunito-sans text-[12px] text-gray-600 group-hover:text-[#2563EB]">
                                   {['Smart solutions for efficient operations', 'Efficient tools for capturing leads', 'Streamline tasks and boost productivity'][index]}
                                 </p>
                               </div>
