@@ -88,6 +88,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     width={20} 
                     height={20} 
                     priority 
+                    className="filter brightness-0"
                   />
                   <span>{navigation.solutions || 'Solutions'}</span>
                   <Image 
@@ -96,7 +97,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     width={20} 
                     height={20} 
                     priority 
-                    className={`transform ${showSolutionsDropdown ? 'rotate-180' : ''}`}
+                    className={`transform ${showSolutionsDropdown ? 'rotate-180' : ''} filter brightness-0`}
                   />
                 </button>
 
@@ -144,6 +145,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                                 width={24} 
                                 height={24} 
                                 priority 
+                                className="filter brightness-0"
                               />
                               <div>
                                 <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
@@ -174,6 +176,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     width={20} 
                     height={20} 
                     priority 
+                    className="filter brightness-0"
                   />
                   <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">
                     {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
