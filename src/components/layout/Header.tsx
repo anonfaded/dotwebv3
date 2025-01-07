@@ -96,6 +96,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     width={20} 
                     height={20} 
                     priority 
+                    className={`transform ${showSolutionsDropdown ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -119,6 +120,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       {/* Arrow */}
                       <div 
                         className="absolute top-[60px] left-[20%] transform -translate-x-1/2 w-4 h-4 bg-white rotate-45 z-10"
+                        style={{
+                          transform: showSolutionsDropdown ? 'translateX(-50%) rotate(225deg)' : 'translateX(-50%) rotate(45deg)'
+                        }}
                       />
 
                       {/* Menu content */}
