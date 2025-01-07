@@ -52,7 +52,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
       <motion.header 
-        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white shadow-lg px-3"
+        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
