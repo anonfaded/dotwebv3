@@ -109,7 +109,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     />
                     
                     {/* Dropdown menu */}
-                    <div 
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
                       className="absolute w-[374px]"
                       style={{
                         left: '50%',
@@ -153,7 +157,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </>
                 )}
               </div>
