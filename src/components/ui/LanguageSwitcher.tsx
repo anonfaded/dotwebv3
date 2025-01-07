@@ -34,9 +34,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <Image
           src="/language.png"
           alt="Language"
-          width={24}
-          height={24}
-          className="w-6 h-6"
+          width={20}
+          height={20}
+          className="w-5 h-5"
           priority
           unoptimized
         />
@@ -44,9 +44,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <Image
           src="/language-dropdown.png"
           alt="Dropdown"
-          width={24}
-          height={24}
-          className="w-6 h-6"
+          width={20}
+          height={20}
+          className="w-5 h-5"
           priority
           unoptimized
         />

@@ -131,13 +131,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                       />
 
                       {/* Menu content */}
-                      <div className="absolute top-[69px] w-full rounded-[12px] bg-white shadow-lg py-4 px-4 z-20">
-                        <div className="space-y-4">
+                      <div className="absolute top-[69px] w-full rounded-[12px] bg-white shadow-lg py-2 px-4 z-20">
+                        <div className="space-y-2 pt-2">
                           {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                             <Link 
                               key={index}
                               href="#" 
-                              className="block py-3 px-2 hover:bg-gray-100 rounded flex items-center space-x-3"
+                              className="block py-1 px-2 hover:bg-gray-100 rounded flex items-center space-x-3"
                             >
                               <Image 
                                 src={`/solutions${index + 1}.png`}
