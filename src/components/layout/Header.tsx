@@ -80,13 +80,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               >
                 <button 
                   ref={solutionsButtonRef}
-                  className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black"
+                  className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black"
                 >
                   <Image 
                     src="/home.png" 
                     alt="Solutions" 
-                    width={20} 
-                    height={20} 
+                    width={22} 
+                    height={22} 
                     priority 
                     className="filter brightness-0"
                   />
@@ -94,8 +94,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   <Image 
                     src="/dropdown.png" 
                     alt="Dropdown" 
-                    width={20} 
-                    height={20} 
+                    width={22} 
+                    height={22} 
                     priority 
                     className={`transform ${showSolutionsDropdown ? 'rotate-180' : ''} filter brightness-0`}
                   />
@@ -124,7 +124,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     >
                       {/* Arrow */}
                       <div 
-                        className="absolute top-[52px] right-[-121px] w-4 h-4 bg-white rotate-45 z-10"
+                        className="absolute top-[52px] right-[-129px] w-4 h-4 bg-white rotate-45 z-10"
                         style={{
                           transform: showSolutionsDropdown ? 'rotate(225deg)' : 'rotate(45deg)'
                         }}
@@ -173,12 +173,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   <Image 
                     src={`/${item === 'case-studies' ? 'casestudies' : item}.png`}
                     alt={item} 
-                    width={20} 
-                    height={20} 
+                    width={22} 
+                    height={22} 
                     priority 
                     className="filter brightness-0"
                   />
-                  <span className="font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">
+                  <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black">
                     {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
                   </span>
                 </Link>
