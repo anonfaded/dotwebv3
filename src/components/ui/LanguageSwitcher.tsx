@@ -30,14 +30,14 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
     >
       <button
         ref={buttonRef}
-        className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black"
+        className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black"
       >
         <Image
           src="/language.png"
           alt="Language"
-          width={20}
-          height={20}
-          className="w-5 h-5"
+          width={22}
+          height={22}
+          className="w-[22px] h-[22px]"
           priority
           unoptimized
         />
@@ -45,9 +45,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <Image
           src="/language-dropdown.png"
           alt="Dropdown"
-          width={20}
-          height={20}
-          className={`w-5 h-5 transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
+          width={22}
+          height={22}
+          className={`w-[22px] h-[22px] transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
           priority
           unoptimized
         />
@@ -95,7 +95,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                         className={`
                           w-full h-full
                           flex items-center justify-center
-                          font-nunito text-[14px] font-[500]
+                          font-nunito text-[17px] font-[500]
                           leading-[16.67px] text-center
                           text-[#0B0B0B]
                           transition-colors

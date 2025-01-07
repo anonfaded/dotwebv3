@@ -193,7 +193,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             <>
               <LanguageSwitcher currentLang={lang} />
               <Link href={`/${lang}/demo`}>
-                <button className="bg-[#2A2A2A] text-white px-4 py-2 rounded-lg font-nunito text-sm hover:bg-black transition-colors whitespace-nowrap">
+                <button className="bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors whitespace-nowrap w-[165px] h-[44px]">
                   {navigation.demo || 'Request a Demo'}
                 </button>
               </Link>
