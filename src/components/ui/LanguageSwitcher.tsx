@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface LanguageSwitcherProps {
   currentLang: string;
@@ -46,74 +47,80 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
           alt="Dropdown"
           width={20}
           height={20}
-          className="w-5 h-5"
+          className={`w-5 h-5 transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
           priority
           unoptimized
         />
       </button>
 
-      {showDropdown && (
-        <>
-          {/* Invisible connection area between button and dropdown */}
-          <div 
-            className="absolute w-full h-[50px] bottom-0 translate-y-full"
-            style={{ pointerEvents: 'auto' }}
-          />
-          
-          {/* Dropdown menu */}
-          <div 
-            className="absolute w-[120px]"
-            style={{
-              left: '50%',
-              transform: 'translateX(-50%)',
-              top: '100%',
-            }}
-          >
-            <div className="absolute top-[50px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
-              {/* Triangular Arrow */}
-              <div
-                className="absolute top-[-10px] left-1/2 -translate-x-1/2
-                         border-l-[10px] border-l-transparent
-                         border-r-[10px] border-r-transparent
-                         border-b-[10px] border-b-white"
-              />
+      <AnimatePresence>
+        {showDropdown && (
+          <>
+            {/* Invisible connection area between button and dropdown */}
+            <div 
+              className="absolute w-full h-[50px] bottom-0 translate-y-full"
+              style={{ pointerEvents: 'auto' }}
+            />
+            
+            {/* Dropdown menu */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute w-[120px]"
+              style={{
+                left: '50%',
+                transform: 'translateX(-50%)',
+                top: '100%',
+              }}
+            >
+              <div className="absolute top-[50px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
+                {/* Triangular Arrow */}
+                <div
+                  className="absolute top-[-10px] left-1/2 -translate-x-1/2
+                           border-l-[10px] border-l-transparent
+                           border-r-[10px] border-r-transparent
+                           border-b-[10px] border-b-white"
+                />
 
-              <div className="flex flex-col h-[180px]">
-                {Object.entries(langs).map(([code, name], index) => (
-                  <div
-                    key={code}
-                    className="flex flex-col flex-1 items-center justify-center"
-                  >
-                    <Link
-                      href={`/${code}/${path}`}
-                      className={`
-                        w-full h-full
-                        flex items-center justify-center
-                        font-nunito text-[14px] font-[500]
-                        leading-[16.67px] text-center
-                        text-[#0B0B0B]
-                        transition-colors
-                        ${currentLang === code
-                          ? 'bg-[#F6F2EF] text-[#2A2A2A] font-medium'
-                          : 'hover:bg-[#F6F2EF] text-[#677489]'
-                        }
-                        ${index === 0 ? 'rounded-t-[12px]' : ''}
-                        ${index === Object.keys(langs).length - 1 ? 'rounded-b-[12px]' : ''}
-                      `}
-                      style={{
-                        textUnderlinePosition: 'from-font',
-                        textDecorationSkipInk: 'none'
-                      }}
+                <div className="flex flex-col h-[180px]">
+                  {Object.entries(langs).map(([code, name], index) => (
+                    <div
+                      key={code}
+                      className="flex flex-col flex-1 items-center justify-center"
                     >
-                      {name}
-                    </Link>
-                  </div>
-                ))}
+                      <Link
+                        href={`/${code}/${path}`}
+                        className={`
+                          w-full h-full
+                          flex items-center justify-center
+                          font-nunito text-[14px] font-[500]
+                          leading-[16.67px] text-center
+                          text-[#0B0B0B]
+                          transition-colors
+                          ${currentLang === code
+                            ? 'bg-[#F6F2EF] text-[#2A2A2A] font-medium'
+                            : 'hover:bg-[#F6F2EF] text-[#677489]'
+                          }
+                          ${index === 0 ? 'rounded-t-[12px]' : ''}
+                          ${index === Object.keys(langs).length - 1 ? 'rounded-b-[12px]' : ''}
+                        `}
+                        style={{
+                          textUnderlinePosition: 'from-font',
+                          textDecorationSkipInk: 'none'
+                        }}
+                      >
+                        {name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-        </>
-      )}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
