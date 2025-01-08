@@ -22,6 +22,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const solutionsButtonRef = useRef<HTMLButtonElement>(null);
   const navigation = dictionary.navigation || {};
 
@@ -29,9 +30,19 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
     };
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
     handleResize();
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const MobileMenu = () => (
@@ -52,7 +63,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
       <motion.header 
-        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3"
+        className={`relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] 
+          ${isScrolled 
+            ? 'bg-white/60 backdrop-blur-lg shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)]' 
+            : 'bg-white shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)]'
+          } px-3 transition-all duration-300 ease-in-out`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -61,7 +76,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
         <div className="flex items-center space-x-2 lg:space-x-4">
           <Link href={`/${lang}`}>
             <Image 
-              src="/dotweb-light.png" 
+              src="/dotweb-transparent.png" 
               alt="DotWeb" 
               width={130} 
               height={43} 
