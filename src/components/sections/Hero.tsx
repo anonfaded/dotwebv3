@@ -28,7 +28,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
     <section className="relative h-[800px] sm:h-[900px] lg:h-[1030px] flex flex-col justify-start overflow-hidden z-[1]">
       {/* adjust above height to make the hero shorter, and the z index is making the overlap of chatsection smooth else the color would be dull visible */}
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full bg-[#F6F2F0]">
         <Image
           src="/hero-bg.png"
           alt="Background pattern"
@@ -38,7 +38,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
         />
       </div>
       
-      <div className="absolute inset-0 bg-black/25 z-[2]" />
+      <div className="absolute inset-0 bg-transparent z-[2]" />
 
       <div className="container mx-auto px-4 relative z-[3] flex flex-col items-center justify-start h-full pt-[175px]">
         <div className="w-full max-w-6xl mx-auto relative">
