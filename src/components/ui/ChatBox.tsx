@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { FC } from 'react';
-import { CSSProperties } from 'react';
+
 
 interface Message {
   id: number;
