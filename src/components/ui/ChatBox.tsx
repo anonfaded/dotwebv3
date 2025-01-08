@@ -26,10 +26,18 @@ export default function ChatBox() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const chatContainer = chatContainerRef.current;
+    if (chatContainer) {
+      // Always scroll to the bottom when messages change
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }, [messages]);
+
+  useEffect(() => {
     if (chatContainerRef.current && !isInitialView) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
-  }, [messages, isInitialView]);
+  }, [isInitialView]);
 
   const handlePrePromptClick = (prompt: string) => {
     setSelectedPrePrompt(prompt);
@@ -46,27 +54,30 @@ export default function ChatBox() {
       sender: 'user'
     };
 
-    // Add to messages
+    // Update messages state
     setMessages(prevMessages => [...prevMessages, newUserMessage]);
 
-    // Simulate bot response (you can replace this with actual API call)
+    // Simulate bot response
+    const randomResponse = DUMMY_RESPONSES[Math.floor(Math.random() * DUMMY_RESPONSES.length)];
+    const botMessage: Message = {
+      id: Date.now() + 1,
+      text: randomResponse,
+      sender: 'bot'
+    };
+
+    // Add bot response after a short delay
     setTimeout(() => {
-      const botResponse: Message = {
-        id: Date.now(),
-        text: `I'll help you with "${inputText}". What specific details would you like to know?`,
-        sender: 'bot'
-      };
-      setMessages(prevMessages => [...prevMessages, botResponse]);
+      setMessages(prevMessages => [...prevMessages, botMessage]);
+      
+      // Ensure initial view is set to false
+      if (isInitialView) {
+        setIsInitialView(false);
+      }
     }, 500);
 
-    // Clear input
+    // Reset input and pre-prompt
     setInputText('');
-
-    // Transition from initial view
-    if (isInitialView) {
-      setIsInitialView(false);
-      setSelectedPrePrompt(null);
-    }
+    setSelectedPrePrompt(null);
   };
 
   return (
@@ -94,14 +105,14 @@ export default function ChatBox() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 px-[clamp(10px,2vw,12px)] sm:px-[clamp(10px,2vw,14px)] lg:px-[clamp(12px,2.2vw,18px)] bg-white rounded-b-lg flex flex-col h-full overflow-hidden">
+        <div className="flex-1 px-[clamp(6px,1.5vw,10px)] sm:px-[clamp(6px,1.5vw,12px)] lg:px-[clamp(8px,2vw,14px)] bg-white rounded-b-lg flex flex-col h-full overflow-hidden">
           {/* Chat Messages */}
           <div 
             ref={chatContainerRef}
-            className="flex-grow overflow-hidden"
+            className="flex-grow overflow-y-auto scroll-smooth"
             style={{ 
-              height: 'calc(100% - 180px)', 
-              maxHeight: 'calc(100% - 180px)'
+              height: 'calc(100% - 90px)', 
+              maxHeight: 'calc(100% - 90px)'
             }}
           >
             {isInitialView ? (
@@ -172,9 +183,14 @@ export default function ChatBox() {
             ) : (
               <div className="h-full overflow-hidden">
                 <div className="space-y-2 py-4 px-4 h-full max-h-full overflow-y-auto">
-                  {messages.map((message) => (
+                  {messages.map((message, index) => (
                     <div 
                       key={message.id} 
+                      ref={index === messages.length - 1 ? (el) => {
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                      } : null}
                       className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div 
