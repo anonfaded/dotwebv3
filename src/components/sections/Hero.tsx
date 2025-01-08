@@ -101,7 +101,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               <h1 className="font-nunito text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-center">
                 <span className="block">Workflows Built for</span>
                 <span className="block mt-2">
-                  <span className="bg-white text-[#016EC6] rounded-xl px-2 sm:px-4 inline-block">Reduced Overhead</span> and
+                  <span className="bg-[#f5faff] text-[#016EC6] rounded-xl px-2 sm:px-4 inline-block">Reduced Overhead</span> and
                 </span>
                 <span className="block mt-2">Better Results</span>
               </h1>
