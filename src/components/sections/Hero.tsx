@@ -131,7 +131,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Buttons */}
               <motion.div 
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-0 sm:mt-4 z-10 relative"
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 -mt-12 sm:-mt-6 z-10 relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
