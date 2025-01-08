@@ -22,6 +22,7 @@ export default function ChatBox() {
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isInitialView, setIsInitialView] = useState(true);
+  const [selectedPrePrompt, setSelectedPrePrompt] = useState<string | null>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,38 +31,42 @@ export default function ChatBox() {
     }
   }, [messages, isInitialView]);
 
+  const handlePrePromptClick = (prompt: string) => {
+    setSelectedPrePrompt(prompt);
+    setInputText(prompt);
+  };
+
   const sendMessage = () => {
     if (inputText.trim() === '') return;
 
-    // Switch to chat view if in initial view
-    if (isInitialView) {
-      setIsInitialView(false);
-    }
-
+    // Add user message
     const newUserMessage: Message = {
       id: Date.now(),
       text: inputText,
       sender: 'user'
     };
 
+    // Add to messages
     setMessages(prevMessages => [...prevMessages, newUserMessage]);
-    setInputText('');
 
-    // Simulate bot response
+    // Simulate bot response (you can replace this with actual API call)
     setTimeout(() => {
       const botResponse: Message = {
-        id: Date.now() + 1,
-        text: DUMMY_RESPONSES[Math.floor(Math.random() * DUMMY_RESPONSES.length)],
+        id: Date.now(),
+        text: `I'll help you with "${inputText}". What specific details would you like to know?`,
         sender: 'bot'
       };
       setMessages(prevMessages => [...prevMessages, botResponse]);
-    }, 1000);
-  };
+    }, 500);
 
-  const handlePrePromptClick = (prompt: string) => {
-    setIsInitialView(false);
-    setInputText(prompt);
-    sendMessage();
+    // Clear input
+    setInputText('');
+
+    // Transition from initial view
+    if (isInitialView) {
+      setIsInitialView(false);
+      setSelectedPrePrompt(null);
+    }
   };
 
   return (
@@ -137,7 +142,7 @@ export default function ChatBox() {
                   ].map((prompt, index) => (
                     <div 
                       key={index} 
-                      className="bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex flex-col justify-center group"
+                      className={`bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex flex-col justify-center group ${selectedPrePrompt === prompt.title ? 'bg-gray-200' : ''}`}
                       onClick={() => handlePrePromptClick(prompt.title)}
                     >
                       <h4 className="font-nunito-sans text-[clamp(12px,1.2vw,16.02px)] font-bold leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-0.5 pt-3 pl-2">
@@ -153,7 +158,12 @@ export default function ChatBox() {
                         height={39.05}
                         priority
                         unoptimized
-                        className="absolute right-6 top-1/2 -translate-y-1/2 hidden group-hover:block cursor-pointer"
+                        className={`absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer transition-opacity duration-300 
+                          ${selectedPrePrompt === prompt.title ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          sendMessage();
+                        }}
                       />
                     </div>
                   ))}
