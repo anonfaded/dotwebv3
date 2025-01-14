@@ -14,8 +14,8 @@ export default function ComparisonStats() {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
         {/* Left Stat */}
         <div className="text-center lg:w-1/4 w-full">
-          <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35]">15h</h2>
-          <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto mt-2">
+          <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35] mt-4">15h</h2>
+          <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto -mt-3">
             Time saved per employee each month through optimized workflows.
           </p>
         </div>
@@ -59,8 +59,8 @@ export default function ComparisonStats() {
 
         {/* Right Stat */}
         <div className="text-center lg:w-1/4 w-full">
-          <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35]">2x</h2>
-          <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto mt-2">
+          <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35] mt-4">2x</h2>
+          <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto -mt-3">
             Accelerated project completion rates through intelligent automation.
           </p>
         </div>
