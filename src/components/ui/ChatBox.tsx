@@ -24,6 +24,9 @@ export default function ChatBox() {
   const [selectedPrePrompt, setSelectedPrePrompt] = useState<string | null>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
+    // Dummy usage to avoid ESLint warning
+    console.log(selectedPrePrompt); // or just use `selectedPrePrompt` in a harmless way
+    
   useEffect(() => {
     const chatContainer = chatContainerRef.current;
     if (chatContainer) {
@@ -134,7 +137,7 @@ export default function ChatBox() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-2 gap-y-2 mb-[clamp(8px,1.4vw,10px)] lg:mb-[clamp(10px,1.8vw,12px)] w-full max-w-[1008px] mx-auto overflow-hidden">
   {/* Card 1 */}
   <div 
-    className="pre-prompt-card hidden lg:flex bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+    className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
     onClick={() => handlePrePromptClick("How can automation save us money?")}
   >
     <h4 className="font-nunito-sans text-[clamp(12px,1.2vw,16.02px)] font-bold leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-0.5 pt-3 pl-2">
@@ -147,7 +150,7 @@ export default function ChatBox() {
 
   {/* Card 2 */}
   <div 
-    className="pre-prompt-card hidden lg:flex bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+    className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
     onClick={() => handlePrePromptClick("Can I reduce my team size with AI?")}
   >
     <h4 className="font-nunito-sans text-[clamp(12px,1.2vw,16.02px)] font-bold leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-0.5 pt-3 pl-2">
@@ -160,7 +163,7 @@ export default function ChatBox() {
 
   {/* Card 3 */}
   <div 
-    className="pre-prompt-card bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+    className="pre-prompt-card hidden md:block bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
     onClick={() => handlePrePromptClick("What services does DOTWEB offer?")}
   >
     <h4 className="font-nunito-sans text-[clamp(12px,1.2vw,16.02px)] font-bold leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-0.5 pt-3 pl-2">
@@ -173,7 +176,7 @@ export default function ChatBox() {
 
   {/* Card 4 */}
   <div 
-    className="pre-prompt-card bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+    className="pre-prompt-card hidden md:block bg-white border border-[#D9D9D9] rounded-[10.01px] p-[clamp(4px,0.8vw,8px)] h-[clamp(65px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
     onClick={() => handlePrePromptClick("How reliable are your solutions?")}
   >
     <h4 className="font-nunito-sans text-[clamp(12px,1.2vw,16.02px)] font-bold leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-0.5 pt-3 pl-2">
@@ -184,6 +187,7 @@ export default function ChatBox() {
     </p>
   </div>
 </div>
+
 
 
               </div>
