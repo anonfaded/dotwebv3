@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
-import { Input, Slider, Button, Typography } from 'antd';
+import { Input, Slider, Typography } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 
