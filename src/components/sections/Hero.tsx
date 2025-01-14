@@ -138,7 +138,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               >
                 <Link
                   href={`/${lang}/start`}
-                  className="start-button flex items-center justify-center gap-2 sm:gap-4 bg-[#0B0B0B] text-white rounded-xl px-6 sm:px-8 py-3 sm:py-4 hover:bg-black/90 transition-colors z-20 w-full sm:w-auto"
+                  className="group start-button flex items-center justify-center gap-2 sm:gap-4 bg-[#0B0B0B] text-white rounded-xl px-6 sm:px-8 py-3 sm:py-4 hover:bg-black/90 transition-all duration-300 hover:scale-[1.02] z-20 w-full sm:w-auto"
                 >
                   <span className="text-base sm:text-lg font-semibold whitespace-nowrap">
                     {dictionary.navigation.start}
@@ -149,6 +149,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                     width={24}
                     height={24}
                     priority
+                    className="transform -rotate-45 transition-transform duration-300 group-hover:rotate-0"
                   />
                 </Link>
                 <Link
