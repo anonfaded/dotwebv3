@@ -2,8 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, Button } from 'antd';
+import { Card } from 'antd';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface FooterProps {
   lang: string;
@@ -111,69 +112,66 @@ export default function Footer({ lang }: FooterProps) {
           </div>
 
           {/* Right side - Legal Information Dropdown */}
-          <div className="relative w-full md:w-auto flex flex-col md:flex-row items-center justify-center md:justify-end gap-4">
-            <div className="flex items-center gap-2">
-              <div className="relative">
-                <button 
-                  className="flex items-center gap-2 px-[10px] py-[6px] md:px-[15.84px] md:py-[9.9px] hover:bg-gray-50 rounded-lg transition-colors"
-                  onClick={() => setShowLegalDropdown(!showLegalDropdown)}
-                  onBlur={() => setTimeout(() => setShowLegalDropdown(false), 200)}
-                >
-                  <Image 
-                    src="/footer-arrowup.png" 
-                    alt="Legal" 
-                    width={16} 
-                    height={16}
-                    className="md:w-[19.8px] md:h-[19.8px]"
-                  />
-                  <span className="font-nunito text-[14px] md:text-[17.12px] leading-[19.8px] text-[#0B0B0B]">
-                    Legal Information
-                  </span>
-                </button>
-
-                {showLegalDropdown && (
-                  <div 
-                    className="absolute bottom-full right-0 mb-2 min-w-[250px] rounded-xl bg-white p-4 shadow-lg z-50"
-                    onMouseEnter={() => setShowLegalDropdown(true)}
-                    onMouseLeave={() => setShowLegalDropdown(false)}
-                  >
+          {/* Legal Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setShowLegalDropdown(true)}
+            onMouseLeave={() => setShowLegalDropdown(false)}
+          >
+            <button
+              className="flex items-center space-x-2 font-nunito text-[17px] font-[400] "
+            >
+              
+              <Image
+                src="/footer-arrowup.png"
+                alt="Dropdown"
+                width={16}
+                height={16}
+                priority
+                className={` ${
+                  showLegalDropdown ? "rotate-180" : ""
+                }`}
+              />
+              <span className="font-nunito text-[17.12px] font-[400] " >Legal Information</span>
+            </button>
+            {/* Dropdown Menu */}
+            {showLegalDropdown && (
+                <>
+                    {/* Invisible connection area between button and menu */}
                     <div 
-                      className="absolute bottom-[-8px] h-4 w-4 rotate-45 transform bg-white shadow-lg"
-                      style={{ 
-                        left: '110px', 
-                        zIndex: -1 
-                      }}
+                      className="absolute w-full h-[60px] bottom-16 translate-y-full"
+                      style={{ pointerEvents: 'auto' }}
                     />
-                    <div className="space-y-2">
-                      {[
-                        { title: 'Privacy Policy', href: `/${lang}/privacy` },
-                        { title: 'Terms & Conditions', href: `/${lang}/terms` },
-                        { title: 'Impressum', href: `/${lang}/impressum` },
-                      ].map((item) => (
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute bottom-full right-10 mb-10 bg-white rounded-lg shadow-lg z-10 whitespace-nowrap pt-2"
+              >
+                <ul className="pt-0 mb-2">
+                  {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+                    (item, index) => (
+                      <li key={index} className="group">
                         <Link
-                          key={item.title}
-                          href={item.href}
-                          className="block whitespace-nowrap px-4 py-2 rounded-lg transition-colors hover:bg-[#F6F2EF] text-[#677489]"
-                          onClick={() => setShowLegalDropdown(false)}
+                          href="#"
+                          className="block px-4 py-1.5 text-sm text-gray-700 hover:bg-[#F6F2EF] hover:text-gray-900 transition-all duration-200"
                         >
-                          {item.title}
+                          {item}
                         </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <Link href={`/${lang}/settings`} className="rounded-lg p-2 transition-colors hover:bg-[#F6F2EF]">
-                <Image
-                  src="/settings.png"
-                  alt="Settings"
-                  width={16}
-                  height={16}
-                  className="md:w-[20px] md:h-[20px]"
-                />
-              </Link>
-            </div>
+                      </li>
+                    )
+                  )}
+                </ul>
+                {/* Downward pointing arrow */}
+                <div className="absolute -bottom-2 right-[104px] w-4 h-4 bg-white transform rotate-45"/>
+              </motion.div>
+            </>
+                             
+            )}
           </div>
+        
         </div>
       </div>
     </section>
