@@ -103,7 +103,7 @@ export default function Footer({  }: FooterProps) {
           {/* Left side - Logo */}
           <div className="flex items-center justify-center w-full md:w-auto mb-4 md:mb-0">
             <Image 
-              src="/footer.png" 
+              src="/dotweb-transparent.png" 
               alt="DotWeb Logo" 
               width={170}
               height={55}
