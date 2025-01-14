@@ -61,30 +61,19 @@ export default function Footer({ lang }: FooterProps) {
 
           {/* Buttons Container */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-2">
-            <Button 
-              type="text"
-              className="flex items-center w-full md:w-[565.32px] h-[50px] md:h-[69.91px] bg-[#F7F2EF] rounded-[87.38px] hover:bg-[#e7e2df] group"
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '15px',
-              }}
-            >
-              <span className="font-nunitoSans text-[16px] md:text-[19.97px] font-semibold leading-none text-black group-hover:text-white whitespace-nowrap">
-                Start the Conversation
-              </span>
-              <svg 
-                width={20} 
-                height={20} 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="group-hover:text-white w-[20px] md:w-[24px] h-[20px] md:h-[24px]"
+          <Link 
+                href="#"
+                className="group inline-flex items-center bg-[#ffffff] text-black px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:text-black hover:opacity-90 transition-all duration-300 hover:scale-[1.02]"
               >
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Button>
+                <span className="font-nunitoSans text-[16px] md:text-[19.97px] font-semibold leading-none whitespace-nowrap">Start the Conversation</span>
+                <svg 
+                  className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
+                  viewBox="0 0 16 16" 
+                  fill="none"
+                >
+                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
             <Link 
               href="#"
               className="mt-4 md:mt-0 text-center font-nunitoSans text-[16px] md:text-[19.97px] font-normal text-[#F7F2EF] hover:text-[#e7e2df] transition-colors whitespace-nowrap"

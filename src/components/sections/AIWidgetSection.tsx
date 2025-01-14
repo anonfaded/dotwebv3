@@ -28,10 +28,14 @@ export default function AIWidgetSection() {
               </p>
               <Link 
                 href="#"
-                className="inline-flex items-center bg-[#0B0B0B] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-opacity"
+                className="group inline-flex items-center bg-[#0B0B0B] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02]"
               >
                 <span className="text-[16px] lg:text-[19.51px]">See How Lead Widgets Work</span>
-                <svg className="ml-4 lg:ml-6 w-4 h-4" viewBox="0 0 16 16" fill="none">
+                <svg 
+                  className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
+                  viewBox="0 0 16 16" 
+                  fill="none"
+                >
                   <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
