@@ -10,7 +10,7 @@ interface FooterProps {
   lang: string;
 }
 
-export default function Footer({ lang }: FooterProps) {
+export default function Footer({  }: FooterProps) {
   const [showLegalDropdown, setShowLegalDropdown] = useState(false);
 
   return (
