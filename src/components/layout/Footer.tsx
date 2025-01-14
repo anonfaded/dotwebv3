@@ -51,16 +51,16 @@ export default function Footer({ lang }: FooterProps) {
           }}
         >
           {/* Text Content */}
-          <div className="w-full max-w-[852px] text-center mb-6 md:mb-8 pt-6 md:pt-12">
-            <h2 className="font-nunito text-[28px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-semibold leading-[1.2] tracking-[-1.5px] md:tracking-[-2.67px] text-[#F7F2EF]">
+          <div className="w-full max-w-[852px] text-center mb-4 md:mb-6 pt-4 md:pt-8">
+            <h2 className="font-nunito text-[24px] sm:text-[32px] md:text-[48px] lg:text-[64px] font-semibold leading-[1.2] tracking-[-1.5px] md:tracking-[-2.67px] text-[#F7F2EF]">
               Our Expertise
               <br />
               Brings Your Vision to Life
             </h2>
           </div>
 
-          {/* Buttons Container */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-2">
+          {/* Buttons Container - Reduced top spacing */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-4 -mt-7">
           <Link 
                 href="#"
                 className="group inline-flex items-center bg-[#ffffff] text-black px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:text-black hover:opacity-90 transition-all duration-300 hover:scale-[1.02]"
