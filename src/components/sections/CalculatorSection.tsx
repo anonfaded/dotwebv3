@@ -137,7 +137,7 @@ export default function CalculatorSection() {
                   <div className="flex-grow">
                     <Slider
                       min={1}
-                      max={100}
+                      max={15}
                       value={inputs.numEmployees}
                       onChange={handleSliderChange}
                       trackStyle={{ backgroundColor: '#0B0B0B' }}
