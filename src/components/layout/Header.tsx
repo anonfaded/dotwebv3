@@ -25,6 +25,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const solutionsButtonRef = useRef<HTMLButtonElement>(null);
   const navigation = dictionary.navigation || {};
+  const menuTopPosition = isScrolled ? '80px' : '100px';
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,7 +53,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
-          className="fixed inset-x-0 top-[80px] bg-white shadow-lg z-50 px-4 py-6 rounded-b-2xl max-h-[calc(100vh-80px)] overflow-y-auto"
+          style={{ top: menuTopPosition }}
+          className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] max-h-[calc(100vh-80px)] overflow-y-auto"
         >
           <div className="flex flex-col space-y-4">
             {/* Solutions Section */}
@@ -68,15 +70,31 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               
               {/* Solutions submenu */}
               <div className="pl-4 space-y-3">
-                {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
+                {[
+                  { 
+                    title: 'Intelligent Automation Tools',
+                    desc: 'Smart solutions for efficient operations',
+                    icon: '/solutions1.png'
+                  },
+                  { 
+                    title: 'Smart Lead Capture Systems',
+                    desc: 'Efficient tools for capturing leads',
+                    icon: '/solutions2.png'
+                  },
+                  { 
+                    title: 'AI-Powered Process Optimization',
+                    desc: 'Streamline tasks and boost productivity',
+                    icon: '/solutions3.png'
+                  }
+                ].map((item, index) => (
                   <Link 
                     key={index}
                     href="#" 
                     className="flex items-start space-x-2 px-2 py-2"
                   >
                     <Image 
-                      src={`/solutions${index + 1}.png`}
-                      alt={item} 
+                      src={item.icon}
+                      alt={item.title} 
                       width={24} 
                       height={24} 
                       priority 
@@ -84,8 +102,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     />
                     <div>
                       <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
-                        {item}
+                        {item.title}
                       </h4>
+                      <p className="font-nunito-sans text-[12px] text-gray-600">
+                        {item.desc}
+                      </p>
                     </div>
                   </Link>
                 ))}
