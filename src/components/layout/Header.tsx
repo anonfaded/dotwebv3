@@ -58,113 +58,117 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     }
   }, [isMobileMenuOpen, isScrolled]);
 
-  const MobileMenu = memo(() => (
-    <AnimatePresence>
-      {isMobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
-          style={{ 
-            top: 'calc(26.3px + 69.4px + 15px)',  // Fixed spacing: header marginTop + height + consistent gap
-            maxHeight: 'calc(100vh - (26.3px + 69.4px + 30px))'
-          }}
-        >
-          <div className="flex flex-col space-y-4">
-            {/* Solutions Section */}
-            <div className="flex flex-col space-y-2">
-              <button className="flex items-center justify-between w-full px-2 py-3">
-                <div className="flex items-center space-x-2">
-                  <Image src="/home.png" alt="Solutions" width={22} height={22} priority className="filter brightness-0" />
-                  <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
-                    {navigation.solutions || 'Solutions'}
-                  </span>
+  const MobileMenu = memo(function MobileMenu() {
+    return (
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
+            style={{ 
+              top: 'calc(26.3px + 69.4px + 15px)',  // Fixed spacing: header marginTop + height + consistent gap
+              maxHeight: 'calc(100vh - (26.3px + 69.4px + 30px))'
+            }}
+          >
+            <div className="flex flex-col space-y-4">
+              {/* Solutions Section */}
+              <div className="flex flex-col space-y-2">
+                <button className="flex items-center justify-between w-full px-2 py-3">
+                  <div className="flex items-center space-x-2">
+                    <Image src="/home.png" alt="Solutions" width={22} height={22} priority className="filter brightness-0" />
+                    <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
+                      {navigation.solutions || 'Solutions'}
+                    </span>
+                  </div>
+                </button>
+                
+                {/* Solutions submenu */}
+                <div className="pl-4 space-y-3">
+                  {[
+                    { 
+                      title: 'Intelligent Automation Tools',
+                      desc: 'Smart solutions for efficient operations',
+                      icon: '/solutions1.png'
+                    },
+                    { 
+                      title: 'Smart Lead Capture Systems',
+                      desc: 'Efficient tools for capturing leads',
+                      icon: '/solutions2.png'
+                    },
+                    { 
+                      title: 'AI-Powered Process Optimization',
+                      desc: 'Streamline tasks and boost productivity',
+                      icon: '/solutions3.png'
+                    }
+                  ].map((item, index) => (
+                    <Link 
+                      key={index}
+                      href="#" 
+                      className="flex items-start space-x-2 px-2 py-2"
+                    >
+                      <Image 
+                        src={item.icon}
+                        alt={item.title} 
+                        width={24} 
+                        height={24} 
+                        priority 
+                        className="mt-1"
+                      />
+                      <div>
+                        <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
+                          {item.title}
+                        </h4>
+                        <p className="font-nunito-sans text-[12px] text-gray-600">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              </button>
-              
-              {/* Solutions submenu */}
-              <div className="pl-4 space-y-3">
-                {[
-                  { 
-                    title: 'Intelligent Automation Tools',
-                    desc: 'Smart solutions for efficient operations',
-                    icon: '/solutions1.png'
-                  },
-                  { 
-                    title: 'Smart Lead Capture Systems',
-                    desc: 'Efficient tools for capturing leads',
-                    icon: '/solutions2.png'
-                  },
-                  { 
-                    title: 'AI-Powered Process Optimization',
-                    desc: 'Streamline tasks and boost productivity',
-                    icon: '/solutions3.png'
-                  }
-                ].map((item, index) => (
-                  <Link 
-                    key={index}
-                    href="#" 
-                    className="flex items-start space-x-2 px-2 py-2"
-                  >
-                    <Image 
-                      src={item.icon}
-                      alt={item.title} 
-                      width={24} 
-                      height={24} 
-                      priority 
-                      className="mt-1"
-                    />
-                    <div>
-                      <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
-                        {item.title}
-                      </h4>
-                      <p className="font-nunito-sans text-[12px] text-gray-600">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
               </div>
-            </div>
 
-            {/* Other Navigation Links */}
-            {['case-studies', 'contact'].map((item) => (
-              <Link 
-                key={item}
-                href={`/${lang}/${item}`} 
-                className="flex items-center space-x-2 px-2 py-3"
-              >
-                <Image 
-                  src={`/${item === 'case-studies' ? 'casestudies' : item}.png`}
-                  alt={item} 
-                  width={22} 
-                  height={22} 
-                  priority 
-                  className="filter brightness-0"
-                />
-                <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
-                  {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
-                </span>
+              {/* Other Navigation Links */}
+              {['case-studies', 'contact'].map((item) => (
+                <Link 
+                  key={item}
+                  href={`/${lang}/${item}`} 
+                  className="flex items-center space-x-2 px-2 py-3"
+                >
+                  <Image 
+                    src={`/${item === 'case-studies' ? 'casestudies' : item}.png`}
+                    alt={item} 
+                    width={22} 
+                    height={22} 
+                    priority 
+                    className="filter brightness-0"
+                  />
+                  <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
+                    {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
+                  </span>
+                </Link>
+              ))}
+
+              {/* Language Switcher */}
+              <div className="px-2 py-3">
+                <LanguageSwitcher currentLang={lang} />
+              </div>
+
+              {/* Request Demo Button */}
+              <Link href={`/${lang}/demo`} className="px-2">
+                <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
+                  {navigation.demo || 'Request a Demo'}
+                </button>
               </Link>
-            ))}
-
-            {/* Language Switcher */}
-            <div className="px-2 py-3">
-              <LanguageSwitcher currentLang={lang} />
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    );
+  });
 
-            {/* Request Demo Button */}
-            <Link href={`/${lang}/demo`} className="px-2">
-              <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
-                {navigation.demo || 'Request a Demo'}
-              </button>
-            </Link>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  ));
+  MobileMenu.displayName = 'MobileMenu';
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
