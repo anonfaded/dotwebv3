@@ -54,7 +54,77 @@ export default function Header({ lang, dictionary }: HeaderProps) {
           exit={{ opacity: 0, y: -50 }}
           className="fixed inset-x-0 top-[80px] bg-white shadow-lg z-50 px-4 py-6 rounded-b-2xl max-h-[calc(100vh-80px)] overflow-y-auto"
         >
-          {/* Mobile menu content remains the same */}
+          <div className="flex flex-col space-y-4">
+            {/* Solutions Section */}
+            <div className="flex flex-col space-y-2">
+              <button className="flex items-center justify-between w-full px-2 py-3">
+                <div className="flex items-center space-x-2">
+                  <Image src="/home.png" alt="Solutions" width={22} height={22} priority className="filter brightness-0" />
+                  <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
+                    {navigation.solutions || 'Solutions'}
+                  </span>
+                </div>
+              </button>
+              
+              {/* Solutions submenu */}
+              <div className="pl-4 space-y-3">
+                {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
+                  <Link 
+                    key={index}
+                    href="#" 
+                    className="flex items-start space-x-2 px-2 py-2"
+                  >
+                    <Image 
+                      src={`/solutions${index + 1}.png`}
+                      alt={item} 
+                      width={24} 
+                      height={24} 
+                      priority 
+                      className="mt-1"
+                    />
+                    <div>
+                      <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
+                        {item}
+                      </h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Other Navigation Links */}
+            {['case-studies', 'contact'].map((item) => (
+              <Link 
+                key={item}
+                href={`/${lang}/${item}`} 
+                className="flex items-center space-x-2 px-2 py-3"
+              >
+                <Image 
+                  src={`/${item === 'case-studies' ? 'casestudies' : item}.png`}
+                  alt={item} 
+                  width={22} 
+                  height={22} 
+                  priority 
+                  className="filter brightness-0"
+                />
+                <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
+                  {navigation[item === 'case-studies' ? 'caseStudies' : 'contact'] || (item === 'case-studies' ? 'Case Studies' : 'Contact')}
+                </span>
+              </Link>
+            ))}
+
+            {/* Language Switcher */}
+            <div className="px-2 py-3">
+              <LanguageSwitcher currentLang={lang} />
+            </div>
+
+            {/* Request Demo Button */}
+            <Link href={`/${lang}/demo`} className="px-2">
+              <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
+                {navigation.demo || 'Request a Demo'}
+              </button>
+            </Link>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
