@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, memo } from 'react';
 
 interface HeaderProps {
   lang: string;
@@ -23,17 +23,22 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuPositionRef = useRef<string>();
+  const prevScrollPosition = useRef(0);
   const solutionsButtonRef = useRef<HTMLButtonElement>(null);
   const navigation = dictionary.navigation || {};
-  const menuTopPosition = isScrolled ? '80px' : '100px';
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScroll = window.scrollY;
+      if (isMobileMenuOpen) {
+        // Prevent position updates while menu is open
+        return;
+      }
+      setIsScrolled(currentScroll > 50);
+      prevScrollPosition.current = currentScroll;
     };
 
     handleResize();
@@ -44,17 +49,27 @@ export default function Header({ lang, dictionary }: HeaderProps) {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
-  const MobileMenu = () => (
+  // Set initial menu position when opening
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      menuPositionRef.current = isScrolled ? '80px' : '100px';
+    }
+  }, [isMobileMenuOpen, isScrolled]);
+
+  const MobileMenu = memo(() => (
     <AnimatePresence>
       {isMobileMenuOpen && (
         <motion.div 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
-          style={{ top: menuTopPosition }}
-          className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] max-h-[calc(100vh-80px)] overflow-y-auto"
+          className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
+          style={{ 
+            top: 'calc(26.3px + 69.4px + 15px)',  // Fixed spacing: header marginTop + height + consistent gap
+            maxHeight: 'calc(100vh - (26.3px + 69.4px + 30px))'
+          }}
         >
           <div className="flex flex-col space-y-4">
             {/* Solutions Section */}
@@ -149,7 +164,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  ));
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
