@@ -1,0 +1,25 @@
+<svg width="99" height="94" viewBox="0 0 99 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_227_303)">
+<rect x="16" y="6" width="67" height="62" rx="31" fill="white" shape-rendering="crispEdges"/>
+<rect x="16.5" y="6.5" width="66" height="61" rx="30.5" stroke="#E4E7EC" shape-rendering="crispEdges"/>
+<mask id="mask0_227_303" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="37" y="25" width="24" height="24">
+<rect x="37" y="25" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_227_303)">
+<path d="M48.5558 42.4808C47.1289 42.3589 45.9296 41.7775 44.9577 40.7365C43.9859 39.6955 43.5 38.45 43.5 37C43.5 35.4722 44.0348 34.1736 45.1043 33.1042C46.1736 32.0347 47.4722 31.5 49 31.5C50.45 31.5 51.6955 31.9843 52.7365 32.953C53.7775 33.9215 54.3589 35.1193 54.4808 36.5463L52.8905 36.075C52.6743 35.175 52.2088 34.4375 51.4938 33.8625C50.7789 33.2875 49.9477 33 49 33C47.9 33 46.9583 33.3917 46.175 34.175C45.3917 34.9583 45 35.9 45 37C45 37.95 45.2891 38.7833 45.8672 39.5C46.4454 40.2167 47.1813 40.6833 48.075 40.9L48.5558 42.4808ZM49.7558 46.4595C49.6298 46.4865 49.5038 46.5 49.378 46.5H49C47.6858 46.5 46.4508 46.2507 45.295 45.752C44.1392 45.2533 43.1337 44.5766 42.2787 43.7218C41.4237 42.8669 40.7469 41.8617 40.2482 40.706C39.7494 39.5503 39.5 38.3156 39.5 37.0017C39.5 35.6877 39.7493 34.4527 40.248 33.2965C40.7467 32.1403 41.4234 31.1347 42.2783 30.2795C43.1331 29.4243 44.1383 28.7472 45.294 28.2482C46.4497 27.7494 47.6844 27.5 48.9983 27.5C50.3123 27.5 51.5473 27.7494 52.7035 28.2482C53.8597 28.7469 54.8653 29.4238 55.7205 30.2788C56.5757 31.1338 57.2528 32.1392 57.7518 33.295C58.2506 34.4508 58.5 35.6858 58.5 37V37.373C58.5 37.4973 58.4865 37.6217 58.4595 37.7463L57 37.3V37C57 34.7667 56.225 32.875 54.675 31.325C53.125 29.775 51.2333 29 49 29C46.7667 29 44.875 29.775 43.325 31.325C41.775 32.875 41 34.7667 41 37C41 39.2333 41.775 41.125 43.325 42.675C44.875 44.225 46.7667 45 49 45H49.3L49.7558 46.4595ZM57.1402 46.6443L52.6058 42.1L51.5193 45.3845L49 37L57.3845 39.5192L54.1 40.6058L58.6443 45.1402L57.1402 46.6443Z" fill="#2A2A2A"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_227_303" x="0" y="0" width="99" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_dropShadow_227_303"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="9"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.0980392 0 0 0 0 0.156863 0 0 0 0.07 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_227_303"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_227_303" result="shape"/>
+</filter>
+</defs>
+</svg>

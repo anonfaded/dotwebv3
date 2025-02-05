@@ -58,7 +58,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 </div>
                 <div className="flex flex-col items-center relative">
                   <Image
-                    src="/hero-icon1.png"
+                    src="/hero-icon1.svg"
                     alt="Hero Icon 1"
                     width={77}
                     height={62}
@@ -81,7 +81,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
             >
               <div className="relative">
                 <Image
-                  src="/hero-icon2.png"
+                  src="/hero-icon2.svg"
                   alt="Hero Icon Combined"
                   width={125}
                   height={110}
@@ -121,7 +121,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
               >
                 <div className="relative">
                   <Image
-                    src="/hero-icon3.png"
+                    src="/hero-icon3.svg"
                     alt="Hero Icon Combined Left"
                     width={125}
                     height={55}
@@ -180,7 +180,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                   </div>
                   <div className="flex justify-center">
                     <Image
-                      src="/hero-icon4.png"
+                      src="/hero-icon4.svg"
                       alt="Hero Icon 5"
                       width={89}
                       height={62}
