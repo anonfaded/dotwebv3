@@ -59,6 +59,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   }, [isMobileMenuOpen, isScrolled]);
 
   const MobileMenu = memo(function MobileMenu() {
+    const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
+
     return (
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -66,67 +68,90 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="fixed inset-x-0 mx-6 bg-white shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
+            className="fixed inset-x-0 mx-6 bg-white/60 backdrop-blur-lg shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
             style={{ 
-              top: 'calc(26.3px + 69.4px + 15px)',  // Fixed spacing: header marginTop + height + consistent gap
+              top: 'calc(26.3px + 69.4px + 15px)',
               maxHeight: 'calc(100vh - (26.3px + 69.4px + 30px))'
             }}
           >
             <div className="flex flex-col space-y-4">
-              {/* Solutions Section */}
-              <div className="flex flex-col space-y-2">
-                <button className="flex items-center justify-between w-full px-2 py-3">
+              {/* Solutions Accordion */}
+              <div className="flex flex-col">
+                <button 
+                  onClick={() => setIsSolutionsExpanded(!isSolutionsExpanded)}
+                  className="flex items-center justify-between w-full px-2 py-3"
+                >
                   <div className="flex items-center space-x-2">
                     <Image src="/home.png" alt="Solutions" width={22} height={22} priority className="filter brightness-0" />
                     <span className="font-nunito text-[17px] font-[400] text-[#2A2A2A]">
                       {navigation.solutions || 'Solutions'}
                     </span>
                   </div>
+                  <Image 
+                    src="/dropdown.png" 
+                    alt="Dropdown" 
+                    width={22} 
+                    height={22} 
+                    priority 
+                    className={`transform transition-transform duration-300 ${isSolutionsExpanded ? 'rotate-180' : ''} filter brightness-0`}
+                  />
                 </button>
                 
-                {/* Solutions submenu */}
-                <div className="pl-4 space-y-3">
-                  {[
-                    { 
-                      title: 'Intelligent Automation Tools',
-                      desc: 'Smart solutions for efficient operations',
-                      icon: '/solutions1.png'
-                    },
-                    { 
-                      title: 'Smart Lead Capture Systems',
-                      desc: 'Efficient tools for capturing leads',
-                      icon: '/solutions2.png'
-                    },
-                    { 
-                      title: 'AI-Powered Process Optimization',
-                      desc: 'Streamline tasks and boost productivity',
-                      icon: '/solutions3.png'
-                    }
-                  ].map((item, index) => (
-                    <Link 
-                      key={index}
-                      href="#" 
-                      className="flex items-start space-x-2 px-2 py-2"
+                {/* Solutions submenu with animation */}
+                <AnimatePresence>
+                  {isSolutionsExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden bg-white/40 backdrop-blur-sm rounded-lg mt-2"
                     >
-                      <Image 
-                        src={item.icon}
-                        alt={item.title} 
-                        width={24} 
-                        height={24} 
-                        priority 
-                        className="mt-1"
-                      />
-                      <div>
-                        <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
-                          {item.title}
-                        </h4>
-                        <p className="font-nunito-sans text-[12px] text-gray-600">
-                          {item.desc}
-                        </p>
+                      <div className="pl-4 space-y-3 py-3">
+                        {[
+                          { 
+                            title: 'Intelligent Automation Tools',
+                            desc: 'Smart solutions for efficient operations',
+                            icon: '/solutions1.png'
+                          },
+                          { 
+                            title: 'Smart Lead Capture Systems',
+                            desc: 'Efficient tools for capturing leads',
+                            icon: '/solutions2.png'
+                          },
+                          { 
+                            title: 'AI-Powered Process Optimization',
+                            desc: 'Streamline tasks and boost productivity',
+                            icon: '/solutions3.png'
+                          }
+                        ].map((item, index) => (
+                          <Link 
+                            key={index}
+                            href="#" 
+                            className="flex items-start space-x-2 px-2 py-2 hover:bg-white/60 rounded-lg transition-colors"
+                          >
+                            <Image 
+                              src={item.icon}
+                              alt={item.title} 
+                              width={24} 
+                              height={24} 
+                              priority 
+                              className="mt-1"
+                            />
+                            <div>
+                              <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A]">
+                                {item.title}
+                              </h4>
+                              <p className="font-nunito-sans text-[12px] text-gray-600">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
-                    </Link>
-                  ))}
-                </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Other Navigation Links */}
@@ -134,7 +159,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 <Link 
                   key={item}
                   href={`/${lang}/${item}`} 
-                  className="flex items-center space-x-2 px-2 py-3"
+                  className="flex items-center space-x-2 px-2 py-3 hover:bg-white/60 rounded-lg transition-colors"
                 >
                   <Image 
                     src={`/${item === 'case-studies' ? 'casestudies' : item}.png`}
@@ -150,17 +175,14 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 </Link>
               ))}
 
-              {/* Language Switcher */}
-              <div className="px-2 py-3">
-                <LanguageSwitcher currentLang={lang} />
+              {/* Request Demo Button - Sticky at bottom */}
+              <div className="sticky bottom-0 pt-4 mt-auto bg-gradient-to-t from-white/60 to-transparent backdrop-blur-lg">
+                <Link href={`/${lang}/demo`}>
+                  <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
+                    {navigation.demo || 'Request a Demo'}
+                  </button>
+                </Link>
               </div>
-
-              {/* Request Demo Button */}
-              <Link href={`/${lang}/demo`} className="px-2">
-                <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
-                  {navigation.demo || 'Request a Demo'}
-                </button>
-              </Link>
             </div>
           </motion.div>
         )}
@@ -314,7 +336,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
 
         {/* Right section */}
         <div className="flex items-center space-x-4">
-          {!isMobile && (
+          {!isMobile ? (
             <>
               <LanguageSwitcher currentLang={lang} />
               <Link href={`/${lang}/demo`}>
@@ -323,20 +345,20 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 </button>
               </Link>
             </>
-          )}
+          ) : (
+            <>
+              <LanguageSwitcher currentLang={lang} isMobile={true} />
+              <button 
+                className="z-50 p-2" 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <div className="w-6 h-4 flex flex-col justify-between relative">
+                  <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute rotate-45 top-1/2' : 'relative top-0'}`}></span>
 
-          {/* Mobile Hamburger */}
-          {isMobile && (
-            <button 
-              className="z-50 p-2" 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <div className="w-6 h-4 flex flex-col justify-between relative">
-                <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute rotate-45 top-1/2' : 'relative top-0'}`}></span>
-
-                <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute -rotate-45 top-1/2' : 'relative bottom-0'}`}></span>
-              </div>
-            </button>
+                  <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute -rotate-45 top-1/2' : 'relative bottom-0'}`}></span>
+                </div>
+              </button>
+            </>
           )}
         </div>
 

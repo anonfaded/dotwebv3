@@ -3,53 +3,139 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LanguageSwitcherProps {
   currentLang: string;
+  isMobile?: boolean;
 }
 
-export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
+const languages = [
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' }
+];
+
+export default function LanguageSwitcher({ currentLang, isMobile = false }: LanguageSwitcherProps) {
   const [showDropdown, setShowDropdown] = useState(false);
   const pathname = usePathname();
-  const path = pathname.split('/').slice(2).join('/');
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const langs = {
-    de: 'Deutsch',
-    fr: 'Français',
-    en: 'English'
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const currentLanguage = languages.find(lang => lang.code === currentLang) || languages[0];
+
+  const newPathname = (langCode: string) => {
+    const segments = pathname.split('/');
+    if (segments.length >= 2) {
+      segments[1] = langCode;
+    } else {
+      segments.push(langCode);
+    }
+    return segments.join('/');
   };
+
+  if (isMobile) {
+    return (
+      <div 
+        ref={dropdownRef} 
+        className="relative inline-block"
+      >
+        <button
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="flex items-center justify-center w-8 h-8"
+        >
+          <span className="text-xl">{currentLanguage.flag}</span>
+        </button>
+
+        <AnimatePresence>
+          {showDropdown && (
+            <>
+              {/* Invisible connection area */}
+              <div 
+                className="absolute w-full h-[50px] bottom-0 translate-y-full"
+                style={{ pointerEvents: 'auto' }}
+              />
+              
+              {/* Dropdown menu */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute w-[120px]"
+                style={{
+                  right: 0,
+                  top: '100%',
+                }}
+              >
+                <div className="absolute top-[50px] w-full rounded-[12px] bg-white/60 backdrop-blur-lg shadow-lg z-50">
+                  {/* Triangular Arrow */}
+                  <div
+                    className="absolute top-[-10px] right-[14px]
+                             border-l-[10px] border-l-transparent
+                             border-r-[10px] border-r-transparent
+                             border-b-[10px] border-b-white/60"
+                  />
+
+                  <div className="flex flex-col py-2">
+                    {languages.map((lang, index) => (
+                      <Link
+                        key={lang.code}
+                        href={newPathname(lang.code)}
+                        className={`
+                          flex items-center space-x-2 px-3 py-2
+                          transition-colors
+                          ${currentLang === lang.code
+                            ? 'bg-white/60 text-[#2A2A2A] font-medium'
+                            : 'hover:bg-white/60 text-[#677489]'
+                          }
+                        `}
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <span className="font-nunito text-sm">{lang.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  }
 
   return (
     <div 
+      ref={dropdownRef} 
       className="relative inline-block"
       onMouseEnter={() => setShowDropdown(true)}
       onMouseLeave={() => setShowDropdown(false)}
     >
       <button
-        ref={buttonRef}
         className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black"
       >
+        <span className="text-xl">{currentLanguage.flag}</span>
+        <span>{currentLanguage.name}</span>
         <Image
-          src="/language.png"
-          alt="Language"
-          width={22}
-          height={22}
-          className="w-[22px] h-[22px]"
-          priority
-          unoptimized
-        />
-        <span>{langs[currentLang as keyof typeof langs]}</span>
-        <Image
-          src="/language-dropdown.png"
+          src="/dropdown.png"
           alt="Dropdown"
           width={22}
           height={22}
-          className={`w-[22px] h-[22px] transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
           priority
-          unoptimized
+          className={`transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
         />
       </button>
 
@@ -85,33 +171,30 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                 />
 
                 <div className="flex flex-col h-[180px]">
-                  {Object.entries(langs).map(([code, name], index) => (
+                  {languages.map((lang, index) => (
                     <div
-                      key={code}
+                      key={lang.code}
                       className="flex flex-col flex-1 items-center justify-center"
                     >
                       <Link
-                        href={`/${code}/${path}`}
+                        href={newPathname(lang.code)}
                         className={`
                           w-full h-full
-                          flex items-center justify-center
+                          flex items-center justify-center space-x-2
                           font-nunito text-[17px] font-[500]
                           leading-[16.67px] text-center
                           text-[#0B0B0B]
                           transition-colors
-                          ${currentLang === code
+                          ${currentLang === lang.code
                             ? 'bg-[#F6F2EF] text-[#2A2A2A] font-medium'
                             : 'hover:bg-[#F6F2EF] text-[#677489]'
                           }
                           ${index === 0 ? 'rounded-t-[12px]' : ''}
-                          ${index === Object.keys(langs).length - 1 ? 'rounded-b-[12px]' : ''}
+                          ${index === languages.length - 1 ? 'rounded-b-[12px]' : ''}
                         `}
-                        style={{
-                          textUnderlinePosition: 'from-font',
-                          textDecorationSkipInk: 'none'
-                        }}
                       >
-                        {name}
+                        <span className="text-lg">{lang.flag}</span>
+                        <span>{lang.name}</span>
                       </Link>
                     </div>
                   ))}
