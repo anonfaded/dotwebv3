@@ -30,7 +30,7 @@ export default function ComparisonStats() {
             {/* Middle icon */}
             <div className="absolute left-[35%] -top-6 sm:-top-8">
               <Image
-                src="/bar.png"
+                src="/bar.svg"
                 alt="Progress Bar Icon"
                 width={24}
                 height={24}
@@ -42,7 +42,7 @@ export default function ComparisonStats() {
             {/* Right icon with spacing */}
             <div className="absolute right-0 -top-6 sm:-top-8">
               <Image
-                src="/bar2.png"
+                src="/bar2.svg"
                 alt="End Bar Icon"
                 width={29}
                 height={29}
@@ -97,7 +97,7 @@ export default function ComparisonStats() {
             {/* Middle icon */}
             <div className="absolute left-[35%] -top-8 sm:-top-8">
               <Image
-                src="/bar.png"
+                src="/bar.svg"
                 alt="Progress Bar Icon"
                 width={24}
                 height={24}
@@ -109,7 +109,7 @@ export default function ComparisonStats() {
             {/* Right icon with spacing */}
             <div className="absolute right-0 -top-8 sm:-top-8">
               <Image
-                src="/bar2.png"
+                src="/bar2.svg"
                 alt="End Bar Icon"
                 width={29}
                 height={29}
