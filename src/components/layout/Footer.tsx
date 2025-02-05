@@ -61,7 +61,7 @@ export default function Footer({  }: FooterProps) {
           </div>
 
           {/* Buttons Container - Reduced top spacing */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-4 -mt-7">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-[30px] w-full max-w-[565px] pb-2 md:pb-4 pt-6 md:pt-0 -mt-7">
           <Link 
                 href="#"
                 className="group inline-flex items-center bg-[#ffffff] text-black px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:text-black hover:opacity-90 transition-all duration-300 hover:scale-[1.02]"
@@ -93,7 +93,7 @@ export default function Footer({  }: FooterProps) {
         {/* Floating Footer Bar */}
         <div 
           className="w-full max-w-[1297px] mx-auto h-auto md:h-[64.85px] 
-                     bg-white flex flex-col md:flex-row items-center justify-between 
+                     bg-white flex flex-row items-center justify-between 
                      px-4 sm:px-[21.62px] py-4 md:py-0 relative"
           style={{
             borderRadius: '10.81px',
@@ -101,12 +101,12 @@ export default function Footer({  }: FooterProps) {
           }}
         >
           {/* Left side - Logo */}
-          <div className="flex items-center justify-center w-full md:w-auto mb-4 md:mb-0">
+          <div className="flex items-center justify-start">
             <Image 
               src="/dotweb-transparent.png" 
               alt="DotWeb Logo" 
-              width={170}
-              height={55}
+              width={140}
+              height={45}
               className="object-contain"
             />
           </div>
@@ -119,9 +119,8 @@ export default function Footer({  }: FooterProps) {
             onMouseLeave={() => setShowLegalDropdown(false)}
           >
             <button
-              className="flex items-center space-x-2 font-nunito text-[17px] font-[400] "
+              className="flex items-center space-x-2 font-nunito text-[17px] font-[400]"
             >
-              
               <Image
                 src="/footer-arrowup.png"
                 alt="Dropdown"
@@ -132,14 +131,17 @@ export default function Footer({  }: FooterProps) {
                   showLegalDropdown ? "rotate-180" : ""
                 }`}
               />
-              <span className="font-nunito text-[17.12px] font-[400] " >Legal Information</span>
+              <span className="font-nunito text-[17.12px] font-[400]">
+                <span className="hidden md:inline">Legal Information</span>
+                <span className="md:hidden">Policies</span>
+              </span>
             </button>
             {/* Dropdown Menu */}
             {showLegalDropdown && (
                 <>
                     {/* Invisible connection area between button and menu */}
                     <div 
-                      className="absolute w-full h-[60px] bottom-16 translate-y-full"
+                      className="absolute w-full h-[90px] bottom-20 translate-y-full"
                       style={{ pointerEvents: 'auto' }}
                     />
 
@@ -148,7 +150,7 @@ export default function Footer({  }: FooterProps) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute bottom-full right-10 mb-10 bg-white rounded-lg shadow-lg z-10 whitespace-nowrap pt-2"
+                className="absolute bottom-full right-10 mb-14 bg-white rounded-lg shadow-lg z-10 whitespace-nowrap pt-2"
               >
                 <ul className="pt-0 mb-2">
                   {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
@@ -165,7 +167,7 @@ export default function Footer({  }: FooterProps) {
                   )}
                 </ul>
                 {/* Downward pointing arrow */}
-                <div className="absolute -bottom-2 right-[104px] w-4 h-4 bg-white transform rotate-45"/>
+                <div className="absolute -bottom-2 right-[25px] sm:right-[104px] w-4 h-4 bg-white transform rotate-45"/>
               </motion.div>
             </>
                              

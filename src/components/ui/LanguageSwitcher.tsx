@@ -89,7 +89,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                   />
 
                   <div className="flex flex-col py-2">
-                    {languages.map((lang, index) => (
+                    {languages.map((lang) => (
                       <Link
                         key={lang.code}
                         href={newPathname(lang.code)}

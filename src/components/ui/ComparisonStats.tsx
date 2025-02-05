@@ -68,34 +68,15 @@ export default function ComparisonStats() {
       </div>
 
       {/* Mobile Version Layout */}
-      <div className="sm:hidden flex flex-col gap-8 mt-8">
-        {/* Flex container for phone screens */}
-        <div className="flex flex-row items-center justify-between w-full">
-          {/* Left Stat (15h) */}
-          <div className="text-center w-1/2">
-            <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35] mt-4">15h</h2>
-            <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto -mt-3">
-              Time saved per employee each month through optimized workflows.
-            </p>
-          </div>
-
-          {/* Right Stat (2x) */}
-          <div className="text-center w-1/2">
-            <h2 className="font-nunito text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#2E2F35] mt-4">2x</h2>
-            <p className="font-lato text-sm sm:text-base leading-relaxed text-[#2E2F35] max-w-[180px] mx-auto -mt-3">
-              Accelerated project completion rates through intelligent automation.
-            </p>
-          </div>
-        </div>
-
-        {/* Legacy section in second row */}
-        <div className="text-center w-full mt-8">
-          <h3 className="font-nunito text-xl sm:text-2xl lg:text-3xl font-bold leading-tight tracking-tight text-[#2E2F35] text-center">
-            Legacy Systems vs. Modern Workflows
+      <div className="sm:hidden flex flex-col mt-6">
+                {/* Legacy section in second row */}
+                <div className="text-center w-full">
+          <h3 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] text-center mb-10">
+            Legacy vs. Automation
           </h3>
-          <div className="relative w-full max-w-[651.36px] mx-auto mt-8 sm:mt-12 lg:mt-16">
+          <div className="relative w-full max-w-[651.36px] mx-auto mb-14">
             {/* Middle icon */}
-            <div className="absolute left-[35%] -top-8 sm:-top-8">
+            <div className="absolute left-[35%] -top-8">
               <Image
                 src="/bar.svg"
                 alt="Progress Bar Icon"
@@ -107,7 +88,7 @@ export default function ComparisonStats() {
             </div>
 
             {/* Right icon with spacing */}
-            <div className="absolute right-0 -top-8 sm:-top-8">
+            <div className="absolute right-0 -top-8">
               <Image
                 src="/bar2.svg"
                 alt="End Bar Icon"
@@ -122,6 +103,25 @@ export default function ComparisonStats() {
             
             {/* Overlay bar */}
             <div className="absolute left-0 top-0 w-[37%] h-3 bg-[#055DA3] rounded-full" />
+          </div>
+        </div>
+        {/* Flex container for phone screens */}
+        <div className="flex flex-row items-start justify-between w-full px-6">
+          
+          {/* Left Stat (15h) */}
+          <div className="text-center w-1/2 pr-2">
+            <h2 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-3">15h</h2>
+            <p className="font-lato text-[15px] leading-[1.4] text-[#2E2F35] mx-auto">
+              Time saved per employee each month.
+            </p>
+          </div>
+
+          {/* Right Stat (2x) */}
+          <div className="text-center w-1/2 pl-2">
+            <h2 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-3">2x</h2>
+            <p className="font-lato text-[15px] leading-[1.4] text-[#2E2F35] mx-auto">
+              Accelerated project completion rates.
+            </p>
           </div>
         </div>
       </div>
