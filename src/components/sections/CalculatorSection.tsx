@@ -43,16 +43,21 @@ export default function CalculatorSection() {
   };
 
   const calculateResults = useCallback(() => {
-    const { hourlyWage, taskHours, numEmployees } = inputs;
+    const { hourlyWage, taskHours, numEmployees, automationPercentage } = inputs;
 
     if (hourlyWage && taskHours) {
-      const timeSavings = parseFloat(taskHours) * parseInt(numEmployees.toString());
-      const costSavings = timeSavings * parseFloat(hourlyWage);
-      const annualSavings = costSavings * 12;
+      // Calculate time savings based on automation percentage
+      const timeSavings = (parseFloat(taskHours) * parseFloat(automationPercentage) / 100) * parseInt(numEmployees.toString());
+      
+      // Calculate monthly cost savings
+      const monthlyCostSavings = timeSavings * parseFloat(hourlyWage);
+      
+      // Calculate annual savings
+      const annualSavings = monthlyCostSavings * 12;
 
       setResults({
         timeSavings: `${Math.round(timeSavings)} Hours`,
-        costSavings: `$${Math.round(costSavings).toLocaleString()}`,
+        costSavings: `$${Math.round(monthlyCostSavings).toLocaleString()}`,
         annualSavings: `$${Math.round(annualSavings).toLocaleString()}`
       });
     }
@@ -92,6 +97,12 @@ export default function CalculatorSection() {
                       max={15}
                       value={inputs.numEmployees}
                       onChange={handleSliderChange}
+                      trackStyle={{ backgroundColor: '#0B0B0B' }}
+                      railStyle={{ backgroundColor: '#E5E5E5' }}
+                      handleStyle={{ 
+                        borderColor: '#0B0B0B', 
+                        backgroundColor: '#0B0B0B' 
+                      }}
                     />
                   </div>
                   <div className="flex items-center justify-center w-[48px] h-[48px] bg-[#F4F4F5] rounded-full">
@@ -139,12 +150,27 @@ export default function CalculatorSection() {
                 <label className="block mb-2 font-inter text-[14px] text-gray-700">
                   Automation Percentage
                 </label>
-                <Slider
-                  min={0}
-                  max={100}
-                  value={inputs.automationPercentage}
-                  onChange={(value) => handleInputChange('automationPercentage', value.toString())}
-                />
+                <div className="flex items-center gap-4">
+                  <div className="flex-1">
+                    <Slider
+                      min={0}
+                      max={100}
+                      value={inputs.automationPercentage}
+                      onChange={(value) => handleInputChange('automationPercentage', value.toString())}
+                      trackStyle={{ backgroundColor: '#0B0B0B' }}
+                      railStyle={{ backgroundColor: '#E5E5E5' }}
+                      handleStyle={{ 
+                        borderColor: '#0B0B0B', 
+                        backgroundColor: '#0B0B0B' 
+                      }}
+                    />
+                  </div>
+                  <div className="w-[90px] h-[50px] flex items-center justify-center border border-[#DDDCE0] rounded-[12.65px]">
+                    <span className="font-nunito text-[16px] font-semibold">
+                      {inputs.automationPercentage}%
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="flex space-x-4">
@@ -169,14 +195,41 @@ export default function CalculatorSection() {
           <div className="space-y-6">
             <h3 className="font-nunito text-xl font-bold">Your Savings Overview</h3>
             <div className="space-y-4">
-              {/* Results cards */}
-              <div className="bg-gray-50 p-4 rounded-[12.65px] text-center">
-                <Text className="block mb-2 font-lato text-sm font-semibold">
+              <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
                   Time Savings (Hours/Month)
                 </Text>
-                <Title level={3} className="!text-xl">{results.timeSavings}</Title>
+                <Title 
+                  level={3}
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
+                >
+                  {results.timeSavings}
+                </Title>
               </div>
-              {/* Add other result cards similarly */}
+
+              <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
+                  Cost Savings (Monthly)
+                </Text>
+                <Title 
+                  level={3}
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
+                >
+                  {results.costSavings}
+                </Title>
+              </div>
+
+              <div className="bg-gray-50 p-4 rounded-[12.65px] border border-[#DDDCE0]">
+                <Text className="block mb-2 font-lato text-[14px] font-semibold text-center text-gray-700">
+                  Annual Cost Savings
+                </Text>
+                <Title 
+                  level={3}
+                  className="text-center font-nunito text-[20px] font-semibold text-[#2A2A2A]"
+                >
+                  {results.annualSavings}
+                </Title>
+              </div>
             </div>
             <div className="flex space-x-4">
               <button 
@@ -187,9 +240,16 @@ export default function CalculatorSection() {
               </button>
               <Link 
                 href="#"
-                className="w-1/2 bg-[#0B0B0B] text-white py-4 rounded-[13.01px] text-center"
+                className="group w-1/2 bg-[#0B0B0B] text-white px-6 py-4 rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center"
               >
-                Get Started
+                <span className="font-nunito text-[16px] font-bold text-white">Let Us Design Your Solution</span>
+                <svg 
+                  className="ml-4 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
+                  viewBox="0 0 16 16" 
+                  fill="none"
+                >
+                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </Link>
             </div>
           </div>
@@ -254,37 +314,11 @@ export default function CalculatorSection() {
                       className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
                     />
                   </div>
-
-                  <div>
-                    <label className="block mb-2 font-inter text-[14px] text-gray-700">
-                      Monthly Employee Costs
-                    </label>
-                    <Input
-                      type="number"
-                      placeholder="Total costs in USD"
-                      value={inputs.employeeCosts}
-                      onChange={(e) => handleInputChange('employeeCosts', e.target.value)}
-                      className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block mb-2 font-inter text-[14px] text-gray-700">
-                      Current or Planned Task Volume
-                    </label>
-                    <Input
-                      type="number"
-                      placeholder="Task volume per employee"
-                      value={inputs.taskVolume}
-                      onChange={(e) => handleInputChange('taskVolume', e.target.value)}
-                      className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
-                    />
-                  </div>
                 </div>
               </div>
 
-              {/* Employees Section */}
-              <div className="border border-[#DDDCE0] rounded-[12.65px] bg-white p-6">
+              {/* Employees and Automation Section */}
+              <div className="border border-[#DDDCE0] rounded-[12.65px] bg-white p-6 space-y-6">
                 <div className="space-y-4">
                   <label className="block font-nunito text-[16px] font-semibold text-gray-800">
                     Number of Employees
@@ -315,6 +349,33 @@ export default function CalculatorSection() {
                         height={20}
                         className="inline-block"
                       />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <label className="block font-nunito text-[16px] font-semibold text-gray-800">
+                    Automation Percentage
+                  </label>
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-grow">
+                      <Slider
+                        min={0}
+                        max={100}
+                        value={inputs.automationPercentage}
+                        onChange={(value) => handleInputChange('automationPercentage', value.toString())}
+                        trackStyle={{ backgroundColor: '#0B0B0B' }}
+                        railStyle={{ backgroundColor: '#E5E5E5' }}
+                        handleStyle={{ 
+                          borderColor: '#0B0B0B', 
+                          backgroundColor: '#0B0B0B' 
+                        }}
+                      />
+                    </div>
+                    <div className="w-[90px] h-[50px] flex items-center justify-center border border-[#DDDCE0] rounded-[12.65px]">
+                      <span className="font-nunito text-[16px] font-semibold">
+                        {inputs.automationPercentage}%
+                      </span>
                     </div>
                   </div>
                 </div>
