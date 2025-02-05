@@ -24,7 +24,6 @@ interface HeroProps {
 
 export default function Hero({ lang, dictionary }: HeroProps) {
   return (
-    
     <section className="relative h-[800px] sm:h-[900px] lg:h-[1030px] flex flex-col justify-start overflow-hidden z-[1]">
       {/* adjust above height to make the hero shorter, and the z index is making the overlap of chatsection smooth else the color would be dull visible */}
       {/* Background Image */}
@@ -46,48 +45,52 @@ export default function Hero({ lang, dictionary }: HeroProps) {
           <div className="relative flex flex-col items-center z-[4]">
             {/* Left icon group */}
             <motion.div 
-              className="absolute left-0 top-0 hidden lg:block -translate-x-[0%] mt-8 "
+              className="absolute left-0 top-0 hidden lg:block mt-8"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-1 sm:py-2 px-2 sm:px-4 flex items-center justify-center h-full">
-                <p className="font-nunito-sans text-[10px] sm:text-xs text-[#016EC6] whitespace-nowrap my-0">
-                  AI Provided Personalized Answers
-                </p>
-              </div>
-              <div className="flex flex-col items-center relative">
-                <Image
-                  src="/hero-icon1.png"
-                  alt="Hero Icon 1"
-                  width={77}
-                  height={62}
-                  className="w-auto h-auto max-w-[clamp(50px,6vw,77px)]"
-                  priority
-                />
-                <div className="absolute top-[62px] left-[85px] w-[73px] h-[500px]">
-                  <CurvedDottedLine />
+              <div className="relative">
+                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center">
+                  <p className="font-nunito-sans text-xs text-[#016EC6] whitespace-nowrap my-0">
+                    AI Provided Personalized Answers
+                  </p>
+                </div>
+                <div className="flex flex-col items-center relative">
+                  <Image
+                    src="/hero-icon1.png"
+                    alt="Hero Icon 1"
+                    width={77}
+                    height={62}
+                    priority
+                    className="object-contain max-w-full h-auto"
+                  />
+                  <div className="absolute top-[62px] left-[85px] w-[73px] h-[500px]">
+                    <CurvedDottedLine />
+                  </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Right icon group */}
             <motion.div 
-              className="absolute right-0 top-0 hidden lg:block"
+              className="absolute right-0 lg:-right-[30px] xl:right-0 top-0 hidden lg:block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Image
-                src="/hero-icon2.png"
-                alt="Hero Icon Combined"
-                width={125}
-                height={110}
-                className="w-auto h-auto max-w-[clamp(80px,8vw,125px)] mt-18"
-                priority
-              />
-              <div className="absolute top-[110px] -left-[20px] w-[103px] h-[500px] -z-10">
-                <CurvedDottedLine4 />
+              <div className="relative">
+                <Image
+                  src="/hero-icon2.png"
+                  alt="Hero Icon Combined"
+                  width={125}
+                  height={110}
+                  priority
+                  className="object-contain max-w-full h-auto mt-18"
+                />
+                <div className="absolute top-[110px] -left-[20px] w-[103px] h-[500px] -z-10">
+                  <CurvedDottedLine4 />
+                </div>
               </div>
             </motion.div>
 
@@ -114,18 +117,20 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="hidden lg:block absolute left-0 bottom-0 -translate-y-1/2"
+                className="hidden lg:block absolute left-0 lg:-left-[30px] xl:left-0 bottom-0 -translate-y-1/2"
               >
-                <Image
-                  src="/hero-icon3.png"
-                  alt="Hero Icon Combined Left"
-                  width={125}
-                  height={55}
-                  className="w-auto h-auto max-w-[clamp(80px,8vw,125px)] ml-40"
-                  priority
-                />
-                <div className="absolute top-[125px] left-[156px] w-[75px] h-[500px] -z-10">
-                  <CurvedDottedLine2 />
+                <div className="relative">
+                  <Image
+                    src="/hero-icon3.png"
+                    alt="Hero Icon Combined Left"
+                    width={125}
+                    height={55}
+                    priority
+                    className="object-contain max-w-full h-auto ml-40"
+                  />
+                  <div className="absolute top-[125px] left-[156px] w-[75px] h-[500px] -z-10">
+                    <CurvedDottedLine2 />
+                  </div>
                 </div>
               </motion.div>
 
@@ -149,7 +154,7 @@ export default function Hero({ lang, dictionary }: HeroProps) {
                     width={24}
                     height={24}
                     priority
-                    className="transform -rotate-45 transition-transform duration-300 group-hover:rotate-0"
+                    className="object-contain max-w-full h-auto transform -rotate-45 transition-transform duration-300 group-hover:rotate-0"
                   />
                 </Link>
                 <Link
@@ -162,27 +167,29 @@ export default function Hero({ lang, dictionary }: HeroProps) {
 
               {/* Right icon group */}
               <motion.div 
-                className="absolute right-20 top-0 hidden lg:block translate-x-80%]"
+                className="absolute right-20 lg:top-[60px] xl:top-0 hidden lg:block"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-1 sm:py-2 px-2 sm:px-4 flex items-center justify-center h-full">
-                  <p className="font-nunito-sans text-[10px] sm:text-xs text-[#016EC6] whitespace-nowrap my-0">
-                    Product Explained, Lead Captured.
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/hero-icon4.png"
-                    alt="Hero Icon 5"
-                    width={89}
-                    height={62}
-                    className="w-auto h-auto max-w-[clamp(50px,6vw,89px)]"
-                    priority
-                  />
-                  <div className="absolute top-[62px] left-[45px] w-[80px] h-[500px] -z-10">
-                    <CurvedDottedLine3 />
+                <div className="relative">
+                  <div className="bg-white rounded-3xl shadow-[0px_4px_44px_0px_#E4F4FF] py-2 px-4 flex items-center justify-center">
+                    <p className="font-nunito-sans text-xs text-[#016EC6] whitespace-nowrap my-0">
+                      Product Explained, Lead Captured.
+                    </p>
+                  </div>
+                  <div className="flex justify-center">
+                    <Image
+                      src="/hero-icon4.png"
+                      alt="Hero Icon 5"
+                      width={89}
+                      height={62}
+                      priority
+                      className="object-contain max-w-full h-auto"
+                    />
+                    <div className="absolute top-[62px] left-[45px] w-[80px] h-[500px] -z-10">
+                      <CurvedDottedLine3 />
+                    </div>
                   </div>
                 </div>
               </motion.div>
