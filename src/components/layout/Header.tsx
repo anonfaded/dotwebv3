@@ -61,6 +61,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const MobileMenu = memo(function MobileMenu() {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
 
+  // Define the top offset dynamically:
+  const mobileMenuTop = isScrolled ? '80px' : '100px';
+
     return (
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -70,8 +73,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             exit={{ opacity: 0, y: -50 }}
             className="fixed inset-x-0 mx-6 bg-white/60 backdrop-blur-lg shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
             style={{ 
-              top: 'calc(26.3px + 69.4px + 15px)',
-              maxHeight: 'calc(100vh - (26.3px + 69.4px + 30px))'
+              top: mobileMenuTop,
+              maxHeight: 'calc(100vh - ${mobileMenuTop})'
             }}
           >
             <div className="flex flex-col space-y-4">
