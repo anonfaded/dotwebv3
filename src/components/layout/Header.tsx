@@ -247,7 +247,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     width={22} 
                     height={22} 
                     priority 
-                    className={`transform ${showSolutionsDropdown ? 'rotate-180' : ''} filter brightness-0`}
+                    className={`transform transition-transform duration-300 ${showSolutionsDropdown ? 'rotate-180' : ''} filter brightness-0`}
                   />
                 </button>
 

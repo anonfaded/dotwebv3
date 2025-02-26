@@ -135,7 +135,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
           width={22}
           height={22}
           priority
-          className={`transform ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
+          className={`transform transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''} filter brightness-0`}
         />
       </button>
 
