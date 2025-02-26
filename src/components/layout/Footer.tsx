@@ -127,8 +127,8 @@ export default function Footer({  }: FooterProps) {
                 width={16}
                 height={16}
                 priority
-                className={` ${
-                  showLegalDropdown ? "rotate-180" : ""
+                className={`transform transition-transform duration-300 rotate-180 ${
+                  showLegalDropdown ? "rotate-0" : ""
                 }`}
               />
               <span className="font-nunito text-[17.12px] font-[400]">
