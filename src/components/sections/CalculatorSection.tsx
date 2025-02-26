@@ -35,7 +35,9 @@ export default function CalculatorSection() {
   }, []);
 
   const handleInputChange = (name: string, value: string) => {
-    setInputs(prev => ({ ...prev, [name]: value }));
+    // Only allow numbers
+    const numericValue = value.replace(/[^0-9]/g, '');
+    setInputs(prev => ({ ...prev, [name]: numericValue }));
   };
 
   const handleSliderChange = (value: number) => {
@@ -46,17 +48,20 @@ export default function CalculatorSection() {
     const { hourlyWage, taskHours, numEmployees, automationPercentage } = inputs;
 
     if (hourlyWage && taskHours) {
-      // Calculate time savings based on automation percentage
-      const timeSavings = (parseFloat(taskHours) * parseFloat(automationPercentage) / 100) * parseInt(numEmployees.toString());
+      // Calculate daily time savings based on automation percentage
+      const dailyTimeSavings = (parseFloat(taskHours) * parseFloat(automationPercentage) / 100) * parseInt(numEmployees.toString());
+      
+      // Calculate monthly time savings (assuming 22 working days)
+      const monthlyTimeSavings = dailyTimeSavings * 22;
       
       // Calculate monthly cost savings
-      const monthlyCostSavings = timeSavings * parseFloat(hourlyWage);
+      const monthlyCostSavings = monthlyTimeSavings * parseFloat(hourlyWage);
       
       // Calculate annual savings
       const annualSavings = monthlyCostSavings * 12;
 
       setResults({
-        timeSavings: `${Math.round(timeSavings)} Hours`,
+        timeSavings: `${Math.round(monthlyTimeSavings)} Hours`,
         costSavings: `$${Math.round(monthlyCostSavings).toLocaleString()}`,
         annualSavings: `$${Math.round(annualSavings).toLocaleString()}`
       });
@@ -81,6 +86,18 @@ export default function CalculatorSection() {
                 </label>
                 <Input
                   type="number"
+                  min={0}
+                  step={1}
+                  onKeyDown={(e) => {
+                    if (!/[0-9]/.test(e.key) && 
+                        e.key !== 'Backspace' && 
+                        e.key !== 'Delete' && 
+                        e.key !== 'ArrowLeft' && 
+                        e.key !== 'ArrowRight' && 
+                        e.key !== 'Tab') {
+                      e.preventDefault();
+                    }
+                  }}
                   value={inputs.hourlyWage}
                   onChange={(e) => handleInputChange('hourlyWage', e.target.value)}
                   className="w-full h-[48px] px-4 rounded-[12.65px]"
@@ -137,10 +154,22 @@ export default function CalculatorSection() {
             <div className="space-y-4">
               <div>
                 <label className="block mb-2 font-inter text-[14px] text-gray-700">
-                  Monthly Hours on Tasks
+                  Daily Hours on Tasks
                 </label>
                 <Input
                   type="number"
+                  min={0}
+                  step={1}
+                  onKeyDown={(e) => {
+                    if (!/[0-9]/.test(e.key) && 
+                        e.key !== 'Backspace' && 
+                        e.key !== 'Delete' && 
+                        e.key !== 'ArrowLeft' && 
+                        e.key !== 'ArrowRight' && 
+                        e.key !== 'Tab') {
+                      e.preventDefault();
+                    }
+                  }}
                   value={inputs.taskHours}
                   onChange={(e) => handleInputChange('taskHours', e.target.value)}
                   className="w-full h-[48px] px-4 rounded-[12.65px]"
@@ -295,6 +324,18 @@ export default function CalculatorSection() {
                     </label>
                     <Input
                       type="number"
+                      min={0}
+                      step={1}
+                      onKeyDown={(e) => {
+                        if (!/[0-9]/.test(e.key) && 
+                            e.key !== 'Backspace' && 
+                            e.key !== 'Delete' && 
+                            e.key !== 'ArrowLeft' && 
+                            e.key !== 'ArrowRight' && 
+                            e.key !== 'Tab') {
+                          e.preventDefault();
+                        }
+                      }}
                       placeholder="Hourly wage in USD"
                       value={inputs.hourlyWage}
                       onChange={(e) => handleInputChange('hourlyWage', e.target.value)}
@@ -304,11 +345,23 @@ export default function CalculatorSection() {
 
                   <div>
                     <label className="block mb-2 font-inter text-[14px] text-gray-700">
-                      Hours Spent on Task Handling
+                      Hours Spent on Task Handling (Daily)
                     </label>
                     <Input
                       type="number"
-                      placeholder="Monthly hours"
+                      min={0}
+                      step={1}
+                      onKeyDown={(e) => {
+                        if (!/[0-9]/.test(e.key) && 
+                            e.key !== 'Backspace' && 
+                            e.key !== 'Delete' && 
+                            e.key !== 'ArrowLeft' && 
+                            e.key !== 'ArrowRight' && 
+                            e.key !== 'Tab') {
+                          e.preventDefault();
+                        }
+                      }}
+                      placeholder="Daily hours"
                       value={inputs.taskHours}
                       onChange={(e) => handleInputChange('taskHours', e.target.value)}
                       className="w-full h-[48px] px-4 rounded-[12.65px] border border-[#DDDCE0] font-nunito-sans text-[14px]"
