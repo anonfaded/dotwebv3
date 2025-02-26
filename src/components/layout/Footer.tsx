@@ -66,7 +66,7 @@ export default function Footer({  }: FooterProps) {
                 href="#"
                 className="group inline-flex items-center bg-[#ffffff] text-black px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:text-black hover:opacity-90 transition-all duration-300 hover:scale-[1.02]"
               >
-                <span className="font-nunitoSans text-[16px] md:text-[19.97px] font-semibold leading-none whitespace-nowrap">Start the Conversation</span>
+                <span className="font-nunitoSans text-[16px] md:text-[19.51px] font-semibold leading-none whitespace-nowrap">Start the Conversation</span>
                 <svg 
                   className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
                   viewBox="0 0 16 16" 
@@ -77,7 +77,7 @@ export default function Footer({  }: FooterProps) {
               </Link>
             <Link 
               href="#"
-              className="mt-4 md:mt-0 text-center font-nunitoSans text-[16px] md:text-[19.97px] font-normal text-[#F7F2EF] hover:text-[#e7e2df] transition-colors whitespace-nowrap"
+              className="mt-4 md:mt-0 text-center font-nunitoSans text-[16px] md:text-[18.97px] font-normal text-[#F7F2EF] hover:text-[#e7e2df] transition-colors whitespace-nowrap"
               style={{
                 textDecoration: 'underline',
                 textDecorationStyle: 'solid',
