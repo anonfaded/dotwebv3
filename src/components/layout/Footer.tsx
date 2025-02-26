@@ -132,7 +132,7 @@ export default function Footer({  }: FooterProps) {
                 }`}
               />
               <span className="font-nunito text-[17.12px] font-[400]">
-                <span className="hidden md:inline">Legal Information</span>
+                <span className="hidden md:inline">Policies</span>
                 <span className="md:hidden">Policies</span>
               </span>
             </button>
@@ -150,15 +150,22 @@ export default function Footer({  }: FooterProps) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute bottom-full right-10 mb-14 bg-white rounded-lg shadow-lg z-10 whitespace-nowrap pt-2"
+                className="absolute bottom-full right-0 mb-14 bg-white rounded-[12px] shadow-lg z-10 whitespace-nowrap"
+                style={{ minWidth: '160px' }} // Increased to match "Legal Information" text width
               >
-                <ul className="pt-0 mb-2">
+                <ul className="flex flex-col h-[180px]">
                   {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
                     (item, index) => (
-                      <li key={index} className="group">
+                      <li key={index} className="group flex-1">
                         <Link
                           href="#"
-                          className="block px-4 py-1.5 text-sm text-gray-700 hover:bg-[#F6F2EF] hover:text-gray-900 transition-all duration-200"
+                          className={`
+                            flex items-center justify-center h-full w-full px-4 py-2
+                            text-sm text-gray-700 hover:bg-[#F6F2EF] hover:text-gray-900 
+                            transition-all duration-200
+                            ${index === 0 ? 'rounded-t-[12px]' : ''}
+                            ${index === 2 ? 'rounded-b-[12px]' : ''}
+                          `}
                         >
                           {item}
                         </Link>
@@ -167,7 +174,8 @@ export default function Footer({  }: FooterProps) {
                   )}
                 </ul>
                 {/* Downward pointing arrow */}
-                <div className="absolute -bottom-2 right-[25px] sm:right-[104px] w-4 h-4 bg-white transform rotate-45"/>
+                <div className="absolute -bottom-2 right-[65px] w-4 h-4 bg-white transform rotate-45"/>
+                {/* Changed right-6 to right-[18px] to align with the button's arrow */}
               </motion.div>
             </>
                              
