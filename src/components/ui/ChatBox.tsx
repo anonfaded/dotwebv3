@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
   id: number;
@@ -120,9 +121,10 @@ export default function ChatBox() {
 
   const toggleFAQ = (index: number) => {
     setFaqItems(prevItems => 
-      prevItems.map((item, i) => 
-        i === index ? { ...item, isOpen: !item.isOpen } : item
-      )
+      prevItems.map((item, i) => ({
+        ...item,
+        isOpen: i === index ? !item.isOpen : false // Close others when opening new one
+      }))
     );
   };
 
@@ -384,40 +386,50 @@ export default function ChatBox() {
                 
                 {/* FAQ Accordion */}
                 <div className="space-y-4">
-                  {/* Increased spacing for mobile */}
                   {faqItems.map((item, index) => (
                     <div 
                       key={index} 
                       className="border border-gray-200 rounded-lg overflow-hidden"
                     >
                       <div 
-                        className="flex justify-between items-center p-4 sm:p-4 bg-gray-50 cursor-pointer"
+                        className="flex justify-between items-center p-4 sm:p-4 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => toggleFAQ(index)}
                       >
                         <h5 className="font-nunito-sans text-base sm:text-[clamp(14px,1.6vw,16px)] font-bold text-[#0E0E0E]">
                           {/* Increased font size for mobile */}
                           {item.question}
                         </h5>
-                        <div>
-                          {item.isOpen ? (
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M15 12.5L10 7.5L5 12.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          ) : (
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 7.5L10 12.5L15 7.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          )}
-                        </div>
+                        <motion.div
+                          animate={{ rotate: item.isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </motion.div>
                       </div>
-                      {item.isOpen && (
-                        <div className="p-4 sm:p-4 bg-white">
-                          <p className="font-lato text-base sm:text-[clamp(12px,1.4vw,15px)] text-gray-700">
-                            {/* Increased font size for mobile */}
-                            {item.answer}
-                          </p>
-                        </div>
-                      )}
+                      <AnimatePresence>
+                        {item.isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                          >
+                            <div className="p-4 sm:p-4 bg-white">
+                              <motion.p
+                                initial={{ y: -10 }}
+                                animate={{ y: 0 }}
+                                exit={{ y: -10 }}
+                                transition={{ duration: 0.2 }}
+                                className="font-lato text-base sm:text-[clamp(12px,1.4vw,15px)] text-gray-700"
+                              >
+                                {item.answer}
+                              </motion.p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ))}
                 </div>
