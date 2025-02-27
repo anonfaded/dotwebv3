@@ -161,13 +161,13 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                 top: '100%',
               }}
             >
-              <div className="absolute top-[50px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
+              <div className="absolute top-[40px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
                 {/* Triangular Arrow */}
                 <div
-                  className="absolute top-[-10px] left-1/2 -translate-x-1/2
-                           border-l-[10px] border-l-transparent
-                           border-r-[10px] border-r-transparent
-                           border-b-[10px] border-b-white"
+                  className="absolute top-[-8px] left-1/2 -translate-x-1/2
+                           border-l-[8px] border-l-transparent
+                           border-r-[8px] border-r-transparent
+                           border-b-[8px] border-b-white"
                 />
 
                 <div className="flex flex-col h-[180px]">

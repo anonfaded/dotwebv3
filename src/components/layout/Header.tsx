@@ -251,15 +251,9 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                   />
                 </button>
 
-                {showSolutionsDropdown && (
-                  <>
-                    {/* Invisible connection area between button and menu */}
-                    <div 
-                      className="absolute w-full h-[60px] bottom-0 translate-y-full"
-                      style={{ pointerEvents: 'auto' }}
-                    />
-                    
-                    {/* Dropdown menu */}
+                {/* Dropdown menu */}
+                <AnimatePresence>
+                  {showSolutionsDropdown && (
                     <motion.div 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -274,14 +268,20 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     >
                       {/* Arrow */}
                       <div 
-                        className="absolute top-[52px] right-[-129px] w-4 h-4 bg-white rotate-45 z-10"
+                        className="absolute top-[40px] right-[-129px] w-4 h-4 bg-white rotate-45 z-10"
                         style={{
                           transform: showSolutionsDropdown ? 'rotate(225deg)' : 'rotate(45deg)'
                         }}
                       />
 
                       {/* Menu content */}
-                      <div className="absolute top-[60px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20">
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-[48px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20"
+                      >
                         <div className="space-y-1 pt-2 pb-0">
                           {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
                             <Link 
@@ -308,10 +308,10 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                             </Link>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
                     </motion.div>
-                  </>
-                )}
+                  )}
+                </AnimatePresence>
               </div>
 
               {['case-studies', 'contact'].map((item) => (
