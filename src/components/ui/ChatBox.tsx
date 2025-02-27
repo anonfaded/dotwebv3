@@ -378,7 +378,7 @@ export default function ChatBox() {
                     How can we help you?
                   </h4>
                   <p className="font-lato text-base sm:text-[clamp(14px,1.6vw,16px)] text-gray-600 mb-3 sm:mb-4">
-                    {/* Increased font size for mobile */}
+                    {/* Changed apostrophe to HTML entity */}
                     Find answers to common questions about our automation chatbot below. 
                     Click on a question to see its answer.
                   </p>
