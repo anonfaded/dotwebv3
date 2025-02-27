@@ -3,11 +3,16 @@
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
-
 interface Message {
   id: number;
   text: string;
   sender: 'user' | 'bot';
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+  isOpen: boolean;
 }
 
 const DUMMY_RESPONSES = [
@@ -17,11 +22,42 @@ const DUMMY_RESPONSES = [
   "Our solutions are designed with reliability and performance in mind, ensuring consistent and dependable results for your business."
 ];
 
+// FAQ data for help overlay
+const FAQ_DATA: FAQItem[] = [
+  {
+    question: "How do I start a conversation?",
+    answer: "Simply type your question in the input field at the bottom of the chat or select one of the suggested questions to begin.",
+    isOpen: false
+  },
+  {
+    question: "What kind of questions can I ask?",
+    answer: "You can ask about automation solutions, cost savings, team efficiency, DOTWEB services, or any other business automation related questions.",
+    isOpen: false
+  },
+  {
+    question: "How accurate are the responses?",
+    answer: "Our AI provides helpful information based on common automation questions. For detailed business solutions, we recommend scheduling a consultation with our team.",
+    isOpen: false
+  },
+  {
+    question: "Can I save or share my conversation?",
+    answer: "Currently, conversations cannot be saved or shared. We recommend taking screenshots if you need to save important information.",
+    isOpen: false
+  },
+  {
+    question: "How do I contact a human representative?",
+    answer: "To speak with our team directly, please visit our website at dotweb.com or email us at support@dotweb.com.",
+    isOpen: false
+  }
+];
+
 export default function ChatBox() {
   const [inputText, setInputText] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isInitialView, setIsInitialView] = useState(true);
   const [selectedPrePrompt, setSelectedPrePrompt] = useState<string | null>(null);
+  const [showHelpOverlay, setShowHelpOverlay] = useState(false);
+  const [faqItems, setFaqItems] = useState<FAQItem[]>(FAQ_DATA);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   // Dummy usage to avoid ESLint warning
@@ -82,10 +118,20 @@ export default function ChatBox() {
     setSelectedPrePrompt(null);
   };
 
+  const toggleFAQ = (index: number) => {
+    setFaqItems(prevItems => 
+      prevItems.map((item, i) => 
+        i === index ? { ...item, isOpen: !item.isOpen } : item
+      )
+    );
+  };
+
+  // Close overlay when clicking outside or on close button
+  const closeOverlay = () => {
+    setShowHelpOverlay(false);
+  };
+
   return (
-
-
-    
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full sm:min-w-[640px] md:min-w-[768px] lg:min-w-[1024px] xl:min-w-[1200px] bg-gray-900 rounded-lg shadow-lg relative h-[868px]">
 
@@ -101,18 +147,20 @@ export default function ChatBox() {
                 Instant insights on workflows, cost savings, and efficiency.
               </p>
             </div>
-            <Image
-              src="/help.png"
-              alt="Help"
-              width={29}
-              height={48.39}
-              priority
-              unoptimized
-            />
+            <div 
+              onClick={() => setShowHelpOverlay(true)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="/help.png"
+                alt="Help"
+                width={29}
+                height={48.39}
+                priority
+                unoptimized
+              />
+            </div>
           </div>
-
-
-
 
           {/* Main Content */}
           <div className="flex-1 px-[clamp(6px,1.5vw,10px)] sm:px-[clamp(6px,1.5vw,12px)] lg:px-[clamp(8px,2vw,14px)] bg-white rounded-b-lg flex flex-col h-full overflow-hidden">
@@ -195,9 +243,6 @@ export default function ChatBox() {
                       </p>
                     </div>
                   </div>
-
-
-
                 </div>
               ) : (
                 <div className="h-full overflow-hidden">
@@ -282,6 +327,90 @@ export default function ChatBox() {
             </div>
           </div>
         </div>
+
+        {/* Help Overlay */}
+        {showHelpOverlay && (
+          <div className="absolute inset-0 bg-black bg-opacity-50 z-10 flex flex-col rounded-lg overflow-hidden">
+            <div className="bg-[#0B0B0B] px-[clamp(20px,3vw,28px)] py-[clamp(18px,2.5vw,22px)] flex justify-between items-center">
+              <h3 className="font-nunito text-[clamp(14px,2vw,21.38px)] font-bold leading-tight text-white">
+                Help Center
+              </h3>
+              <div 
+                onClick={closeOverlay}
+                className="cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            
+            <div className="flex-1 bg-white p-6 overflow-y-auto">
+              <div className="max-w-[800px] mx-auto">
+                <div className="mb-6">
+                  <h4 className="font-nunito text-[clamp(14px,2vw,20px)] font-bold text-[#0E0E0E] mb-4">
+                    How can we help you?
+                  </h4>
+                  <p className="font-lato text-[clamp(12px,1.6vw,16px)] text-gray-600 mb-4">
+                    Find answers to common questions about our automation chatbot below. 
+                    Click on a question to see its answer.
+                  </p>
+                </div>
+                
+                {/* FAQ Accordion */}
+                <div className="space-y-3">
+                  {faqItems.map((item, index) => (
+                    <div 
+                      key={index} 
+                      className="border border-gray-200 rounded-lg overflow-hidden"
+                    >
+                      <div 
+                        className="flex justify-between items-center p-4 bg-gray-50 cursor-pointer"
+                        onClick={() => toggleFAQ(index)}
+                      >
+                        <h5 className="font-nunito-sans text-[clamp(12px,1.6vw,16px)] font-bold text-[#0E0E0E]">
+                          {item.question}
+                        </h5>
+                        <div>
+                          {item.isOpen ? (
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15 12.5L10 7.5L5 12.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          ) : (
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 7.5L10 12.5L15 7.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                      {item.isOpen && (
+                        <div className="p-4 bg-white">
+                          <p className="font-lato text-[clamp(12px,1.4vw,15px)] text-gray-700">
+                            {item.answer}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Contact Section */}
+                <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+                  <h4 className="font-nunito text-[clamp(13px,1.8vw,18px)] font-bold text-[#0E0E0E] mb-2">
+                    Still need help?
+                  </h4>
+                  <p className="font-lato text-[clamp(12px,1.4vw,15px)] text-gray-700 mb-4">
+                    If you couldn't find the answer to your question, feel free to contact our support team.
+                  </p>
+                  <button className="bg-[#0B0B0B] text-white px-4 py-2 rounded-md font-nunito-sans text-[clamp(12px,1.4vw,14px)] font-medium hover:bg-gray-800 transition-colors">
+                    Contact Support
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
