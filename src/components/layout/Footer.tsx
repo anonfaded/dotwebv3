@@ -77,7 +77,7 @@ export default function Footer({  }: FooterProps) {
               </Link>
             <Link 
               href="#"
-              className="mt-4 md:mt-0 text-center font-nunitoSans text-[16px] md:text-[18.97px] font-normal text-[#F7F2EF] hover:text-[#e7e2df] transition-colors whitespace-nowrap"
+              className="mt-4 md:mt-0 text-center text-base sm:text-lg  text-[#F7F2EF] hover:text-[#e7e2df] transition-colors whitespace-nowrap"
               style={{
                 textDecoration: 'underline',
                 textDecorationStyle: 'solid',
