@@ -230,8 +230,8 @@ export default function ChatBox() {
             </div>
 
             {/* Input Field */}
-            <div className="relative mb-[clamp(6px,1.2vw,8px)] lg:mb-[clamp(6px,1.2vw,10px)]">
-              <div className="flex items-center border border-[#E5E5E5] rounded-[8.91px] h-[clamp(40px,3.2vw,48px)] mx-auto w-full max-w-[1008px] bg-white">
+            <div className="relative mb-[clamp(6px,1.2vw,8px)] lg:mb-[clamp(6px,1.2vw,10px)] w-full flex justify-center">
+              <div className="flex items-center border border-[#E5E5E5] rounded-[8.91px] h-[clamp(40px,3.2vw,48px)] w-[clamp(300px,50%,600px)] bg-white">
                 <input
                   type="text"
                   placeholder="Ask anything about automation here..."
