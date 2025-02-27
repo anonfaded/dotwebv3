@@ -104,7 +104,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                         onClick={() => setShowDropdown(false)}
                       >
                         <span className="text-lg">{lang.flag}</span>
-                        <span className="font-nunito text-sm">{lang.name}</span>
+                        <span className="font-nunito text-[13px]">{lang.name}</span>
                       </Link>
                     ))}
                   </div>
@@ -125,9 +125,9 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
       onMouseLeave={() => setShowDropdown(false)}
     >
       <button
-        className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black"
+        className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black"
       >
-        <span className="text-xl">{currentLanguage.flag}</span>
+        <span className="text-lg">{currentLanguage.flag}</span>
         <span>{currentLanguage.name}</span>
         <Image
           src="/dropdown.png"
@@ -181,7 +181,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                         className={`
                           w-full h-full
                           flex items-center justify-center space-x-2
-                          font-nunito text-[17px] font-[500]
+                          font-nunito text-[16px] font-[500]
                           leading-[16.67px] text-center
                           text-[#0B0B0B]
                           transition-colors
