@@ -61,8 +61,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   const MobileMenu = memo(function MobileMenu() {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
 
-  // Define the top offset dynamically:
-  const mobileMenuTop = isScrolled ? '80px' : '100px';
+    // Define the top offset dynamically:
+    const mobileMenuTop = isScrolled ? '80px' : '100px';
 
     return (
       <AnimatePresence>
@@ -74,7 +74,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             className="fixed inset-x-0 mx-6 bg-white/60 backdrop-blur-lg shadow-lg z-50 px-4 py-6 rounded-[11.57px] overflow-y-auto"
             style={{ 
               top: mobileMenuTop,
-              maxHeight: 'calc(100vh - ${mobileMenuTop})'
+              maxHeight: `calc(100vh - ${mobileMenuTop})`
             }}
           >
             <div className="flex flex-col space-y-4">
@@ -230,7 +230,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               >
                 <button 
                   ref={solutionsButtonRef}
-                  className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black"
+                  className="flex items-center space-x-2 font-nunito text-[17px] font-[400] text-[#2A2A2A] hover:text-black transition-colors"
                 >
                   <Image 
                     src="/home.png" 
@@ -241,75 +241,92 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     className="filter brightness-0"
                   />
                   <span>{navigation.solutions || 'Solutions'}</span>
-                  <Image 
-                    src="/dropdown.png" 
-                    alt="Dropdown" 
-                    width={22} 
-                    height={22} 
-                    priority 
-                    className={`transform transition-transform duration-300 ${showSolutionsDropdown ? 'rotate-180' : ''} filter brightness-0`}
-                  />
+                  <motion.div
+                    animate={{
+                      rotate: showSolutionsDropdown ? 180 : 0
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <Image 
+                      src="/dropdown.png" 
+                      alt="Dropdown" 
+                      width={22} 
+                      height={22} 
+                      priority 
+                      className="filter brightness-0"
+                    />
+                  </motion.div>
                 </button>
 
-                {/* Dropdown menu */}
                 <AnimatePresence>
                   {showSolutionsDropdown && (
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute w-auto"
-                      style={{
-                        left: 0,
-                        transform: 'translateX(0)',
-                        top: '100%',
-                      }}
-                    >
-                      {/* Arrow */}
+                    <>
+                      {/* Invisible connection area between button and menu */}
                       <div 
-                        className="absolute top-[40px] right-[-129px] w-4 h-4 bg-white rotate-45 z-10"
-                        style={{
-                          transform: showSolutionsDropdown ? 'rotate(225deg)' : 'rotate(45deg)'
-                        }}
+                        className="absolute w-full h-[60px] bottom-0 translate-y-full"
+                        style={{ pointerEvents: 'auto' }}
                       />
-
-                      {/* Menu content */}
+                      
+                      {/* Dropdown menu with coordinated animation */}
                       <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-[48px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20"
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute w-auto"
+                        style={{
+                          left: 0,
+                          transform: 'translateX(0)',
+                          top: '100%',
+                        }}
                       >
-                        <div className="space-y-1 pt-2 pb-0">
-                          {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
-                            <Link 
-                              key={index}
-                              href="#" 
-                              className={`block py-1 px-1 rounded flex items-center space-x-2 items-start group ${index === 2 ? 'pb-0' : 'pb-1'}`}
-                            >
-                              <Image 
-                                src={`/solutions${index + 1}.png`}
-                                alt={item} 
-                                width={24} 
-                                height={24} 
-                                priority 
-                                className="filter brightness-0 self-start mt-1 group-hover:filter-none group-hover:brightness-100"
-                              />
-                              <div>
-                                <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A] group-hover:text-[#2563EB]">
-                                  {item}
-                                </h4>
-                                <p className="font-nunito-sans text-[12px] text-gray-600 group-hover:text-[#2563EB]">
-                                  {['Smart solutions for efficient operations', 'Efficient tools for capturing leads', 'Streamline tasks and boost productivity'][index]}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
+                        {/* Arrow aligned with the dropdown animation */}
+                        <motion.div 
+                          className="absolute top-[52px] right-[-129px] w-4 h-4 bg-white z-10"
+                          style={{
+                            transformOrigin: "center",
+                            transform: "rotate(225deg)"
+                          }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                        />
+
+                        {/* Menu content */}
+                        <div className="absolute top-[60px] w-auto min-w-[300px] max-w-[400px] rounded-[12px] bg-white shadow-lg py-2 px-3 z-20">
+                          <div className="space-y-1 pt-2 pb-0">
+                            {['Intelligent Automation Tools', 'Smart Lead Capture Systems', 'AI-Powered Process Optimization'].map((item, index) => (
+                              <Link 
+                                key={index}
+                                href="#" 
+                                className={`block py-1 px-1 rounded flex items-center space-x-2 items-start group ${index === 2 ? 'pb-0' : 'pb-1'}`}
+                              >
+                                <Image 
+                                  src={`/solutions${index + 1}.png`}
+                                  alt={item} 
+                                  width={24} 
+                                  height={24} 
+                                  priority 
+                                  className="filter brightness-0 self-start mt-1 group-hover:filter-none group-hover:brightness-100"
+                                />
+                                <div>
+                                  <h4 className="font-nunito text-[14px] font-semibold text-[#2A2A2A] group-hover:text-[#2563EB]">
+                                    {item}
+                                  </h4>
+                                  <p className="font-nunito-sans text-[12px] text-gray-600 group-hover:text-[#2563EB]">
+                                    {['Smart solutions for efficient operations', 'Efficient tools for capturing leads', 'Streamline tasks and boost productivity'][index]}
+                                  </p>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </motion.div>
-                    </motion.div>
+                    </>
                   )}
                 </AnimatePresence>
               </div>
@@ -357,7 +374,6 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               >
                 <div className="w-6 h-4 flex flex-col justify-between relative">
                   <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute rotate-45 top-1/2' : 'relative top-0'}`}></span>
-
                   <span className={`w-full h-0.5 bg-black transition-all origin-center ${isMobileMenuOpen ? 'absolute -rotate-45 top-1/2' : 'relative bottom-0'}`}></span>
                 </div>
               </button>
