@@ -79,7 +79,7 @@ export default function AutomationSection() {
                         src="/widget-screenshot2.png"
                         alt="Automation Interface"
                         fill
-                        className="object-cover object-right"
+                        className="object-cover object-top"
                         priority
                       />
                     </div>

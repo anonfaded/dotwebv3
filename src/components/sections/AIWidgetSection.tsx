@@ -49,7 +49,7 @@ export default function AIWidgetSection() {
                         src="/widget-screenshot.png"
                         alt="AI Widget Interface"
                         fill
-                        className="object-cover object-left"
+                        className="object-cover object-top"
                         priority
                       />
                     </div>
