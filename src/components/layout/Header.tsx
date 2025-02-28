@@ -53,7 +53,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             // Removed shadow from the mobile menu container.
-            className="fixed inset-x-0 bg-white/60 backdrop-blur-lg z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
+            className="fixed inset-x-0 bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur-lg z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
             style={mobileMenuStyle}
           >
             {/* Container matching header's width */}
@@ -180,7 +180,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
       <motion.header 
-        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white/60 backdrop-blur-lg shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3 transition-all duration-300 ease-in-out"
+        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur-lg shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3 transition-all duration-300 ease-in-out"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
