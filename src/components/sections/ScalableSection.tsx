@@ -12,13 +12,13 @@ export default function ScalableSection() {
           {/* Content Grid */}
           <div className="flex flex-col lg:flex-row items-center">
             {/* Left Content - Window Frame with Background Layers */}
-            <div className="w-full lg:w-1/2 lg:absolute lg:left-[-10.3vw] lg:top-1/2 lg:-translate-y-1/2">
+            <div className="w-full lg:w-1/2 lg:absolute lg:left-[-10.3vw] lg:top-1/2 lg:-translate-y-1/2 mt-8 lg:mt-0 order-2 lg:order-1">
               <div className="relative w-full max-w-[680px] mx-auto lg:mx-0">
                 {/* Background layers */}
                 <div className="absolute -right-4 lg:-right-8 -top-3 lg:-top-5 -bottom-3 lg:bottom-0 w-[calc(100%+32px)] lg:w-[calc(100%+64px)] bg-[#e2ddd8] rounded-xl" />
                 <div className="absolute -right-2 lg:-right-4 top-6 lg:top-12 -bottom-1 lg:-bottom-3 w-[calc(100%+16px)] lg:w-[calc(100%+32px)] bg-[#f5f1ee] rounded-xl" />
                 
-                {/* Card container with overflow */}
+                {/* Card container */}
                 <div className="relative">
                   <Card
                     className="overflow-hidden w-full [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
@@ -58,8 +58,8 @@ export default function ScalableSection() {
               </div>
             </div>
 
-            {/* Right Content */}
-            <div className="w-full lg:w-1/2 lg:ml-auto lg:max-w-[480px] mb-12 lg:mb-0">
+            {/* Right Content - Text Section */}
+            <div className="w-full lg:w-1/2 lg:ml-auto lg:max-w-[480px] mb-8 lg:mb-0 order-1 lg:order-2">
               <div 
                 className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
