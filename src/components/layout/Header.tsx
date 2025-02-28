@@ -160,7 +160,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 ))}
 
                 {/* Request Demo Button - Sticky at bottom (no shadow) */}
-                <div className="sticky bottom-0 pt-4 mt-auto bg-gradient-to-t from-white/60 to-transparent backdrop-blur-lg">
+                <div className="sticky bottom-0 pt-4 mt-auto ">
                   <Link href={`/${lang}/demo`}>
                     <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors shadow-none">
                       {navigation.demo || 'Request a Demo'}
