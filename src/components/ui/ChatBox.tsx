@@ -308,7 +308,7 @@ export default function ChatBox() {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                 />
-                <div className="flex items-center gap-2 pr-4 sm:pr-4">
+                <div className="flex items-center pr-2"> {/* Reduced from pr-4 to pr-2 */}
                   {inputText.trim() === '' ? (
                     <Image
                       src="/send3.png"
