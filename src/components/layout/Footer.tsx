@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from 'antd';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface FooterProps {
@@ -12,6 +12,34 @@ interface FooterProps {
 
 export default function Footer({  }: FooterProps) {
   const [showLegalDropdown, setShowLegalDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Add mobile detection
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Add click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowLegalDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Handle interaction based on device type
+  const handleInteraction = () => {
+    if (isMobile) {
+      setShowLegalDropdown(!showLegalDropdown);
+    }
+  };
 
   return (
     <section className="relative w-full bg-white py-10">
@@ -114,23 +142,29 @@ export default function Footer({  }: FooterProps) {
           {/* Right side - Legal Information Dropdown */}
           {/* Legal Dropdown */}
           <div
+            ref={dropdownRef}
             className="relative"
-            onMouseEnter={() => setShowLegalDropdown(true)}
-            onMouseLeave={() => setShowLegalDropdown(false)}
+            onClick={handleInteraction}
+            onMouseEnter={() => !isMobile && setShowLegalDropdown(true)}
+            onMouseLeave={() => !isMobile && setShowLegalDropdown(false)}
           >
             <button
               className="flex items-center space-x-2 font-nunito text-[17px] font-[400]"
             >
-              <Image
-                src="/footer-arrowup.png"
-                alt="Dropdown"
-                width={16}
-                height={16}
-                priority
-                className={`transform transition-transform duration-300 rotate-180 ${
-                  showLegalDropdown ? "rotate-0" : ""
-                }`}
-              />
+              <motion.div
+                initial={{ rotate: 180 }}
+                animate={{ rotate: showLegalDropdown ? 0 : 180 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/footer-arrowup.png"
+                  alt="Dropdown"
+                  width={16}
+                  height={16}
+                  priority
+                  className="transition-transform duration-300"
+                />
+              </motion.div>
               <span className="font-nunito text-[17.12px] font-[400]">
                 <span className="hidden md:inline">Policies</span>
                 <span className="md:hidden">Policies</span>
