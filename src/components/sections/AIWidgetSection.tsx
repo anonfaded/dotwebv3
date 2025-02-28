@@ -42,7 +42,7 @@ export default function AIWidgetSection() {
             </div>
 
             {/* Right Content - Window Frame with Background Layers */}
-            <div className="w-full lg:w-1/2 lg:absolute lg:right-[-10vw] lg:top-1/2 lg:-translate-y-1/2">
+            <div className="w-full lg:w-1/2 lg:absolute lg:right-[-15vw] lg:top-1/2 lg:-translate-y-1/2">
               <div className="relative w-full max-w-[680px] mx-auto lg:mx-0">
                 {/* Background layers */}
                 <div className="absolute -left-4 lg:-left-8 -top-3 lg:-top-5 -bottom-3 lg:bottom-0 w-[calc(100%+32px)] lg:w-[calc(100%+64px)] bg-[#e2ddd8] rounded-xl" />
