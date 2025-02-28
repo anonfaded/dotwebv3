@@ -45,6 +45,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
     return segments.join('/');
   };
 
+  // Mobile version
   if (isMobile) {
     return (
       <div 
@@ -67,7 +68,7 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                 style={{ pointerEvents: 'auto' }}
               />
               
-              {/* Dropdown menu */}
+              {/* Dropdown menu with adjusted positioning for mobile */}
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -75,14 +76,14 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                 transition={{ duration: 0.2 }}
                 className="absolute w-[120px]"
                 style={{
-                  right: 0,
-                  top: '100%',
+                  right: '-8px', // Adjusted to align with flag button
+                  top: '159%',
                 }}
               >
-                <div className="absolute top-[50px] w-full rounded-[12px] bg-white/60 backdrop-blur-lg shadow-lg z-50">
-                  {/* Triangular Arrow */}
+                <div className="absolute top-[15px] w-full rounded-[12px] bg-white/60 backdrop-blur-lg shadow-lg z-50">
+                  {/* Triangular Arrow - Adjusted position */}
                   <div
-                    className="absolute top-[-10px] right-[14px]
+                    className="absolute top-[-10px] right-[14px]  // Adjusted to align with flag
                              border-l-[10px] border-l-transparent
                              border-r-[10px] border-r-transparent
                              border-b-[10px] border-b-white/60"
