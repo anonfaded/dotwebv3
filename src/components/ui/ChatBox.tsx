@@ -172,9 +172,10 @@ export default function ChatBox() {
           <div className="flex-1 px-3 sm:px-[clamp(6px,1.5vw,12px)] lg:px-[clamp(8px,2vw,14px)] bg-white rounded-b-lg flex flex-col h-full overflow-hidden">
             {/* Increased padding on mobile */}
             {/* Chat Messages */}
+            {/* Gap/Bottom margin below the message and above the input section */}
             <div
               ref={chatContainerRef}
-              className="flex-grow overflow-y-auto scroll-smooth"
+              className="flex-grow overflow-y-auto scroll-smooth mb-4"
               style={{
                 height: 'calc(100% - 90px)',
                 maxHeight: 'calc(100% - 90px)'
