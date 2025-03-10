@@ -180,10 +180,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6">
       <motion.header 
-        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur-lg shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3 transition-all duration-300 ease-in-out"
+        className="relative w-full h-[69.4px] mt-[26.3px] flex items-center justify-between rounded-[11.57px] bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur-lg shadow-[0_1px_2px_-1px_rgba(0,0,0,0.03)] px-3"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ 
+          duration: 1.7,
+          ease: [0.21, 0.45, 0.32, 1]  // Smooth cubic easing
+        }}
       >
         {/* Left section */}
         <div className="flex items-center space-x-2 lg:space-x-4">
