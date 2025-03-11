@@ -120,7 +120,7 @@ export default function ChatBox() {
   };
 
   const toggleFAQ = (index: number) => {
-    setFaqItems(prevItems => 
+    setFaqItems(prevItems =>
       prevItems.map((item, i) => ({
         ...item,
         isOpen: i === index ? !item.isOpen : false // Close others when opening new one
@@ -153,7 +153,7 @@ export default function ChatBox() {
                 Instant insights on workflows, cost savings, and efficiency.
               </p>
             </div>
-            <div 
+            <div
               onClick={() => setShowHelpOverlay(true)}
               className="cursor-pointer hover:opacity-80 transition-opacity"
             >
@@ -202,7 +202,7 @@ export default function ChatBox() {
                   {/* Pre-prompt Cards - Show only 2 on mobile */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-4 mb-4 sm:mb-[clamp(10px,1.8vw,12px)] w-full max-w-full sm:max-w-[1008px] mx-auto overflow-hidden px-4 sm:px-4">
                     {/* Increased spacing and width for mobile */}
-                    
+
                     {/* Card 1 - Increased height and padding for mobile */}
                     <div
                       className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 sm:p-[clamp(4px,0.8vw,8px)] h-auto min-h-[95px] sm:h-[clamp(75px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
@@ -354,22 +354,27 @@ export default function ChatBox() {
         {/* Help Overlay - Improved for mobile */}
         {showHelpOverlay && (
           <div className="absolute inset-0 bg-black bg-opacity-50 z-10 flex flex-col rounded-lg overflow-hidden">
-            <div className="bg-[#0B0B0B] px-5 sm:px-[clamp(12px,3vw,28px)] py-5 sm:py-[clamp(18px,2.5vw,22px)] flex justify-between items-center">
-              <h3 className="font-nunito text-lg sm:text-[clamp(16px,2vw,21.38px)] font-bold leading-tight text-white">
-                {/* Increased font size and padding for mobile */}
-                Help Center
-              </h3>
+            {/* Help Center Header - Matched with main header */}
+            <div className="bg-[#0B0B0B] px-4 sm:px-[clamp(20px,3vw,26px)] lg:px-[clamp(24px,3.2vw,28px)] py-4 lg:py-[clamp(20px,2.5vw,22px)] flex justify-between items-center">
+              <div className="space-y-1 sm:space-y-2 px-1 sm:px-[clamp(4px,1vw,10px)] py-1 sm:py-[clamp(3px,0.5vw,6px)]">
+                <h3 className="font-nunito text-lg sm:text-[clamp(16px,2vw,21.38px)] font-bold leading-tight text-white">
+                  Help Center
+                </h3>
+                <p className="font-lato text-base sm:text-[clamp(14px,1.8vw,17.81px)] font-normal leading-relaxed text-[#E8E8E8]">
+                  Find answers to your questions
+                </p>
+              </div>
               <div 
                 onClick={closeOverlay}
-                className="cursor-pointer hover:opacity-80 transition-opacity"
+                className="cursor-pointer hover:opacity-80 transition-opacity w-[29px] h-[48.39px] flex items-center justify-center"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 7L7 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7 7L22 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
             </div>
-            
+
             <div className="flex-1 bg-white p-5 sm:p-6 overflow-y-auto">
               <div className="max-w-full sm:max-w-[800px] mx-auto">
                 {/* Increased max-width for mobile */}
@@ -380,19 +385,19 @@ export default function ChatBox() {
                   </h4>
                   <p className="font-lato text-base sm:text-[clamp(14px,1.6vw,16px)] text-gray-600 mb-3 sm:mb-4">
                     {/* Changed apostrophe to HTML entity */}
-                    Find answers to common questions about our automation chatbot below. 
+                    Find answers to common questions about our automation chatbot below.
                     Click on a question to see its answer.
                   </p>
                 </div>
-                
+
                 {/* FAQ Accordion */}
                 <div className="space-y-4">
                   {faqItems.map((item, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className="border border-gray-200 rounded-lg overflow-hidden"
                     >
-                      <div 
+                      <div
                         className="flex justify-between items-center p-4 sm:p-4 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
                         onClick={() => toggleFAQ(index)}
                       >
@@ -405,7 +410,7 @@ export default function ChatBox() {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M5 7.5L10 12.5L15 7.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="#0E0E0E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </motion.div>
                       </div>
@@ -434,7 +439,7 @@ export default function ChatBox() {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Contact Section */}
                 <div className="mt-6 sm:mt-8 p-5 sm:p-6 bg-gray-50 rounded-lg">
                   <h4 className="font-nunito text-lg sm:text-[clamp(14px,1.8vw,18px)] font-bold text-[#0E0E0E] mb-3">
