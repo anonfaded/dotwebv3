@@ -450,10 +450,12 @@ export default function ChatBox() {
                     {/* Increased font size for mobile */}
                     {`If you couldn't find the answer to your question, feel free to contact our support team.`}
                   </p>
-                  <button className="bg-[#0B0B0B] text-white px-5 py-3 rounded-md font-nunito-sans text-base sm:text-[clamp(12px,1.4vw,14px)] font-medium hover:bg-gray-800 transition-colors">
-                    {/* Increased size for mobile */}
+                  <a 
+                    href="mailto:support@dotweb.agency"
+                    className="inline-block bg-[#0B0B0B] text-white px-5 py-3 rounded-md font-nunito-sans text-base sm:text-[clamp(12px,1.4vw,14px)] font-medium hover:bg-gray-800 transition-colors"
+                  >
                     Contact Support
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
