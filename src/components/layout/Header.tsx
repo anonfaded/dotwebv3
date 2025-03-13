@@ -53,10 +53,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             // Updated mobile menu backdrop styling for iOS compatibility
-            className="fixed inset-x-0 bg-white/60 backdrop-blur-lg supports-[backdrop-filter]:bg-white/40 bg-clip-padding backdrop-filter z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
+            className="fixed inset-x-0 bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 bg-clip-padding backdrop-filter z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
             style={{
               ...mobileMenuStyle,
-              WebkitBackdropFilter: 'blur(8px)', // Add explicit webkit support
+              WebkitBackdropFilter: 'blur(12px)',
+              backdropFilter: 'blur(12px)',
+              backgroundColor: 'rgba(255, 255, 255, 0.85)'
             }}
           >
             {/* Container matching header's width */}
@@ -92,7 +94,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden bg-white/40 backdrop-blur-sm rounded-lg mt-2"
+                        className="overflow-hidden bg-white/85 backdrop-blur-lg supports-[backdrop-filter]:bg-white/75 bg-clip-padding backdrop-filter rounded-lg mt-2"
+                        style={{
+                          WebkitBackdropFilter: 'blur(12px)',
+                          backdropFilter: 'blur(12px)',
+                        }}
                       >
                         <div className="pl-4 space-y-3 py-3">
                           {[
