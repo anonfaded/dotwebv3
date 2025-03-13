@@ -52,9 +52,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            // Removed shadow from the mobile menu container.
-            className="fixed inset-x-0 bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur-lg z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
-            style={mobileMenuStyle}
+            // Updated mobile menu backdrop styling for iOS compatibility
+            className="fixed inset-x-0 bg-white/60 backdrop-blur-lg supports-[backdrop-filter]:bg-white/40 bg-clip-padding backdrop-filter z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
+            style={{
+              ...mobileMenuStyle,
+              WebkitBackdropFilter: 'blur(8px)', // Add explicit webkit support
+            }}
           >
             {/* Container matching header's width */}
             <div className="max-w-[1200px] mx-auto">

@@ -78,7 +78,11 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                   top: '159%',
                 }}
               >
-                <div className="absolute top-[15px] w-full rounded-[12px] bg-white/60 backdrop-blur-lg shadow-lg z-50">
+                <div className="absolute top-[15px] w-full rounded-[12px] bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 bg-clip-padding backdrop-filter shadow-lg z-50"
+                  style={{
+                    WebkitBackdropFilter: 'blur(8px)', // Add explicit webkit support
+                  }}
+                >
                   {/* Triangular Arrow - Adjusted position */}
                   <div
                     className="absolute top-[-10px] right-[14px]  // Adjusted to align with flag
