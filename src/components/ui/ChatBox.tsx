@@ -133,6 +133,21 @@ export default function ChatBox() {
     setShowHelpOverlay(false);
   };
 
+  // Replace the placeholder input usage with useEffect
+  const [placeholder, setPlaceholder] = useState("Ask anything about automation here...");
+
+  useEffect(() => {
+    // Only run on client-side
+    setPlaceholder(window.innerWidth < 640 ? "Ask about automation..." : "Ask anything about automation here...");
+    
+    const handleResize = () => {
+      setPlaceholder(window.innerWidth < 640 ? "Ask about automation..." : "Ask anything about automation here...");
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="flex justify-center items-center min-h-screen px-0 sm:px-4 -m-6 ">
       {/* Removed padding on mobile to use full width */}
@@ -303,7 +318,7 @@ export default function ChatBox() {
                 {/* Increased height and width for mobile */}
                 <input
                   type="text"
-                  placeholder={window.innerWidth < 640 ? "Ask about automation..." : "Ask anything about automation here..."}
+                  placeholder={placeholder}
                   className="flex-1 px-4 lg:px-6 font-nunito text-base sm:text-[clamp(12px,1.1vw,15.14px)] font-normal leading-normal placeholder-gray-400 focus:outline-none"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
