@@ -125,7 +125,7 @@ export default function CalculatorSection() {
                   <div className="flex items-center justify-center w-[48px] h-[48px] bg-[#F4F4F5] rounded-full">
                     <div className="relative w-6 h-6">
                       <Image
-                        src="/employee.png"
+                        src="/employee.svg"
                         alt="Employees"
                         fill
                         className="object-contain"
@@ -396,7 +396,7 @@ export default function CalculatorSection() {
                         {inputs.numEmployees}×
                       </span>
                       <Image
-                        src="/employee.png"
+                        src="/employee.svg"
                         alt="Employee"
                         width={20}
                         height={20}
