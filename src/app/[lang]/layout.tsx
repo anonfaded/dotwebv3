@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Nunito, Nunito_Sans } from 'next/font/google';
+// import { Nunito, Nunito_Sans } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { locales, Locale } from '@/config/i18n';
