@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function ComparisonStats() {
   return (
     <motion.div 
-      className="w-full bg-[#F6F2EF] rounded-2xl p-4 sm:p-6 lg:p-8 min-w-[320px] max-w-[1200px] mx-auto my-8"
+      className="w-full bg-[#F6F2EF] rounded-2xl p-4 sm:p-6 lg:p-8 min-w-0 max-w-[1200px] mx-auto my-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -68,13 +68,13 @@ export default function ComparisonStats() {
       </div>
 
       {/* Mobile Version Layout */}
-      <div className="sm:hidden flex flex-col mt-6">
-                {/* Legacy section in second row */}
-                <div className="text-center w-full">
-          <h3 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] text-center mb-10">
+      <div className="sm:hidden flex flex-col mt-6 w-full max-w-full overflow-x-hidden px-2">
+        {/* Legacy section in second row */}
+        <div className="text-center w-full">
+          <h3 className="font-nunito text-[24px] sm:text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] text-center mb-8">
             Legacy vs. Automation
           </h3>
-          <div className="relative w-full max-w-[651.36px] mx-auto mb-14">
+          <div className="relative w-full max-w-full mx-auto mb-10">
             {/* Middle icon */}
             <div className="absolute left-[35%] -top-8">
               <Image
@@ -105,21 +105,27 @@ export default function ComparisonStats() {
             <div className="absolute left-0 top-0 w-[37%] h-3 bg-[#055DA3] rounded-full" />
           </div>
         </div>
-        {/* Flex container for phone screens */}
-        <div className="flex flex-row items-start justify-between w-full px-6">
-          
+
+        {/* Flex container for phone screens - Adjusted spacing and widths */}
+        <div className="flex flex-row items-start justify-between w-full">
           {/* Left Stat (15h) */}
-          <div className="text-center w-1/2 pr-2">
-            <h2 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-3">15h</h2>
-            <p className="font-lato text-[15px] leading-[1.4] text-[#2E2F35] mx-auto">
-              Time saved per employee each month.
+          <div className="text-center w-[48%]">
+            <h2 className="font-nunito text-[24px] xs:text-[28px] sm:text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-2">15h</h2>
+            <p
+              className="font-lato text-[13px] xs:text-[14px] sm:text-[15px] leading-[1.4] text-[#2E2F35] mx-auto line-clamp-3 overflow-hidden"
+              style={{ height: '3.5rem' }}  // Adjusted to fixed height for exactly 3 lines
+            >
+              Time saved monthly per employee.
             </p>
           </div>
 
           {/* Right Stat (2x) */}
-          <div className="text-center w-1/2 pl-2">
-            <h2 className="font-nunito text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-3">2x</h2>
-            <p className="font-lato text-[15px] leading-[1.4] text-[#2E2F35] mx-auto">
+          <div className="text-center w-[48%]">
+            <h2 className="font-nunito text-[24px] xs:text-[28px] sm:text-[32px] font-bold leading-tight tracking-tight text-[#2E2F35] mb-2">2x</h2>
+            <p
+              className="font-lato text-[13px] xs:text-[14px] sm:text-[15px] leading-[1.4] text-[#2E2F35] mx-auto line-clamp-3 overflow-hidden"
+              style={{ height: '3.5rem' }}  // Same fixed height to force exactly 3 lines
+            >
               Accelerated project completion rates.
             </p>
           </div>
