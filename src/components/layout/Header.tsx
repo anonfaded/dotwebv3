@@ -36,15 +36,12 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     };
   }, []);
 
-  interface ExtendedMotionStyle extends MotionStyle {
-    isolation?: 'isolate';
-  }
-  
+
   const MobileMenu = memo(function MobileMenu() {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
 
     // Decreased top margin from 100px to 70px and use header's container width.
-    const mobileMenuStyle: ExtendedMotionStyle = {
+    const mobileMenuStyle = {
       top: '80px',
       maxHeight: 'calc(100vh - 70px)',
       isolation: 'isolate'
@@ -52,17 +49,20 @@ export default function Header({ lang, dictionary }: HeaderProps) {
 
     return (
       <AnimatePresence>
-        {isMobileMenuOpen && (
+      {isMobileMenuOpen && (
+        // Wrap in a div to apply isolation without interfering with MotionStyle.
+        <div style={{ isolation: 'isolate' }}>
           <motion.div 
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="fixed inset-x-0 bg-white/95 backdrop-blur-xl supports-[backdrop-filter]:bg-white/75 bg-clip-padding backdrop-filter z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
+            className="fixed inset-x-0 backdrop-blur-xl bg-clip-padding z-50 px-6 py-6 rounded-[11.57px] overflow-y-auto"
             style={{
               ...mobileMenuStyle,
               WebkitBackdropFilter: 'blur(24px)',
               backdropFilter: 'blur(24px)',
-              backgroundColor: 'rgba(255, 255, 255, 0.95)'
+              // Use a more translucent color for a glassy effect.
+              backgroundColor: 'rgba(255, 255, 255, 0.6)'
             }}
           >
             {/* Container matching header's width */}
