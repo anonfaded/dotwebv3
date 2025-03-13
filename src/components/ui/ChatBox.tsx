@@ -145,12 +145,12 @@ export default function ChatBox() {
           <div className="flex justify-between items-center px-4 sm:px-[clamp(20px,3vw,26px)] lg:px-[clamp(24px,3.2vw,28px)] py-4 lg:py-[clamp(20px,2.5vw,22px)] bg-[#0B0B0B] rounded-t-lg">
             <div className="space-y-1 sm:space-y-2 px-1 sm:px-[clamp(4px,1vw,10px)] py-1 sm:py-[clamp(3px,0.5vw,6px)]">
               <h3 className="font-nunito text-lg sm:text-[clamp(16px,2vw,21.38px)] font-bold leading-tight text-white">
-                {/* Increased text size for mobile */}
-                Ask About Smarter Automation Solutions
+                <span className="sm:hidden">Ask About Automation</span>
+                <span className="hidden sm:inline">Ask About Smarter Automation Solutions</span>
               </h3>
               <p className="font-lato text-base sm:text-[clamp(14px,1.8vw,17.81px)] font-normal leading-relaxed text-[#E8E8E8]">
-                {/* Increased text size for mobile */}
-                Instant insights on workflows, cost savings, and efficiency.
+                <span className="sm:hidden">Get insights on efficiency & costs</span>
+                <span className="hidden sm:inline">Instant insights on workflows, cost savings, and efficiency.</span>
               </p>
             </div>
             <div
