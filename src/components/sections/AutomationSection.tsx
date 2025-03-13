@@ -9,8 +9,8 @@ export default function AutomationSection() {
     <section className="bg-[#F5FAFF] relative overflow-hidden min-h-[671px] py-16 lg:h-[671px] lg:py-0">
       <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
         <div className="max-w-[1200px] mx-auto w-full">
-          {/* Content Grid */}
-          <div className="flex flex-col lg:flex-row items-center">
+          {/* Content Grid - Updated spacing */}
+          <div className="flex flex-col lg:flex-row items-center lg:gap-36">
             {/* Left Content */}
             <div className="w-full lg:w-1/2 lg:max-w-[480px] mb-12 lg:mb-0">
               <div 
@@ -41,12 +41,12 @@ export default function AutomationSection() {
               </Link>
             </div>
 
-            {/* Right Content - Window Frame with Background Layers */}
-            <div className="w-full lg:w-1/2 lg:absolute lg:right-[-15vw] lg:top-1/2 lg:-translate-y-1/2">
-              <div className="relative w-full max-w-[680px] mx-auto lg:mx-0">
-                {/* Background layers */}
-                <div className="absolute -left-4 lg:-left-8 -top-3 lg:-top-5 -bottom-3 lg:bottom-0 w-[calc(100%+32px)] lg:w-[calc(100%+64px)] bg-[#016EC6] rounded-xl" />
-                <div className="absolute -left-2 lg:-left-4 top-6 lg:top-12 -bottom-1 lg:-bottom-3 w-[calc(100%+16px)] lg:w-[calc(100%+32px)] bg-[#f5faff] rounded-xl" />
+            {/* Right Content - Updated positioning */}
+            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:flex lg:justify-end">
+              <div className="relative w-full max-w-[680px] mx-auto">
+                {/* Updated background layers */}
+                <div className="absolute -right-4 lg:-right-4 -top-3 lg:-top-3 -bottom-3 lg:-bottom-3 w-[calc(100%+32px)] bg-[#016EC6] rounded-xl" />
+                <div className="absolute -right-2 lg:-right-2 top-6 lg:top-6 -bottom-1 lg:-bottom-1 w-[calc(100%+16px)] bg-[#f5faff] rounded-xl" />
                 
                 {/* Card container with overflow */}
                 <div className="relative">
