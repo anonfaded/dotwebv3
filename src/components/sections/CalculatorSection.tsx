@@ -288,7 +288,7 @@ export default function CalculatorSection() {
 
   // Return different layouts for mobile and desktop
   return (
-    <section className="w-full bg-[#0B0B0B] py-16">
+    <section className="w-full bg-[#0B0B0B] py-24">
       <div className="container mx-auto px-4 max-w-[1400px]">
         {isMobile ? (
           // Mobile step-by-step layout
