@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionStyle  } from 'framer-motion';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 import { useState, useRef, useEffect, memo } from 'react';
 
@@ -36,11 +36,15 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     };
   }, []);
 
+  interface ExtendedMotionStyle extends MotionStyle {
+    isolation?: 'isolate';
+  }
+  
   const MobileMenu = memo(function MobileMenu() {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
 
     // Decreased top margin from 100px to 70px and use header's container width.
-    const mobileMenuStyle = {
+    const mobileMenuStyle: ExtendedMotionStyle = {
       top: '80px',
       maxHeight: 'calc(100vh - 70px)',
       isolation: 'isolate'
@@ -59,7 +63,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               WebkitBackdropFilter: 'blur(24px)',
               backdropFilter: 'blur(24px)',
               backgroundColor: 'rgba(255, 255, 255, 0.95)'
-            }as any}
+            }}
           >
             {/* Container matching header's width */}
             <div className="max-w-[1200px] mx-auto">
