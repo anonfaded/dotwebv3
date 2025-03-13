@@ -6,15 +6,15 @@ import { locales, Locale } from '@/config/i18n';
 import { getDictionary } from '@/lib/dictionary';
 import '@/app/globals.css';
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-});
+// const nunito = Nunito({
+//   subsets: ['latin'],
+//   variable: '--font-nunito',
+// });
 
-const nunitoSans = Nunito_Sans({
-  subsets: ['latin'],
-  variable: '--font-nunito-sans',
-});
+// const nunitoSans = Nunito_Sans({
+//   subsets: ['latin'],
+//   variable: '--font-nunito-sans',
+// });
 
 export const metadata: Metadata = {
   title: 'DotWeb - Smart Automation Solutions',
@@ -25,22 +25,22 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-interface Dictionary {
-  navigation: {
-    start: string;
-    learn: string;
-  };
-  hero: {
-    title: string;
-    subtitle: string;
-  };
-  features: {
-    title: string;
-    automation: string;
-    workflow: string;
-    integration: string;
-  };
-}
+// interface Dictionary {
+//   navigation: {
+//     start: string;
+//     learn: string;
+//   };
+//   hero: {
+//     title: string;
+//     subtitle: string;
+//   };
+//   features: {
+//     title: string;
+//     automation: string;
+//     workflow: string;
+//     integration: string;
+//   };
+// }
 
 interface RootLayoutProps {
   children: React.ReactNode;
