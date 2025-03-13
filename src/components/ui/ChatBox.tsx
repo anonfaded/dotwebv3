@@ -136,8 +136,8 @@ export default function ChatBox() {
   return (
     <div className="flex justify-center items-center min-h-screen px-0 sm:px-4 -m-6 ">
       {/* Removed padding on mobile to use full width */}
-      <div className="w-full sm:min-w-[640px] md:min-w-[768px] lg:min-w-[1024px] xl:min-w-[1200px] bg-gray-900 rounded-lg shadow-lg relative h-[95vh] sm:h-[868px]">
-        {/* Increased height to 95vh on mobile */}
+      <div className="w-full sm:min-w-[640px] md:min-w-[768px] lg:min-w-[1024px] xl:min-w-[1200px] bg-gray-900 rounded-lg shadow-lg relative h-[85vh] sm:h-[868px]">
+        {/* Changed from 95vh to 85vh for mobile */}
 
         {/* Content */}
         <div className="h-full flex flex-col">
@@ -279,13 +279,13 @@ export default function ChatBox() {
                           {/* Increased margin for better spacing */}
                           <div
                             className={`
-                            max-w-[85%] sm:max-w-[600px] p-4 rounded-lg text-base sm:text-base
+                            max-w-[85%] sm:max-w-[600px] p-2.5 rounded-lg text-base sm:text-base
                             ${message.sender === 'user'
                                 ? 'bg-[#0b0b0b] text-white'
                                 : 'bg-gray-200 text-black'}
                           `}
                           >
-                            {/* Increased width, padding and font size for mobile */}
+                            {/* Reduced padding from p-4 to p-2.5 */}
                             {message.text}
                           </div>
                         </div>
@@ -303,7 +303,7 @@ export default function ChatBox() {
                 {/* Increased height and width for mobile */}
                 <input
                   type="text"
-                  placeholder="Ask anything about automation here..."
+                  placeholder={window.innerWidth < 640 ? "Ask about automation..." : "Ask anything about automation here..."}
                   className="flex-1 px-4 lg:px-6 font-nunito text-base sm:text-[clamp(12px,1.1vw,15.14px)] font-normal leading-normal placeholder-gray-400 focus:outline-none"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
