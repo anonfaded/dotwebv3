@@ -263,15 +263,18 @@ export default function CalculatorSection() {
             <div className="flex space-x-4">
               <button 
                 onClick={() => setCurrentStep(2)}
-                className="w-1/2 bg-gray-200 text-black py-4 rounded-[13.01px]"
+                className="w-1/3 bg-gray-200 text-black py-4 rounded-[13.01px]"
               >
                 Back
               </button>
               <Link 
                 href="#"
-                className="group w-1/2 bg-[#0B0B0B] text-white px-6 py-4 rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center"
+                className="group w-2/3 bg-[#0B0B0B] text-white px-4 py-4 rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center whitespace-nowrap"
               >
-                <span className="font-nunito text-[16px] font-bold text-white">Let Us Design Your Solution</span>
+                <span className="font-nunito text-[14px] sm:text-[15px] font-bold text-white">
+                  <span className="block sm:hidden">Get Started</span>
+                  <span className="hidden sm:block text-[14px] md:text-[16px]">Let Us Design Your Solution</span>
+                </span>
                 <svg 
                   className="ml-4 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
                   viewBox="0 0 16 16" 
@@ -484,11 +487,13 @@ export default function CalculatorSection() {
               <div className="mt-6">
               <Link 
                   href="#"
-                  className="group  bg-[#0B0B0B] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center shadow-none border-none w-full h-[54px]"
+                  className="group bg-[#0B0B0B] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center shadow-none border-none w-full h-[54px]"
                 >
-                  <span className="font-nunito text-[16px] font-bold text-white">Let Us Design Your Solution</span>
+                  <span className="font-nunito text-[15px] md:text-[16px] font-bold text-white whitespace-nowrap">
+                    Let Us Design Your Solution
+                  </span>
                   <svg 
-                    className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
+                    className="ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
                     viewBox="0 0 16 16" 
                     fill="none"
                   >
