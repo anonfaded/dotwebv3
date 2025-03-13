@@ -72,46 +72,41 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="absolute w-[120px]"
+                className="absolute w-[120px] bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/40 bg-clip-padding backdrop-filter shadow-lg z-50"
                 style={{
                   right: '-8px', // Adjusted to align with flag button
                   top: '159%',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  backdropFilter: 'blur(12px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.85)'
                 }}
               >
-                <div className="absolute top-[15px] w-full rounded-[12px] bg-white/85 backdrop-blur-lg supports-[backdrop-filter]:bg-white/75 bg-clip-padding backdrop-filter shadow-lg z-50"
-                  style={{
-                    WebkitBackdropFilter: 'blur(12px)',
-                    backdropFilter: 'blur(12px)',
-                    backgroundColor: 'rgba(255, 255, 255, 0.85)'
-                  }}
-                >
-                  {/* Triangular Arrow - Adjusted position */}
-                  <div
-                    className="absolute top-[-10px] right-[14px]  // Adjusted to align with flag
+                {/* Triangular Arrow - Adjusted position */}
+                <div
+                  className="absolute top-[-10px] right-[14px]  // Adjusted to align with flag
                              border-l-[10px] border-l-transparent
                              border-r-[10px] border-r-transparent
                              border-b-[10px] border-b-white/60"
-                  />
+                />
 
-                  <div className="flex flex-col py-2">
-                    {languages.map((lang) => (
-                      <Link
-                        key={lang.code}
-                        href={newPathname(lang.code)}
-                        className={`
-                          flex items-center space-x-2 px-3 py-2
-                          transition-colors
-                          ${currentLang === lang.code
-                            ? 'bg-white/60 text-[#2A2A2A] font-medium'
-                            : 'hover:bg-white/60 text-[#677489]'
-                          }
-                        `}
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        <span className="font-nunito text-[13px]">{lang.name}</span>
-                      </Link>
-                    ))}
-                  </div>
+                <div className="flex flex-col py-2">
+                  {languages.map((lang) => (
+                    <Link
+                      key={lang.code}
+                      href={newPathname(lang.code)}
+                      className={`
+                        flex items-center space-x-2 px-3 py-2
+                        transition-colors
+                        ${currentLang === lang.code
+                          ? 'bg-white/60 text-[#2A2A2A] font-medium'
+                          : 'hover:bg-white/60 text-[#677489]'
+                        }
+                      `}
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      <span className="font-nunito text-[13px]">{lang.name}</span>
+                    </Link>
+                  ))}
                 </div>
               </motion.div>
             </>
@@ -156,11 +151,14 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute w-[120px]"
+              className="absolute w-[120px] bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 bg-clip-padding backdrop-filter shadow-lg z-50"
               style={{
                 left: '50%',
                 transform: 'translateX(-50%)',
                 top: '100%',
+                WebkitBackdropFilter: 'blur(12px)',
+                backdropFilter: 'blur(12px)',
+                backgroundColor: 'rgba(255, 255, 255, 0.85)'
               }}
             >
               <div className="absolute top-[40px] w-full rounded-[12px] bg-white shadow-[0px_0px_12.4px_0px_#0000000D] z-50">
