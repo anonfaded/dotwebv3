@@ -42,31 +42,23 @@ interface Dictionary {
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-  params: { lang: Locale };
-}) {
-  const dictionary = await getDictionary(params.lang) as Dictionary;
+  params: {
+    lang: string;
+  };
+}
+
+export default async function RootLayout({ children, params: { lang } }: RootLayoutProps) {
+  const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={params.lang} suppressHydrationWarning>
-      <head>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-      </head>
-      <body className={`${nunito.variable} ${nunitoSans.variable} flex flex-col min-h-screen`} suppressHydrationWarning>
-        <div className="flex-grow">
-          <Header lang={params.lang} dictionary={dictionary} />
-          <main className="min-h-[calc(100vh-200px)]">{children}</main>
-        </div>
-        <Footer lang={params.lang} />
-      </body>
-    </html>
+    <main className="min-h-screen flex flex-col">
+      <Header lang={lang} dictionary={dictionary} />
+      <div className="flex-grow">
+        {children}
+      </div>
+      <Footer lang={lang} />
+    </main>
   );
 }

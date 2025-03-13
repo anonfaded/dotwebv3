@@ -10,7 +10,7 @@ interface FooterProps {
   lang: string;
 }
 
-export default function Footer({  }: FooterProps) {
+export default function Footer({ lang }: FooterProps) {
   const [showLegalDropdown, setShowLegalDropdown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -188,28 +188,28 @@ export default function Footer({  }: FooterProps) {
                 style={{ minWidth: '160px' }} // Increased to match "Legal Information" text width
               >
                 <ul className="flex flex-col h-[180px]">
-                  {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-                    (item, index) => (
-                      <li key={index} className="group flex-1">
-                        <Link
-                          href="#"
-                          className={`
-                            flex items-center justify-center h-full w-full px-4 py-2
-                            text-sm text-gray-700 hover:bg-[#F6F2EF] hover:text-gray-900 
-                            transition-all duration-200
-                            ${index === 0 ? 'rounded-t-[12px]' : ''}
-                            ${index === 2 ? 'rounded-b-[12px]' : ''}
-                          `}
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    )
-                  )}
+                  {[
+                    { title: "Privacy Policy", href: `/${lang}/legal/privacy-policy` },
+                    { title: "Terms of Service", href: `/${lang}/legal/terms-of-service` },
+                    { title: "Cookie Policy", href: `/${lang}/legal/cookie-policy` }
+                  ].map((item, index) => (
+                    <li key={index} className="group flex-1">
+                      <Link
+                        href={item.href}
+                        className={`
+                          flex items-center justify-center h-full w-full px-4 py-2
+                          text-sm text-gray-700 hover:bg-[#F6F2EF] hover:text-gray-900 
+                          transition-all duration-200
+                          ${index === 0 ? 'rounded-t-[12px]' : ''}
+                          ${index === 2 ? 'rounded-b-[12px]' : ''}
+                        `}
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
-                {/* Downward pointing arrow */}
                 <div className="absolute -bottom-2 right-[65px] w-4 h-4 bg-white transform rotate-45"/>
-                {/* Changed right-6 to right-[18px] to align with the button's arrow */}
               </motion.div>
             </>
                              
