@@ -42,7 +42,8 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     // Decreased top margin from 100px to 70px and use header's container width.
     const mobileMenuStyle = {
       top: '80px',
-      maxHeight: 'calc(100vh - 70px)'
+      maxHeight: 'calc(100vh - 70px)',
+      isolation: 'isolate'
     };
 
     return (
@@ -58,7 +59,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
               WebkitBackdropFilter: 'blur(24px)',
               backdropFilter: 'blur(24px)',
               backgroundColor: 'rgba(255, 255, 255, 0.95)'
-            }}
+            }as any}
           >
             {/* Container matching header's width */}
             <div className="max-w-[1200px] mx-auto">
