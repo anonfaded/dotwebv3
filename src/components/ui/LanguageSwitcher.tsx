@@ -1,5 +1,6 @@
 "use client";
 
+import { Globe } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -12,9 +13,9 @@ interface LanguageSwitcherProps {
 }
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' }
+  { code: 'en', name: 'English' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'fr', name: 'Français' }
 ];
 
 export default function LanguageSwitcher({ currentLang, isMobile = false }: LanguageSwitcherProps) {
@@ -48,15 +49,12 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
   // Mobile version
   if (isMobile) {
     return (
-      <div 
-        ref={dropdownRef} 
-        className="relative inline-block"
-      >
+      <div ref={dropdownRef} className="relative inline-block">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
           className="flex items-center justify-center w-8 h-8"
         >
-          <span className="text-xl">{currentLanguage.flag}</span>
+          <Globe size={20} strokeWidth={1.5} className="text-[#2A2A2A]" />
         </button>
 
         <AnimatePresence>
@@ -104,7 +102,6 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                         `}
                         onClick={() => setShowDropdown(false)}
                       >
-                        <span className="text-lg">{lang.flag}</span>
                         <span className="font-nunito text-[13px]">{lang.name}</span>
                       </Link>
                     ))}
@@ -125,10 +122,8 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
       onMouseEnter={() => setShowDropdown(true)}
       onMouseLeave={() => setShowDropdown(false)}
     >
-      <button
-        className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black"
-      >
-        <span className="text-lg">{currentLanguage.flag}</span>
+      <button className="flex items-center space-x-2 font-nunito text-[16px] font-[400] text-[#2A2A2A] hover:text-black">
+        <Globe size={20} strokeWidth={1.5} />
         <span>{currentLanguage.name}</span>
         <Image
           src="/dropdown.png"
@@ -194,7 +189,6 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                           ${index === languages.length - 1 ? 'rounded-b-[12px]' : ''}
                         `}
                       >
-                        <span className="text-lg">{lang.flag}</span>
                         <span>{lang.name}</span>
                       </Link>
                     </div>
