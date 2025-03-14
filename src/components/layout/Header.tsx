@@ -36,14 +36,13 @@ export default function Header({ lang, dictionary }: HeaderProps) {
     };
   }, []);
 
-
   const MobileMenu = memo(function MobileMenu() {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
 
     return (
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <div className="fixed inset-x-0 top-[95px] z-[40] px-6">
+          <div className="fixed inset-x-0 top-[70px] z-[40]">
             <motion.div 
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -53,6 +52,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                 WebkitBackdropFilter: 'blur(8px)',
                 backdropFilter: 'blur(8px)',
                 backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                marginTop: '10px',
               }}
             >
               <div className="max-w-[1200px] mx-auto">
@@ -159,7 +159,7 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     </Link>
                   ))}
 
-                  <div className="sticky bottom-0 pt-4 mt-auto">
+                  <div className="sticky bottom-0 pt-4 mt-auto px-4">
                     <Link href={`/${lang}/demo`}>
                       <button className="w-full bg-[#2A2A2A] text-white px-4 py-3 rounded-lg font-nunito text-[17px] hover:bg-black transition-colors">
                         {navigation.demo || 'Request a Demo'}
