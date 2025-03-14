@@ -72,10 +72,10 @@ export default function LanguageSwitcher({ currentLang, isMobile = false }: Lang
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="absolute w-[120px] bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/40 bg-clip-padding backdrop-filter shadow-lg z-50"
+                className="absolute w-[100px] bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/40 bg-clip-padding backdrop-filter shadow-lg z-50 rounded-md"
                 style={{
                   right: '-8px', // Adjusted to align with flag button
-                  top: '159%',
+                  top: '209%',
                   WebkitBackdropFilter: 'blur(12px)',
                   backdropFilter: 'blur(12px)',
                   backgroundColor: 'rgba(255, 255, 255, 0.85)'
