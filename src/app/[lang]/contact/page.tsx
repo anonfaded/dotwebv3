@@ -2,6 +2,12 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { Lato } from 'next/font/google';
+
+const lato = Lato({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export default function ContactPage() {
   return (
@@ -25,7 +31,7 @@ export default function ContactPage() {
             <div className="relative flex flex-col items-center z-[4]">
               {/* Main Title */}
               <motion.div
-                className="w-full max-w-[812px] mx-auto space-y-4 md:space-y-6 mb-8 md:mb-12 select-text"
+                className="w-full max-w-[812px] mx-auto space-y-4 md:space-y-6  select-text"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -33,6 +39,17 @@ export default function ContactPage() {
                 <h1 className="font-nunito text-center text-[#05313E] font-medium text-[71.36px] leading-[77.57px]">
                   <span className="block">Kontaktieren Sie uns</span>
                 </h1>
+              </motion.div>
+              {/* Descriptive text below title */}
+              <motion.div
+                className={`w-[564px] h-[67px] text-center text-[#A2AAAC] ${lato.className}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-[22.16px] leading-[33.24px]">
+                  Ihre Fragen, unsere Antworten – gemeinsam schaffen wir die Grundlage für Ihren erfolgreichen Start.
+                </p>
               </motion.div>
             </div>
           </div>
