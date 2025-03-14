@@ -154,40 +154,93 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="relative min-h-screen bg-white">
-        <div className="container mx-auto px-4 relative">
-          {/* Upper Heading */}
-          <h3 className={`${nunitoSans.className} absolute left-[120px] top-[80px] text-[16px] font-bold leading-[140%] uppercase text-[#12705B] tracking-wider`}>
-            Ihr Kontakt zu mehr Verkaufsmandaten
-          </h3>
+      <section className="relative bg-white py-16 sm:py-20 lg:py-24 pb-[50px]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-20">
+            {/* Left Content */}
+            <div className="w-full lg:w-[527px] px-4 sm:px-6 lg:px-0 lg:ml-[120px]">
+              {/* Upper Heading */}
+              <h3 className={`${nunitoSans.className} text-[14px] sm:text-[16px] font-bold leading-[140%] uppercase text-[#016ec6] tracking-wider`}>
+                Ihr Kontakt zu mehr Verkaufsmandaten
+              </h3>
 
-          {/* Main Heading */}
-          <h2 className="absolute w-[527px] left-[calc(50%-527px/2-336.5px)] top-[105px] font-nunito font-semibold text-[53px] leading-[120%] text-[#05313E]">
-            Verwandeln Sie Interessenten in Kunden – wir liefern Ihnen die richtigen Tools
-          </h2>
+              {/* Main Heading */}
+              <h2 className="mt-4 sm:mt-6 font-nunito font-semibold text-[32px] sm:text-[42px] lg:text-[53px] leading-[120%] text-[#05313E]">
+                Verwandeln Sie Interessenten in Kunden – wir liefern Ihnen die richtigen Tools
+              </h2>
 
-          {/* Social Icons */}
-          <div className="absolute left-[121px] top-[454px] flex items-center gap-3">
-            {/* LinkedIn */}
-            <div className="w-[41.19px] h-[41.19px] relative flex items-center justify-center">
-              <svg width="41" height="41" viewBox="0 0 41 41" fill="none">
-                <rect width="41.19" height="41.19" rx="20.595" fill="#12705B"/>
-                <path d="M28.9273 28.9289H25.1843V22.8449C25.1843 21.3159 25.1573 19.3669 23.0733 19.3669C20.9593 19.3669 20.6343 21.0319 20.6343 22.7539V28.9279H16.8913V16.8179H20.4813V18.4549H20.5353C21.0013 17.7649 21.6437 17.2033 22.3926 16.8335C23.1415 16.4637 23.9702 16.2998 24.7983 16.3579C28.5953 16.3579 28.9293 19.0429 28.9293 22.4979L28.9273 28.9289ZM13.5293 15.1809C12.9901 15.1809 12.4633 15.0318 12.0104 14.7514C11.5575 14.471 11.1988 14.0714 10.9793 13.5997C10.7598 13.1281 10.6886 12.6042 10.7742 12.0974C10.8599 11.5906 11.0987 11.1214 11.4614 10.7487C11.824 10.376 12.2807 10.1249 12.7739 10.0261C13.2672 9.92722 13.777 9.98535 14.2357 10.1947C14.6943 10.404 15.084 10.7548 15.3576 11.2022C15.6313 11.6496 15.7773 12.1728 15.7773 12.7089C15.7773 13.4213 15.4963 14.1046 14.9972 14.6091C14.498 15.1136 13.8228 15.3982 13.1193 15.3989L13.5293 15.1809ZM15.4003 28.9289H11.6523V16.8179H15.4003V28.9289ZM30.7993 10.4189H10.8293C10.4903 10.4139 10.1633 10.5389 9.91731 10.7669C9.67131 10.9949 9.52531 11.3079 9.51331 11.6409V29.7069C9.52431 30.0409 9.66931 30.3559 9.91531 30.5859C10.1613 30.8159 10.4893 30.9419 10.8293 30.9379H30.7993C31.1413 30.9439 31.4713 30.8199 31.7203 30.5909C31.9693 30.3619 32.1173 30.0459 32.1303 29.7109V11.6369C32.1163 11.3019 31.9673 10.9869 31.7173 10.7589C31.4673 10.5309 31.1373 10.4079 30.7953 10.4149" fill="white"/>
-              </svg>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3 sm:gap-4 mt-8 sm:mt-10 lg:mt-12">
+                {/* LinkedIn */}
+                <div className="w-[41.19px] h-[41.19px] relative flex items-center justify-center">
+                  <svg width="41" height="41" viewBox="0 0 41 41" fill="none">
+                    <rect width="41.19" height="41.19" rx="20.595" fill="#016ec6"/>
+                    <path d="M28.9273 28.9289H25.1843V22.8449C25.1843 21.3159 25.1573 19.3669 23.0733 19.3669C20.9593 19.3669 20.6343 21.0319 20.6343 22.7539V28.9279H16.8913V16.8179H20.4813V18.4549H20.5353C21.0013 17.7649 21.6437 17.2033 22.3926 16.8335C23.1415 16.4637 23.9702 16.2998 24.7983 16.3579C28.5953 16.3579 28.9293 19.0429 28.9293 22.4979L28.9273 28.9289ZM13.5293 15.1809C12.9901 15.1809 12.4633 15.0318 12.0104 14.7514C11.5575 14.471 11.1988 14.0714 10.9793 13.5997C10.7598 13.1281 10.6886 12.6042 10.7742 12.0974C10.8599 11.5906 11.0987 11.1214 11.4614 10.7487C11.824 10.376 12.2807 10.1249 12.7739 10.0261C13.2672 9.92722 13.777 9.98535 14.2357 10.1947C14.6943 10.404 15.084 10.7548 15.3576 11.2022C15.6313 11.6496 15.7773 12.1728 15.7773 12.7089C15.7773 13.4213 15.4963 14.1046 14.9972 14.6091C14.498 15.1136 13.8228 15.3982 13.1193 15.3989L13.5293 15.1809ZM15.4003 28.9289H11.6523V16.8179H15.4003V28.9289ZM30.7993 10.4189H10.8293C10.4903 10.4139 10.1633 10.5389 9.91731 10.7669C9.67131 10.9949 9.52531 11.3079 9.51331 11.6409V29.7069C9.52431 30.0409 9.66931 30.3559 9.91531 30.5859C10.1613 30.8159 10.4893 30.9419 10.8293 30.9379H30.7993C31.1413 30.9439 31.4713 30.8199 31.7203 30.5909C31.9693 30.3619 32.1173 30.0459 32.1303 29.7109V11.6369C32.1163 11.3019 31.9673 10.9869 31.7173 10.7589C31.4673 10.5309 31.1373 10.4079 30.7953 10.4149" fill="white"/>
+                  </svg>
+                </div>
+
+                {/* Email */}
+                <div className="w-[30.51px] h-[30.51px] relative flex items-center justify-center">
+                  <svg width="31" height="31" viewBox="0 0 31 31" fill="none">
+                    <path d="M25.425 5.08984H5.425C3.7625 5.08984 2.4375 6.42734 2.4375 8.08984L2.425 22.0898C2.425 23.7523 3.7625 25.0898 5.425 25.0898H25.425C27.0875 25.0898 28.425 23.7523 28.425 22.0898V8.08984C28.425 6.42734 27.0875 5.08984 25.425 5.08984ZM25.425 10.0898L15.425 16.0898L5.425 10.0898V8.08984L15.425 14.0898L25.425 8.08984V10.0898Z" fill="#05313E"/>
+                  </svg>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="w-[35.08px] h-[35.08px] relative flex items-center justify-center">
+                  <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
+                    <path d="M29.75 5.09375C28.1454 3.47228 26.2342 2.18754 24.1281 1.31323C22.022 0.438914 19.7629 -0.00746055 17.4825 9.43164e-05C7.9275 9.43164e-05 0.14 7.78759 0.14 17.3426C0.14 20.4051 0.945 23.3801 2.45 25.9951L0 35.0001L9.1875 32.5851C11.725 33.9676 14.5775 34.7026 17.4825 34.7026C27.0375 34.7026 34.825 26.9151 34.825 17.3601C34.825 12.7226 33.0225 8.36509 29.75 5.09375ZM17.4825 31.7626C14.8925 31.7626 12.355 31.0626 10.1325 29.7501L9.6075 29.4351L4.1475 30.8701L5.6 25.5501L5.25 25.0076C3.81072 22.7099 3.04661 20.0537 3.045 17.3426C3.045 9.39759 9.52 2.92259 17.465 2.92259C21.315 2.92259 24.9375 4.42759 27.65 7.15759C28.9933 8.49436 30.0578 10.0846 30.7818 11.8359C31.5058 13.5873 31.8749 15.465 31.8675 17.3601C31.9025 25.3051 25.4275 31.7626 17.4825 31.7626ZM25.3925 20.9826C24.955 20.7726 22.82 19.7226 22.435 19.5651C22.0325 19.4251 21.7525 19.3551 21.455 19.7751C21.1575 20.2126 20.335 21.1926 20.09 21.4726C19.845 21.7701 19.5825 21.8051 19.145 21.5776C18.7075 21.3676 17.3075 20.8951 15.6625 19.4251C14.3675 18.2701 13.51 16.8526 13.2475 16.4151C13.0025 15.9776 13.2125 15.7501 13.44 15.5226C13.6325 15.3301 13.8775 15.0151 14.0875 14.7701C14.2975 14.5251 14.385 14.3326 14.525 14.0526C14.665 13.7551 14.595 13.5101 14.49 13.3001C14.385 13.0901 13.51 10.9551 13.16 10.0801C12.81 9.24009 12.4425 9.34509 12.18 9.32759H11.34C11.0425 9.32759 10.5875 9.43259 10.185 9.87009C9.8 10.3076 8.68 11.3576 8.68 13.4926C8.68 15.6276 10.22 17.6926 10.4475 17.9726C10.6575 18.2701 13.51 22.6451 17.85 24.5176C18.9325 24.9726 19.775 25.2351 20.4225 25.4276C21.455 25.7601 22.4 25.7076 23.1525 25.6026C23.9875 25.4801 25.6325 24.5526 25.9825 23.5376C26.3375 22.5226 26.3375 21.6476 26.215 21.4726C26.0925 21.2976 25.83 21.1926 25.3925 20.9826Z" fill="#05313E"/>
+                  </svg>
+                </div>
+              </div>
             </div>
 
-            {/* Email */}
-            <div className="w-[30.51px] h-[30.51px] relative flex items-center justify-center">
-              <svg width="31" height="31" viewBox="0 0 31 31" fill="none">
-                <path d="M25.425 5.08984H5.425C3.7625 5.08984 2.4375 6.42734 2.4375 8.08984L2.425 22.0898C2.425 23.7523 3.7625 25.0898 5.425 25.0898H25.425C27.0875 25.0898 28.425 23.7523 28.425 22.0898V8.08984C28.425 6.42734 27.0875 5.08984 25.425 5.08984ZM25.425 10.0898L15.425 16.0898L5.425 10.0898V8.08984L15.425 14.0898L25.425 8.08984V10.0898Z" fill="#05313E"/>
-              </svg>
-            </div>
+            {/* Contact Form */}
+            <div className="w-full lg:w-[557px] mt-12 lg:mt-0">
+              <form className="space-y-4 sm:space-y-5 lg:space-y-6">
+                {/* Company Name Field */}
+                <div className="relative">
+                  <input 
+                    type="text"
+                    placeholder="Firmenname"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                  />
+                </div>
 
-            {/* WhatsApp */}
-            <div className="w-[35.08px] h-[35.08px] relative flex items-center justify-center">
-              <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
-                <path d="M29.75 5.09375C28.1454 3.47228 26.2342 2.18754 24.1281 1.31323C22.022 0.438914 19.7629 -0.00746055 17.4825 9.43164e-05C7.9275 9.43164e-05 0.14 7.78759 0.14 17.3426C0.14 20.4051 0.945 23.3801 2.45 25.9951L0 35.0001L9.1875 32.5851C11.725 33.9676 14.5775 34.7026 17.4825 34.7026C27.0375 34.7026 34.825 26.9151 34.825 17.3601C34.825 12.7226 33.0225 8.36509 29.75 5.09375ZM17.4825 31.7626C14.8925 31.7626 12.355 31.0626 10.1325 29.7501L9.6075 29.4351L4.1475 30.8701L5.6 25.5501L5.25 25.0076C3.81072 22.7099 3.04661 20.0537 3.045 17.3426C3.045 9.39759 9.52 2.92259 17.465 2.92259C21.315 2.92259 24.9375 4.42759 27.65 7.15759C28.9933 8.49436 30.0578 10.0846 30.7818 11.8359C31.5058 13.5873 31.8749 15.465 31.8675 17.3601C31.9025 25.3051 25.4275 31.7626 17.4825 31.7626ZM25.3925 20.9826C24.955 20.7726 22.82 19.7226 22.435 19.5651C22.0325 19.4251 21.7525 19.3551 21.455 19.7751C21.1575 20.2126 20.335 21.1926 20.09 21.4726C19.845 21.7701 19.5825 21.8051 19.145 21.5776C18.7075 21.3676 17.3075 20.8951 15.6625 19.4251C14.3675 18.2701 13.51 16.8526 13.2475 16.4151C13.0025 15.9776 13.2125 15.7501 13.44 15.5226C13.6325 15.3301 13.8775 15.0151 14.0875 14.7701C14.2975 14.5251 14.385 14.3326 14.525 14.0526C14.665 13.7551 14.595 13.5101 14.49 13.3001C14.385 13.0901 13.51 10.9551 13.16 10.0801C12.81 9.24009 12.4425 9.34509 12.18 9.32759H11.34C11.0425 9.32759 10.5875 9.43259 10.185 9.87009C9.8 10.3076 8.68 11.3576 8.68 13.4926C8.68 15.6276 10.22 17.6926 10.4475 17.9726C10.6575 18.2701 13.51 22.6451 17.85 24.5176C18.9325 24.9726 19.775 25.2351 20.4225 25.4276C21.455 25.7601 22.4 25.7076 23.1525 25.6026C23.9875 25.4801 25.6325 24.5526 25.9825 23.5376C26.3375 22.5226 26.3375 21.6476 26.215 21.4726C26.0925 21.2976 25.83 21.1926 25.3925 20.9826Z" fill="#05313E"/>
-              </svg>
+                {/* Phone Number Field */}
+                <div className="relative">
+                  <input 
+                    type="tel"
+                    placeholder="Ihre Telefonnummer"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div className="relative">
+                  <input 
+                    type="email"
+                    placeholder="Ihre E-Mail-Adresse"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                  />
+                </div>
+
+                {/* Message Field */}
+                <div className="relative">
+                  <textarea 
+                    placeholder="Ihre Nachricht oder weitere Informationen…"
+                    className="w-full h-[200px] sm:h-[225px] lg:h-[258px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] resize-none transition-colors"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button 
+                  type="submit"
+                  className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-[#016ec6] border-4 border-[rgba(1,110,198,0.32)] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] font-nunito font-bold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-white hover:bg-[#016ec6cc] transition-colors"
+                >
+                  Absenden
+                </button>
+              </form>
             </div>
           </div>
         </div>
