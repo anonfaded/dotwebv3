@@ -154,7 +154,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="relative bg-white py-16 sm:py-20 lg:py-24 pb-[50px]">
+      <section className="relative bg-white py-12 sm:py-16 lg:py-10 pb-[30px]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-20">
             {/* Left Content */}
