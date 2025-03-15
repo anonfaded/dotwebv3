@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card } from 'antd';
 
 export default function ScalableSection() {
   return (

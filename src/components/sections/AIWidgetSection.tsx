@@ -16,20 +16,20 @@ export default function AIWidgetSection() {
                 className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
                 <span className="uppercase text-sm font-bold tracking-wider text-[#2A2A2A]">
-                  LEAD PREQUALIFICATION
+                DOCUMENT AUTOMATION
                 </span>
               </div>
               <h2 className="font-nunito text-[32px] lg:text-[41.2px] font-bold leading-tight lg:leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
-                AI Widget Tailored to Drive Real Estate Results
+              Automate Document Creation, Across Any Industry
               </h2>
               <p className="font-lato text-[16px] lg:text-[19.51px] leading-relaxed lg:leading-[29.27px] text-[#2A2A2A] mb-8">
-                The IMMOIQ AI widget enables seamless lead generation and qualification, delivering instant insights to potential clients. It simplifies user interactions, collects valuable data, and improves conversion rates for real estate professionals.
+              Eliminate manual paperwork and accelerate your workflows with automated document generation tailored specifically for your business. Whether it's proposals, contracts, invoices, or reports, our solution ensures consistency, accuracy, and professional presentation—so your team can focus on what truly matters.
               </p>
               <Link 
                 href="#"
                 className="group inline-flex items-center bg-[#0B0B0B] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] whitespace-nowrap"
               >
-                <span className="text-[16px] lg:text-[19.51px]">See How Lead Widgets Work</span>
+                <span className="text-[16px] lg:text-[19.51px]">Discover Document Creation</span>
                 <svg 
                   className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
                   viewBox="0 0 16 16" 
