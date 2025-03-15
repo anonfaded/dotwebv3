@@ -26,30 +26,30 @@ export default function AutomationSection() {
 
             {/* Right Content - Text Section */}
             <div className="w-full lg:w-1/2 lg:ml-auto lg:max-w-[480px] mb-12 lg:mb-0 order-1 lg:order-2">
-              <div 
+              <div
                 className="w-[216px] h-[35px] bg-[#d8e9f5] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
                 <span className="uppercase text-sm font-bold tracking-wider text-[#016EC6]">
-                  WORKFLOW EFFICIENCY
+                  SALES AUTOMATION
                 </span>
               </div>
               <h2 className="font-nunito text-[32px] lg:text-[41.2px] font-bold leading-tight lg:leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
-                Marketing Automation Made Simple for Teams
+                Capture and Qualify Leads—Everywhere, Effortlessly
               </h2>
               <p className="font-lato text-[16px] lg:text-[19.51px] leading-relaxed lg:leading-[29.27px] text-[#2A2A2A] mb-8">
-                IMMOIQ&apos;s automation tools make it easy to generate exposé PDFs, open house invitations, follow-up emails, and polished client presentations. By eliminating manual tasks, real estate professionals can save time and focus on strengthening client relationships.
+                Turn every interaction into an opportunity. Our omnichannel automation seamlessly connects WhatsApp, Messenger, Instagram, websites, and even phone calls into a unified lead-generation and qualification engine. AI-powered chat and voice agents automatically engage, pre-screen, and deliver qualified prospects directly into your sales funnel.
               </p>
-              <Link 
+              <Link
                 href="#"
                 className="group inline-flex items-center bg-[#016EC6] text-white px-6 lg:px-[40.89px] py-4 lg:py-[20.44px] rounded-[13.01px] hover:opacity-90 transition-all duration-300 hover:scale-[1.02] whitespace-nowrap"
               >
-                <span className="text-[16px] lg:text-[19.51px]">See How Automation Saves Time</span>
-                <svg 
-                  className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0" 
-                  viewBox="0 0 16 16" 
+                <span className="text-[16px] lg:text-[19.51px]">Start Capturing More Leads</span>
+                <svg
+                  className="ml-4 lg:ml-6 w-4 h-4 transform -rotate-45 transition-transform duration-300 group-hover:rotate-0"
+                  viewBox="0 0 16 16"
                   fill="none"
                 >
-                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
             </div>
