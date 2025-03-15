@@ -22,18 +22,18 @@ export default function CookiePolicyPage() {
           {/* Content Container */}
           <div className="container relative z-[3] mx-auto px-4">
             <div className="max-w-[1207px] ml-[116px]">
-              {/* Heading */}
-              <h1 className="font-nunito font-semibold text-[53px] leading-[120%] text-[#05313E] mt-[171px]">
+              {/* Heading - reduced from 120% to 110% */}
+              <h1 className="font-nunito font-semibold text-[53px] leading-[110%] text-[#05313E] mt-[171px]">
                 Impressum
               </h1>
 
-              {/* Content Section */}
-              <div className="font-nunito font-light text-[18px] leading-[160%] text-[#05313E] mt-[55px] space-y-8">
+              {/* Content Section - reduced from 160% to 140% */}
+              <div className="font-nunito font-light text-[18px] leading-[140%] text-[#05313E] mt-[55px] space-y-8">
                 <p className="mb-8">{`Dotweb Agency ist ein Online-Angebot der ELK Media LLC.`}</p>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Anschrift:</h2>
-                  <p className="whitespace-pre-line" >{`ELK Media LLC
+                  <h2 className="font-semibold leading-none">Anschrift:</h2>
+                  <p className="whitespace-pre-line leading-[140%]">{`ELK Media LLC
 30 N Gould St Ste R
 Sheridan, WY 82801
 USA
@@ -43,33 +43,33 @@ Webseite: www.immoiq.ch`}</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Handelsregister:</h2>
-                  <p>ELK Media LLC ist eingetragen im Bundesstaat Wyoming, USA.</p>
+                  <h2 className="font-semibold leading-none">Handelsregister:</h2>
+                  <p className="leading-[140%]">ELK Media LLC ist eingetragen im Bundesstaat Wyoming, USA.</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Vertretungsberechtigte:</h2>
-                  <p>Die vertretungsberechtigten Personen sind durch die ELK Media LLC offiziell benannt.</p>
+                  <h2 className="font-semibold leading-none">Vertretungsberechtigte:</h2>
+                  <p className="leading-[140%]">Die vertretungsberechtigten Personen sind durch die ELK Media LLC offiziell benannt.</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Haftungsausschluss:</h2>
-                  <p>{`Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen verantwortlich, jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.`}</p>
+                  <h2 className="font-semibold leading-none">Haftungsausschluss:</h2>
+                  <p className="leading-[140%]">{`Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen verantwortlich, jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.`}</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Verbraucherstreitbeilegung:</h2>
-                  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                  <h2 className="font-semibold leading-none">Verbraucherstreitbeilegung:</h2>
+                  <p className="leading-[140%]">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Hinweis:</h2>
-                  <p>Für Anfragen zur Nutzung und Verwaltung persönlicher Daten oder zur Löschung solcher Daten können Sie uns über die oben angegebene E-Mail-Adresse kontaktieren.</p>
+                  <h2 className="font-semibold leading-none">Hinweis:</h2>
+                  <p className="leading-[140%]">Für Anfragen zur Nutzung und Verwaltung persönlicher Daten oder zur Löschung solcher Daten können Sie uns über die oben angegebene E-Mail-Adresse kontaktieren.</p>
                 </div>
 
                 <div className="mb-8">
-                  <h2 className="font-semibold -mb-1">Urheberrecht:</h2>
-                  <p>{`Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.`}</p>
+                  <h2 className="font-semibold leading-none">Urheberrecht:</h2>
+                  <p className="leading-[140%]">{`Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.`}</p>
                 </div>
               </div>
             </div>
