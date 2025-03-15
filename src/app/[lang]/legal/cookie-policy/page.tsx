@@ -23,12 +23,12 @@ export default function CookiePolicyPage() {
           <div className="container relative z-[3] mx-auto px-4 md:px-6">
             <div className="max-w-[1207px] mx-4 md:ml-[60px] lg:ml-[116px]">
               {/* Heading - with responsive sizing */}
-              <h1 className="font-nunito font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[53px] leading-tight md:leading-[110%] text-[#05313E] mt-[130px] sm:mt-[140px] md:mt-[150px] lg:mt-[171px]">
+              <h1 className="font-nunito font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[53px] leading-tight md:leading-[110%] text-[#0b0b0b] mt-[130px] sm:mt-[140px] md:mt-[150px] lg:mt-[171px]">
                 Cookie Policy
               </h1>
 
               {/* Content Section - with responsive spacing */}
-              <div className="font-nunito font-light text-base md:text-[18px] leading-relaxed md:leading-[140%] text-[#05313E] mt-6 sm:mt-8 md:mt-[55px] space-y-6 md:space-y-8">
+              <div className="font-nunito font-light text-base md:text-[18px] leading-relaxed md:leading-[140%] text-[#0b0b0b] mt-6 sm:mt-8 md:mt-[55px] space-y-6 md:space-y-8">
                 <p className="mb-6 md:mb-8">{`Dotweb Agency ist ein Online-Angebot der ELK Media LLC.`}</p>
 
                 <div className="mb-6 md:mb-8">
