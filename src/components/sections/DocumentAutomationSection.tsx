@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function AIWidgetSection() {
+export default function DocAutomationSection() {
   return (
     <section className="bg-[#F6F2EF] relative overflow-hidden min-h-[671px] py-16 lg:h-[671px] lg:py-0">
       <div className="container mx-auto px-4 relative z-10 h-full flex items-center">

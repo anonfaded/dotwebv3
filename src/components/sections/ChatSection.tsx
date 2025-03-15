@@ -3,9 +3,9 @@
 import React from 'react';
 import ChatBox from '../ui/ChatBox';
 import ComparisonStats from '../ui/ComparisonStats';
-import AIWidgetSection from './AIWidgetSection';
-import AutomationSection from './AutomationSection';
-import ScalableSection from './ScalableSection';
+import AIWidgetSection from './DocumentAutomationSection';
+import AutomationSection from './SalesAutomationSection';
+import ScalableSection from './PrivacySection';
 import CalculatorSection from './CalculatorSection';
 
 export default function ChatSection() {

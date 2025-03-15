@@ -1,6 +1,6 @@
 import Hero from '@/components/sections/Hero';
-import AutomationSection from '@/components/sections/AutomationSection';
-import ScalableSection from '@/components/sections/ScalableSection';
+import AutomationSection from '@/components/sections/SalesAutomationSection';
+import ScalableSection from '@/components/sections/PrivacySection';
 import CalculatorSection from '@/components/sections/CalculatorSection';
 import Footer from '@/components/layout/Footer';
 import { getDictionary } from '@/lib/dictionary';
