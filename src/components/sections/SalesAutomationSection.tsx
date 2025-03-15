@@ -6,14 +6,14 @@ import Link from 'next/link';
 
 export default function SalesAutomationSection() {
   return (
-    <section className="bg-[#F5FAFF] relative overflow-hidden min-h-[671px] py-16 lg:h-[671px] lg:py-0">
+    <section className="bg-[#F5FAFF] relative overflow-hidden min-h-[671px] py-16 lg:h-[750px] lg:py-0">
       <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
-        <div className="max-w-[1200px] mx-auto w-full">
+        <div className="max-w-[1144px] mx-auto w-full">
           {/* Content Grid - Updated spacing */}
-          <div className="flex flex-col lg:flex-row items-center lg:gap-36">
+          <div className="flex flex-col lg:flex-row items-center">
             {/* Left Content - Image */}
-            <div className="w-full lg:w-[50%] mt-8 lg:mt-0 order-2 lg:order-1">
-              <div className="relative w-full aspect-[16/9] max-w-[1000px] h-[600px] mx-auto">
+            <div className="w-full lg:w-[50%] mt-8 lg:mt-0 order-2 lg:order-1 lg:translate-x-[-20%]">
+              <div className="relative w-full aspect-[16/9] max-w-[800px] h-[800px] mx-auto">
                 <Image
                   src="/sales-automation.png"
                   alt="Sales Automation Interface"
@@ -25,7 +25,7 @@ export default function SalesAutomationSection() {
             </div>
 
             {/* Right Content - Text Section */}
-            <div className="w-full lg:w-1/2 lg:ml-auto lg:max-w-[480px] mb-12 lg:mb-0 order-1 lg:order-2">
+            <div className="w-full lg:w-[55%] mb-12 lg:mb-0 order-1 lg:order-2 pl-24 -mr-10">
               <div
                 className="w-[216px] h-[35px] bg-[#d8e9f5] rounded-[12.54px] mb-8 flex items-center justify-center"
               >

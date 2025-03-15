@@ -1,17 +1,15 @@
 "use client";
-
 import Image from 'next/image';
 import Link from 'next/link';
-
 export default function DocAutomationSection() {
   return (
-    <section className="bg-[#F6F2EF] relative overflow-hidden min-h-[671px] py-16 lg:h-[671px] lg:py-0">
+    <section className="bg-[#F6F2EF] relative overflow-hidden min-h-[671px] py-16 lg:h-[750px] lg:py-0">
       <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
-        <div className="max-w-[1200px] mx-auto w-full">
+        <div className="max-w-[1144px] mx-auto w-full">
           {/* Content Grid */}
           <div className="flex flex-col lg:flex-row items-center">
             {/* Left Content - Text Section */}
-            <div className="w-full lg:w-1/2 lg:mr-auto lg:max-w-[480px] mb-8 lg:mb-0 order-1">
+            <div className="w-full lg:w-[55%] mb-8 lg:mb-0 order-1 pr-24 -ml-10">
               <div
                 className="w-[216px] h-[35px] bg-[#EDE9E6] rounded-[12.54px] mb-8 flex items-center justify-center"
               >
@@ -19,7 +17,7 @@ export default function DocAutomationSection() {
                   DOCUMENT AUTOMATION
                 </span>
               </div>
-              <h2 className="font-nunito text-[32px] lg:text-[41.2px] font-bold leading-tight lg:leading-[41.2px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
+              <h2 className="font-nunito text-[32px] lg:text-[41.2px] font-bold leading-tight lg:leading-[48px] tracking-[-2.17px] text-[#2A2A2A] mb-6">
                 Automate Document Creation, Across Any Industry
               </h2>
               <p className="font-lato text-[16px] lg:text-[19.51px] leading-relaxed lg:leading-[29.27px] text-[#2A2A2A] mb-8">
@@ -39,10 +37,9 @@ export default function DocAutomationSection() {
                 </svg>
               </Link>
             </div>
-
             {/* Right Content - Image */}
-            <div className="w-full lg:w-[65%] mt-8 lg:mt-0 order-2">
-              <div className="relative w-full aspect-[16/9] max-w-[1000px] h-[600px] mx-auto lg:mx-0">
+            <div className="w-full lg:w-[50%] mt-8 lg:mt-0 order-2 lg:translate-x-[20%]">
+              <div className="relative w-full aspect-[16/9] max-w-[800px] h-[800px] mx-auto lg:mx-0">
                 <Image
                   src="/document-automation.png"
                   alt="Document Automation Interface"
