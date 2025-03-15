@@ -23,7 +23,7 @@ export default function ContactPage() {
             src="/hero-bg.png"
             alt="Background pattern"
             fill
-            className="object-cover w-full opacity-[0.25]"
+            className="object-cover w-full opacity-[0.15]"
             priority
           />
         </div>
