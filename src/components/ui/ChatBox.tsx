@@ -235,7 +235,7 @@ export default function ChatBox() {
 
                     {/* Card 2 - Increased height and padding for mobile */}
                     <div
-                      className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 sm:p-[clamp(4px,0.8vw,8px)] h-auto min-h-[95px] sm:h-[clamp(75px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+                      className="pre-prompt-card hidden lg:block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 sm:p-[clamp(4px,0.8vw,8px)] h-auto min-h-[95px] sm:h-[clamp(75px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
                       onClick={() => handlePrePromptClick("Can I reduce my team size with AI?")}
                     >
                       <h4 className="font-nunito-sans text-base sm:text-[clamp(14px,1.2vw,16.02px)] font-bold leading-normal sm:leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-2 pt-1 sm:pt-3 pl-1 sm:pl-2">
