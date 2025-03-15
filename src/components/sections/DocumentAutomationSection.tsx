@@ -41,13 +41,13 @@ export default function DocAutomationSection() {
             </div>
 
             {/* Right Content - Image */}
-            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2">
-              <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto lg:mx-0">
+            <div className="w-full lg:w-3/4 mt-8 lg:mt-0 order-2">
+              <div className="relative w-full aspect-[16/10] max-w-[900px] mx-auto lg:mx-0">
                 <Image
                   src="/document-automation.png"
-                  alt="AI Widget Interface"
+                  alt="Document Automation Interface"
                   fill
-                  className="object-cover object-top rounded-xl"
+                  className="object-contain rounded-xl"
                   priority
                 />
               </div>

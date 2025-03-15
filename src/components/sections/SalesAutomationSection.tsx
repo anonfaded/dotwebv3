@@ -12,13 +12,13 @@ export default function SalesAutomationSection() {
           {/* Content Grid - Updated spacing */}
           <div className="flex flex-col lg:flex-row items-center lg:gap-36">
             {/* Left Content - Image */}
-            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2 lg:order-1">
-              <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto">
+            <div className="w-full lg:w-3/4 mt-8 lg:mt-0 order-2 lg:order-1">
+              <div className="relative w-full aspect-[16/10] max-w-[900px] mx-auto">
                 <Image
                   src="/sales-automation.png"
-                  alt="Automation Interface"
+                  alt="Sales Automation Interface"
                   fill
-                  className="object-cover object-top rounded-xl"
+                  className="object-contain rounded-xl"
                   priority
                 />
               </div>
