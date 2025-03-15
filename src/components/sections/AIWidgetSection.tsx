@@ -23,7 +23,7 @@ export default function AIWidgetSection() {
               Automate Document Creation, Across Any Industry
               </h2>
               <p className="font-lato text-[16px] lg:text-[19.51px] leading-relaxed lg:leading-[29.27px] text-[#2A2A2A] mb-8">
-              Eliminate manual paperwork and accelerate your workflows with automated document generation tailored specifically for your business. Whether it's proposals, contracts, invoices, or reports, our solution ensures consistency, accuracy, and professional presentation—so your team can focus on what truly matters.
+              {`Eliminate manual paperwork and accelerate your workflows with automated document generation tailored specifically for your business. Whether it's proposals, contracts, invoices, or reports, our solution ensures consistency, accuracy, and professional presentation—so your team can focus on what truly matters.`}
               </p>
               <Link 
                 href="#"
