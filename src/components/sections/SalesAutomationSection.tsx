@@ -12,8 +12,8 @@ export default function SalesAutomationSection() {
           {/* Content Grid - Updated spacing */}
           <div className="flex flex-col lg:flex-row items-center lg:gap-36">
             {/* Left Content - Image */}
-            <div className="w-full lg:w-3/4 mt-8 lg:mt-0 order-2 lg:order-1">
-              <div className="relative w-full aspect-[16/10] max-w-[900px] mx-auto">
+            <div className="w-full lg:w-[50%] mt-8 lg:mt-0 order-2 lg:order-1">
+              <div className="relative w-full aspect-[16/9] max-w-[1000px] h-[600px] mx-auto">
                 <Image
                   src="/sales-automation.png"
                   alt="Sales Automation Interface"

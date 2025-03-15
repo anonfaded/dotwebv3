@@ -41,8 +41,8 @@ export default function PrivacySection() {
             </div>
 
             {/* Right Content - Image */}
-            <div className="w-full lg:w-3/4 mt-8 lg:mt-0 order-2">
-              <div className="relative w-full aspect-[16/10] max-w-[900px] mx-auto lg:mx-0">
+            <div className="w-full lg:w-[65%] mt-8 lg:mt-0 order-2">
+              <div className="relative w-full aspect-[16/9] max-w-[1000px] h-[600px] mx-auto lg:mx-0">
                 <Image
                   src="/data-privacy.png"
                   alt="Privacy & Security Interface"
