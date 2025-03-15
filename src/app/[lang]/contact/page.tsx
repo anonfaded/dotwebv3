@@ -66,7 +66,7 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <p className="text-[clamp(16px,2vw,22.16px)] leading-[1.5] sm:leading-[1.6] lg:leading-[33.24px]">
+                <p className="text-[clamp(16px,2vw,22.16px)] leading-[1.5] sm:leading-[1.6] lg:leading-[33.24px] hidden md:block">
                   Ihre Fragen, unsere Antworten – gemeinsam schaffen wir die Grundlage für Ihren erfolgreichen Start.
                 </p>
               </motion.div>
