@@ -18,14 +18,14 @@ const nunitoSans = Nunito_Sans({
 export default function ContactPage() {
   return (
     <div className="flex-grow">
-      <section className="relative min-h-screen pb-[70px] pt-[120px] lg:pt-0 flex flex-col justify-start overflow-hidden z-[1]">
+      <section className="relative min-h-screen pb-[70px] pt-[170px] lg:pt-[85px] flex flex-col justify-start overflow-hidden z-[1]">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full bg-[#F6F2F0]">
           <Image
             src="/hero-bg.png"
             alt="Background pattern"
             fill
-            className="object-cover w-full opacity-20"
+            className="object-cover w-full opacity-[0.25]"
             priority
           />
         </div>
@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-transparent z-[2]" />
 
         {/* Rectangle with rounded corners */}
-        <div className="absolute top-[120px] sm:top-[120px] lg:top-[120px] left-[15px] sm:left-[20px] lg:left-[25px] right-[15px] sm:right-[20px] lg:right-[25px] bottom-[50px] bg-white rounded-[12px] sm:rounded-[16px] lg:rounded-[20px] z-[3] opacity-90 overflow-hidden">
+        <div className="absolute top-[160px] sm:top-[160px] lg:top-[160px] left-[15px] sm:left-[20px] lg:left-[25px] right-[15px] sm:right-[20px] lg:right-[25px] bottom-[70px] bg-white rounded-[12px] sm:rounded-[16px] lg:rounded-[20px] z-[3] opacity-90 overflow-hidden">
           {/* SVG Background */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <Image
@@ -63,7 +63,7 @@ export default function ContactPage() {
               </motion.div>
               {/* Descriptive text below title */}
               <motion.div
-                className={`w-full max-w-[564px] mx-auto px-4 text-center text-[#A2AAAC] ${lato.className}`}
+                className={`w-full max-w-[564px] mx-auto px-4 text-center text-[#6B7280] ${lato.className}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 </p>
               </motion.div>
               {/* Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full mb-12 sm:mb-14 lg:mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full mb-[70px]">
                 {/* Email Card */}
                 <div className="relative w-full max-w-[320px] sm:max-w-[387px] mx-auto h-[200px] sm:h-[244px] border-[1.20949px] border-[#E4E5E7] rounded-[19.3518px] transition-transform hover:scale-[1.02]">
                   <div className="absolute inset-x-[11px] top-[11px] bottom-[10px] bg-white shadow-[0px_1.20949px_3.62846px_rgba(4,37,47,0.06),0px_14.5138px_38.7036px_-14.5138px_rgba(4,37,47,0.2)] rounded-[9.67589px]">
