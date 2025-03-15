@@ -15,7 +15,7 @@ export default function SalesAutomationSection() {
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2 lg:order-1">
               <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto">
                 <Image
-                  src="/widget-screenshot2.png"
+                  src="/sales-automation.png"
                   alt="Automation Interface"
                   fill
                   className="object-cover object-top rounded-xl"

@@ -44,7 +44,7 @@ export default function PrivacySection() {
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2">
               <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto lg:mx-0">
                 <Image
-                  src="/widget-screenshot3.png"
+                  src="/data-privacy.png"
                   alt="Scalable Platform Interface"
                   fill
                   className="object-cover object-right rounded-xl"
