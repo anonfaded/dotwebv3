@@ -73,7 +73,7 @@ export default function ContactPage() {
                 </p>
               </motion.div>
               {/* Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full mb-[70px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-20 w-full mb-[70px]">
                 {/* Email Card */}
                 <div className="relative w-full max-w-[320px] sm:max-w-[387px] mx-auto h-[200px] sm:h-[244px] border-[1.20949px] border-[#E4E5E7] rounded-[19.3518px] transition-transform hover:scale-[1.02]">
                   <div className="absolute inset-x-[11px] top-[11px] bottom-[10px] bg-white shadow-[0px_1.20949px_3.62846px_rgba(4,37,47,0.06),0px_14.5138px_38.7036px_-14.5138px_rgba(4,37,47,0.2)] rounded-[9.67589px]">
