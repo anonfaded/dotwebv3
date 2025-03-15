@@ -1,15 +1,30 @@
 import ContactForm from "@/components/sections/ContactForm";
-
+import Image from 'next/image';
 export default function CookiePolicyPage() {
   return (
     <>
-    <div className="flex-grow pt-32 pb-16">
-      <div className="container mx-auto px-4">
-        <h1 className="font-nunito text-4xl font-bold mb-8">Cookie Policy</h1>
-        {/* Cookie Policy content will go here */}
+      <div className="flex-grow">
+
+
+        <section className="relative min-h-screen  flex flex-col justify-start overflow-hidden z-[1]">
+          {/* Background Image */}
+          <div className="absolute inset-0 w-full h-full bg-[#F6F2F0]">
+            <Image
+              src="/hero-bg.png"
+              alt="Background pattern"
+              fill
+              className="object-cover w-full opacity-[0.25]"
+              priority
+            />
+          </div>
+
+          <div className="absolute inset-0 bg-transparent z-[2]" />
+        </section>
+
+
+
       </div>
-    </div>
-    <ContactForm />
+      <ContactForm />
     </>
   );
 }
