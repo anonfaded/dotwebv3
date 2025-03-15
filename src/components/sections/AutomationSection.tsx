@@ -11,50 +11,16 @@ export default function AutomationSection() {
         <div className="max-w-[1200px] mx-auto w-full">
           {/* Content Grid - Updated spacing */}
           <div className="flex flex-col lg:flex-row items-center lg:gap-36">
-            {/* Left Content - Window Frame */}
+            {/* Left Content - Image */}
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2 lg:order-1">
-              <div className="relative w-full max-w-[680px] mx-auto">
-                {/* Updated background layers */}
-                <div className="absolute -left-4 lg:-left-4 -top-3 lg:-top-3 -bottom-3 lg:-bottom-3 w-[calc(100%+32px)] bg-[#016EC6] rounded-xl" />
-                <div className="absolute -left-2 lg:-left-2 top-6 lg:top-6 -bottom-1 lg:-bottom-1 w-[calc(100%+16px)] bg-[#f5faff] rounded-xl" />
-                
-                {/* Card container with overflow */}
-                <div className="relative">
-                  <Card
-                    className="overflow-hidden w-full [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
-                    bodyStyle={{ 
-                      padding: 0,
-                      background: '#1E1E1E',
-                      height: '500px',
-                      border: 'none',
-                    }}
-                    headStyle={{
-                      background: '#2A2A2A',
-                      border: 'none',
-                      borderBottom: 0,
-                      padding: '12px 16px',
-                      minHeight: 'auto',
-                      marginBottom: 0,
-                    }}
-                    title={
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 rounded-full bg-[#f7f7f8]" />
-                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
-                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
-                      </div>
-                    }
-                  >
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/widget-screenshot2.png"
-                        alt="Automation Interface"
-                        fill
-                        className="object-cover object-top"
-                        priority
-                      />
-                    </div>
-                  </Card>
-                </div>
+              <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto">
+                <Image
+                  src="/widget-screenshot2.png"
+                  alt="Automation Interface"
+                  fill
+                  className="object-cover object-top rounded-xl"
+                  priority
+                />
               </div>
             </div>
 

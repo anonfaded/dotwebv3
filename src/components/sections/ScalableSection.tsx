@@ -41,50 +41,16 @@ export default function ScalableSection() {
               </Link>
             </div>
 
-            {/* Right Content - Window Frame */}
+            {/* Right Content - Image */}
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-2">
-              <div className="relative w-full max-w-[680px] mx-auto lg:mx-0">
-                {/* Background layers */}
-                <div className="absolute -right-4 lg:-right-8 -top-3 lg:-top-5 -bottom-3 lg:bottom-0 w-[calc(100%+32px)] lg:w-[calc(100%+64px)] bg-[#e2ddd8] rounded-xl" />
-                <div className="absolute -right-2 lg:-right-4 top-6 lg:top-12 -bottom-1 lg:-bottom-3 w-[calc(100%+16px)] lg:w-[calc(100%+32px)] bg-[#f5f1ee] rounded-xl" />
-                
-                {/* Card container */}
-                <div className="relative">
-                  <Card
-                    className="overflow-hidden w-full [&_.ant-card-head-wrapper]:after:hidden !border-0 [&_.ant-card]:border-0 [&_.ant-card-head]:border-b-0 shadow-none"
-                    bodyStyle={{ 
-                      padding: 0,
-                      background: '#1E1E1E',
-                      height: '500px',
-                      border: 'none',
-                    }}
-                    headStyle={{
-                      background: '#2A2A2A',
-                      border: 'none',
-                      borderBottom: 0,
-                      padding: '12px 16px',
-                      minHeight: 'auto',
-                      marginBottom: 0,
-                    }}
-                    title={
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 rounded-full bg-[#f7f7f8]" />
-                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
-                        <div className="w-3 h-3 rounded-full bg-[#565b5d]" />
-                      </div>
-                    }
-                  >
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/widget-screenshot3.png"
-                        alt="Scalable Platform Interface"
-                        fill
-                        className="object-cover object-right"
-                        priority
-                      />
-                    </div>
-                  </Card>
-                </div>
+              <div className="relative w-full aspect-[4/3] max-w-[680px] mx-auto lg:mx-0">
+                <Image
+                  src="/widget-screenshot3.png"
+                  alt="Scalable Platform Interface"
+                  fill
+                  className="object-cover object-right rounded-xl"
+                  priority
+                />
               </div>
             </div>
           </div>
