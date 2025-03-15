@@ -63,7 +63,7 @@ export default function ContactForm() {
             </div>
 
             {/* Left Content - Moved down on mobile */}
-            <div className="w-full lg:w-[527px] px-4 sm:px-6 lg:pd-0 lg:ml-[110px] py-3 sm:py-10 lg:py-24 order-2 lg:order-1">
+            <div className="w-full lg:w-[527px] px-4 sm:px-6 lg:pd-0 lg:ml-[110px] py-3 sm:py-10 lg:py-24 order-2 lg:order-1 hidden lg:block">
               {/* Upper Heading */}
               <h3
                 className={`${nunitoSans.className} text-[14px] sm:text-[16px] font-bold leading-[140%] uppercase text-[#016ec6] tracking-wider`}
