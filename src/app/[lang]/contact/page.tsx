@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-transparent z-[2]" />
 
         {/* Rectangle with rounded corners */}
-        <div className="absolute top-[160px] sm:top-[160px] lg:top-[160px] left-[15px] sm:left-[20px] lg:left-[25px] right-[15px] sm:right-[20px] lg:right-[25px] bottom-[70px] bg-white rounded-[12px] sm:rounded-[16px] lg:rounded-[20px] z-[3] opacity-100 overflow-hidden">
+        <div className="absolute top-[125px]  lg:top-[125px] left-[15px] sm:left-[20px] lg:left-[25px] right-[15px] sm:right-[20px] lg:right-[25px] bottom-[70px] bg-white rounded-[12px] sm:rounded-[16px] lg:rounded-[20px] z-[3] opacity-100 overflow-hidden">
           {/* SVG Background */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-100 lg:top-[180px]">
             <Image
