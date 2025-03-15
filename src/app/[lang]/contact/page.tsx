@@ -86,12 +86,12 @@ export default function ContactPage() {
                       </div>
 
                       {/* Description text - with flex-grow to push divider down */}
-                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-6 flex-grow">
+                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-3 flex-grow mr-10 sm:mr-20">
                         Für allgemeine oder Support-Anfragen erreichen Sie uns jederzeit per E-Mail.
                       </div>
 
                       {/* Horizontal Divider */}
-                      <div className="h-px w-full bg-[#E4E5E7] mb-4" />
+                      <div className="h-px w-full bg-[#E4E5E7] mb-2" />
 
                       {/* Email with icon */}
                       <div className="flex items-center">
@@ -120,12 +120,15 @@ export default function ContactPage() {
                       </div>
 
                       {/* Description text - with flex-grow to push divider down */}
-                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-6 flex-grow">
+                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-3 flex-grow mr-10 sm:mr-20">
                         Für schnellen Support nutzen Sie auch unseren WhatsApp-Dienst.
+                        <br />
+                        <br />
                       </div>
+                      
 
                       {/* Horizontal Divider */}
-                      <div className="h-px w-full bg-[#E4E5E7] mb-4" />
+                      <div className="h-px w-full bg-[#E4E5E7] mb-2" />
 
                       {/* WhatsApp with icon */}
                       <div className="flex items-center">
@@ -154,14 +157,14 @@ export default function ContactPage() {
                       </div>
 
                       {/* Description text - with flex-grow to push divider down */}
-                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-6 flex-grow">
+                      <div className="font-lato font-normal text-sm md:text-[16.93px] leading-relaxed md:leading-[27px] text-[#05313E] mb-3 flex-grow mr-10 sm:mr-20">
                         ImmoIQ<br />
                         ELK Media LLC<br />
                         WY 82801, USA
                       </div>
 
                       {/* Horizontal Divider */}
-                      <div className="h-px w-full bg-[#E4E5E7] mb-4" />
+                      <div className="h-px w-full bg-[#E4E5E7] mb-2" />
 
                       {/* Address with icon */}
                       <div className="flex items-center">
