@@ -55,7 +55,7 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="font-nunito text-center text-[#0b0b0b] font-medium text-[clamp(2.5rem,5vw,71.36px)] leading-[1.2] sm:leading-[1.3] lg:leading-[77.57px]">
+                <h1 className="font-nunito text-center text-[#0b0b0b] font-medium text-[28px] xs:text-[32px] sm:text-[38px] md:text-[45px] lg:text-[53px] leading-none whitespace-nowrap">
                   <span className="block">Kontaktieren Sie uns</span>
                 </h1>
               </motion.div>
