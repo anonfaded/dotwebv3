@@ -198,7 +198,7 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-[#016ec6] border-4 border-[rgba(1,110,198,0.32)] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] font-nunito font-bold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-white hover:bg-[#016ec6cc] transition-colors"
+                  className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-[#016ec6] border-4 border-[rgba(82,138,243,0.4)] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] font-nunito font-bold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-white hover:bg-[#016ec6cc] transition-colors"
                 >
                   Absenden
                 </button>
