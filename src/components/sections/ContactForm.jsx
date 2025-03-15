@@ -22,7 +22,7 @@ export default function ContactForm() {
                   <input
                     type="text"
                     placeholder="Firmenname"
-                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#0b0b0b] transition-colors"
                   />
                 </div>
 
@@ -31,7 +31,7 @@ export default function ContactForm() {
                   <input
                     type="tel"
                     placeholder="Ihre Telefonnummer"
-                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#0b0b0b] transition-colors"
                   />
                 </div>
 
@@ -40,7 +40,7 @@ export default function ContactForm() {
                   <input
                     type="email"
                     placeholder="Ihre E-Mail-Adresse"
-                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] transition-colors"
+                    className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#0b0b0b] transition-colors"
                   />
                 </div>
 
@@ -48,14 +48,14 @@ export default function ContactForm() {
                 <div className="relative">
                   <textarea
                     placeholder="Ihre Nachricht oder weitere Informationen…"
-                    className="w-full h-[200px] sm:h-[225px] lg:h-[258px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#016ec6] resize-none transition-colors"
+                    className="w-full h-[200px] sm:h-[225px] lg:h-[258px] bg-white border-2 border-[#E9E9E9] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] px-5 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 font-nunito font-semibold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-[#C2C2C2] focus:outline-none focus:border-[#0b0b0b] resize-none transition-colors"
                   />
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-[#016ec6] border-4 border-[rgba(82,138,243,0.4)] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] font-nunito font-bold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-white hover:bg-[#016ec6cc] transition-colors"
+                  className="w-full h-[50px] sm:h-[60px] lg:h-[66px] bg-[#0b0b0b] border-4 border-[rgba(0,0,0,0.15)] rounded-[25px] sm:rounded-[30px] lg:rounded-[35px] font-nunito font-bold text-[16px] sm:text-[17px] lg:text-[18px] leading-[120%] text-white hover:bg-[#333333] transition-colors"
                 >
                   Absenden
                 </button>
