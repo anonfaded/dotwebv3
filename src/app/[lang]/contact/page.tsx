@@ -158,7 +158,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-20">
             {/* Left Content */}
-            <div className="w-full lg:w-[527px] px-4 sm:px-6 lg:px-0 lg:ml-[120px] py-24">
+            <div className="w-full lg:w-[527px] px-4 sm:px-6 lg:px-0 lg:ml-[120px] py-3 sm:py-10 lg:py-24">
               {/* Upper Heading */}
               <h3 className={`${nunitoSans.className} text-[14px] sm:text-[16px] font-bold leading-[140%] uppercase text-[#016ec6] tracking-wider`}>
                 Ihr Kontakt zu mehr Verkaufsmandaten
