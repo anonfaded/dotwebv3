@@ -187,7 +187,6 @@ export default function ChatBox() {
           <div className="flex-1 px-3 sm:px-[clamp(6px,1.5vw,12px)] lg:px-[clamp(8px,2vw,14px)] bg-white rounded-b-lg flex flex-col h-full overflow-hidden">
             {/* Increased padding on mobile */}
             {/* Chat Messages */}
-            {/* Gap/Bottom margin below the message and above the input section */}
             <div
               ref={chatContainerRef}
               className="flex-grow overflow-y-auto scroll-smooth mb-4"
@@ -214,14 +213,12 @@ export default function ChatBox() {
                     What do you want to know about automation today?
                   </p>
 
-                  {/* Pre-prompt Cards - Show only 2 on mobile */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-4 mb-4 sm:mb-[clamp(10px,1.8vw,12px)] w-full max-w-full sm:max-w-[1008px] mx-auto overflow-hidden px-4 sm:px-4">
-                    {/* Increased spacing and width for mobile */}
-
-                    {/* Card 1 - Increased height and padding for mobile */}
+                  {/* Pre-prompt Cards - Show only on desktop */}
+                  <div className="hidden lg:grid grid-cols-2 gap-x-3 gap-y-4 mb-4 sm:mb-[clamp(10px,1.8vw,12px)] w-full max-w-full sm:max-w-[1008px] mx-auto overflow-hidden px-4 sm:px-4">
+                    {/* All cards except Card 1 */}
                     <div
                       className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 sm:p-[clamp(4px,0.8vw,8px)] h-auto min-h-[95px] sm:h-[clamp(75px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
-                      onClick={() => handlePrePromptClick("How can automation save us money?")}
+onClick={() => handlePrePromptClick("How can automation save us money?")}
                     >
                       <h4 className="font-nunito-sans text-base sm:text-[clamp(14px,1.2vw,16.02px)] font-bold leading-normal sm:leading-[clamp(18px,1.4vw,24.03px)] text-[#0E0E0E] mb-2 pt-1 sm:pt-3 pl-1 sm:pl-2">
                         {/* Increased font size and margin for mobile */}
@@ -310,6 +307,23 @@ export default function ChatBox() {
                 </div>
               )}
             </div>
+
+            {/* Mobile Card 1 - Only show on mobile above input */}
+            {isInitialView && (
+              <div className="lg:hidden w-full px-4 mb-4">
+                <div
+                  className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 h-auto min-h-[95px] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
+                  onClick={() => handlePrePromptClick("How can automation save us money?")}
+                >
+                  <h4 className="font-nunito-sans text-base font-bold leading-normal text-[#0E0E0E] mb-2 pt-1 pl-1">
+                    How can automation save us money?
+                  </h4>
+                  <p className="font-lato text-sm font-normal leading-tight text-[#8C8C8C] mt-1 pl-1">
+                    Discover how to cut costs and improve efficiency.
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Input Field - Improved for mobile */}
             <div className="relative mb-3 sm:mb-[clamp(6px,1.2vw,10px)] px-2 sm:px-4">
