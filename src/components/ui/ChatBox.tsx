@@ -196,7 +196,7 @@ export default function ChatBox() {
               }}
             >
               {isInitialView ? (
-                <div className="flex flex-col items-center justify-center h-full overflow-hidden">
+                <div className="flex flex-col items-center justify-center h-full overflow-hidden pt-[40px] sm:pt-0">
                   <div className="w-12 h-12 sm:w-[clamp(35px,3.8vw,45.42px)] sm:h-[clamp(35px,3.8vw,45.42px)] mb-4 sm:mb-6 lg:mb-8">
                     {/* Increased size for mobile */}
                     <Image
@@ -214,7 +214,7 @@ export default function ChatBox() {
                   </p>
 
                   {/* Pre-prompt Cards - Show only on desktop */}
-                  <div className="hidden lg:grid grid-cols-2 gap-x-3 gap-y-4 mb-4 sm:mb-[clamp(10px,1.8vw,12px)] w-full max-w-full sm:max-w-[1008px] mx-auto overflow-hidden px-4 sm:px-4">
+                  <div className="hidden lg:grid grid-cols-2 gap-x-3 gap-y-4 mt-[40px] mb-4 sm:mb-[clamp(10px,1.8vw,12px)] w-full max-w-full sm:max-w-[1008px] mx-auto overflow-hidden px-4 sm:px-4">
                     {/* All cards except Card 1 */}
                     <div
                       className="pre-prompt-card block bg-white border border-[#D9D9D9] rounded-[10.01px] p-4 sm:p-[clamp(4px,0.8vw,8px)] h-auto min-h-[95px] sm:h-[clamp(75px,5.6vw,85px)] w-full relative transition-all duration-300 hover:border-gray-400 hover:shadow-md cursor-pointer flex-col justify-center group"
